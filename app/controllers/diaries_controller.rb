@@ -1,7 +1,6 @@
 class DiariesController < ApplicationController
-  require "date"
   def index
-    @diaries - Diary.all.order(created_at: :desc)
+    @diaries - Diary.all
   end
 
   def new
