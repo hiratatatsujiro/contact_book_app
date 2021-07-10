@@ -60,6 +60,7 @@ Things you may want to cover:
 ## diariesテーブル
 | Column             | Type       | Options           |
 |--------------------|------------|-------------------|
+| diary_day          | date       | null: false       |
 | title              | string     | null: false       |
 | diary              | text       | null: false       |
 | user               | references | foreign_key: true |
