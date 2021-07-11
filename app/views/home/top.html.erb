@@ -3,7 +3,7 @@
 <%= link_to "ログイン", new_user_session_path %>
 <%= link_to "ユーザー情報編集", edit_user_registration_path %>
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<%= link_to "日記", new_diary_path %>
+<%= link_to "日記", diaries_path %>
 <% if user_signed_in? %>
 <img src=<%= current_user.image %> class = "icon_image">
 <% end %>

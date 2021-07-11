@@ -20,6 +20,24 @@ class DiariesController < ApplicationController
     @diary = Diary.find(params[:id])
   end
 
+  def edit
+    @diary = Diary.find(params[:id])
+  end
+
+  def update
+    @diary = Diary.find(params[:id])
+    if @diary.update(diary_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @diary = Diary.find(params[:id])
+    redirect_to root_path
+  end
+
   private
   def diary_params
     params.require(:diary).permit(:diary_day, :title, :diary, :image).merge(user_id: current_user.id)

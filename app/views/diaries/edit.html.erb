@@ -1,0 +1,66 @@
+<h1>日記編集</h1>
+<%= form_with model: @diary, url: diary_path, class: 'registration-main', local: true do |f| %>
+  <div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      日記編集
+    </h1>
+  </div>
+ 
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">書いた日</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='input-birth-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :diary_day,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 2021,
+                    end_year: (Time.now.year + 5),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+  </div>
+
+<div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">画像</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.file_field :image, class:"profile_image", id:"profile_image" %>
+  </div>  
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">タイトル</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_area :title, class:"input-default", id:"nickname", placeholder:"例) 楽ちょ太郎", maxlength:"40" %>
+  </div>
+
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">日記</label>
+      <span class="indispensable">必須</span>
+    </div>
+      <%= f.text_area :diary, class:"input-introduction", id:"introduction", placeholder:"例)楽ちょ太郎です。みんなと仲良く、力を合わせていきます！よろしく！" %>
+  </div>
+
+
+  
+<div class='register-btn'>
+    <%= f.submit "登録" ,class:"register-yellow-btn" %>
+  </div>
+  <%= link_to "トップページへ", root_path, class: 'register-info' %>
+  <%= link_to "ログイン画面へ", new_user_session_path, class: 'register-info' %>
+</div>
+<% end %>
+
+
