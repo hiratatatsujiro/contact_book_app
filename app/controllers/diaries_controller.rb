@@ -9,12 +9,15 @@ class DiariesController < ApplicationController
 
   def create
     @diary = Diary.new(diary_params)
-    binding.pry
     if @diary.save
       redirect_to root_path
     else
       render :new
     end
+  end
+
+  def show
+    @diary = Diary.find(params[:id])
   end
 
   private

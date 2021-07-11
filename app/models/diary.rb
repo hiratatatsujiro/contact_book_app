@@ -3,7 +3,7 @@ class Diary < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :date
+    validates :diary_day
     validates :title
     validates :diary
     validates :image
