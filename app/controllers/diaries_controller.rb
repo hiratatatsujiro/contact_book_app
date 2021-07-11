@@ -1,6 +1,6 @@
 class DiariesController < ApplicationController
   def index
-    @diaries - Diary.all
+    @diaries = Diary.all
   end
 
   def new
@@ -9,7 +9,7 @@ class DiariesController < ApplicationController
 
   def create
     @diary = Diary.new(diary_params)
-    #binding.pry
+    binding.pry
     if @diary.save
       redirect_to root_path
     else
