@@ -9,7 +9,7 @@ class CommentsController < ApplicationController
     else
       @diary = Diary.find(params[:diary_id])
       @comment = Comment.new(comment_params)
-      render "diaries/show"
+      redirect_to diary_path(@comment.diary)
     end
   end
 
