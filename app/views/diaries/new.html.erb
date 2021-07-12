@@ -1,5 +1,6 @@
 <h1>日記投稿</h1>
 <%= form_with model: @diary, url: diaries_path, class: 'registration-main', local: true do |f| %>
+
   <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
@@ -7,7 +8,7 @@
     </h1>
   </div>
  
-
+  <%= render "error_messages", resource: @diary %>
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">書いた日</label>
