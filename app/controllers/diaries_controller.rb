@@ -18,8 +18,8 @@ class DiariesController < ApplicationController
 
   def show
     @diary = Diary.find(params[:id])
-    @comment = Comment.new
-    @comments = @diary.comments.includes(:user)
+    @comment = Comment.new #①
+    @comments = @diary.comments #②
   end
 
   def edit
