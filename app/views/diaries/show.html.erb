@@ -1,39 +1,36 @@
-<div class="main">
-  <div class="inner">
-    <div class="user__wrapper">
-      <h2 class="page-heading">
-        <%= @diary.diary_day %>
-      </h2>
-      <div>
-         <%= image_tag @diary.image ,class:"item-box-img" %>
-         </div>
-      <table class="table">
+<h2 class="page-heading">
+  <%= @diary.diary_day %>
+</h2>
+  <div>
+    <%= image_tag @diary.image ,class:"item-box-img" %>
+  </div>
+    <table class="table">
         <tbody>
-          <tr>
+          <div>
             <th class="table__col1">日記</th>
             <td class="table__cal3"><%= @diary.title %></td>
             <td class="table__col2"><%= @diary.diary %></td>
-          </tr>
+          </div>
         </tbody>
-      </table>
-      <div>
-  <%= form_with model: [@diary, @comment], url: diary_comments_path(@diary), class: 'registration-main', local: true do |f| %>
-  
-    <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">コメント</label>
-    </div>
-    <%= f.text_area :comment, id:"profile_image" %>
-    <%= f.submit "コメントする"%>
-   </div>   
-  <% end %>
-    <% @comments.each do |comment| %>
-        <div><%= comment.comment %></div>
-        <div><%= comment.created_at %></div>
+    </table>
+
+  <div>
+    <h4>コメント</h4>
+    <div id="comments_area"><!-- #① -->
+      <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+      <%= render partial: 'comments/index', locals: { comments: @comments } %>
+    </div>  
+    <% if user_signed_in? %>
+      <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+      <%= render partial: 'comments/form', locals: { comment: @comment, diary: @diary } %>
     <% end %>
-    <div>
-      <%= link_to "編集する", edit_diary_path(@diary) %>
-      <%= link_to "削除する", diary_path(@diary), method: :delete %>
-    </div>
   </div>
-</div>
+
+     
+  <div>
+    <%= link_to "編集する", edit_diary_path(@diary) %>
+    <%= link_to "削除する", diary_path(@diary), method: :delete %>
+  </div>
+
+    
+
