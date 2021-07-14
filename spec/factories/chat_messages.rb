@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :chat_message do
-    content {Faker::Lorem.sentence}
+    content { Faker::Lorem.sentence }
     association :user
     association :room
 

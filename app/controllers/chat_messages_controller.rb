@@ -8,6 +8,7 @@ class ChatMessagesController < ApplicationController
   def create
     @room = Room.find(params[:room_id])
     @chat_message = @room.chat_messages.new(chat_message_params)
+
     if @chat_message.save
       redirect_to room_chat_messages_path(@room)
     else
@@ -17,7 +18,8 @@ class ChatMessagesController < ApplicationController
   end
 
   private
+
   def chat_message_params
-   params.require(:chat_message).permit(:content, :image).merge(user_id: current_user.id)
+    params.require(:chat_message).permit(:content, :image).merge(user_id: current_user.id)
   end
 end

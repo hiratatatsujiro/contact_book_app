@@ -13,22 +13,21 @@ RSpec.describe Comment, type: :model do
 
   context '内容に問題がある場合' do
     it 'commentが空だと登録できない' do
-      @comment.comment = ""
+      @comment.comment = ''
       @comment.valid?
-      expect(@comment.errors.full_messages).to include("Comment can't be blank")  
+      expect(@comment.errors.full_messages).to include("Comment can't be blank")
     end
 
     it 'userが紐付いていないと登録できない' do
       @comment.user = nil
       @comment.valid?
-      expect(@comment.errors.full_messages).to include("User must exist")  
+      expect(@comment.errors.full_messages).to include('User must exist')
     end
 
     it 'diaryが紐付いていないと登録できない' do
       @comment.diary = nil
       @comment.valid?
-      expect(@comment.errors.full_messages).to include("Diary must exist")  
+      expect(@comment.errors.full_messages).to include('Diary must exist')
     end
-    
   end
 end

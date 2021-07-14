@@ -18,8 +18,8 @@ class DiariesController < ApplicationController
 
   def show
     @diary = Diary.find(params[:id])
-    @comment = Comment.new #①
-    @comments = @diary.comments #②
+    @comment = Comment.new # ①
+    @comments = @diary.comments # ②
   end
 
   def edit
@@ -42,6 +42,7 @@ class DiariesController < ApplicationController
   end
 
   private
+
   def diary_params
     params.require(:diary).permit(:diary_day, :title, :diary, :image).merge(user_id: current_user.id)
   end

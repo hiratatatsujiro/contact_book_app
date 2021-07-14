@@ -19,4 +19,3 @@ FactoryBot.define do
     first_name_reading    { person.first.katakana }
   end
 end
-

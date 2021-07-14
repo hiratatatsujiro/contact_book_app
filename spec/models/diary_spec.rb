@@ -13,9 +13,9 @@ RSpec.describe Diary, type: :model do
 
   context '内容に問題がある場合' do
     it 'diary_dayが空だと登録できない' do
-      @diary.diary_day = ""
+      @diary.diary_day = ''
       @diary.valid?
-      expect(@diary.errors.full_messages).to include("Diary day can't be blank")  
+      expect(@diary.errors.full_messages).to include("Diary day can't be blank")
     end
 
     it 'imageが空だと登録できない' do
@@ -25,23 +25,21 @@ RSpec.describe Diary, type: :model do
     end
 
     it 'titleが空だと登録できない' do
-      @diary.title = ""
+      @diary.title = ''
       @diary.valid?
-      expect(@diary.errors.full_messages).to include("Title can't be blank")  
+      expect(@diary.errors.full_messages).to include("Title can't be blank")
     end
 
     it 'diaryが空だと登録できない' do
-      @diary.diary = ""
+      @diary.diary = ''
       @diary.valid?
-      expect(@diary.errors.full_messages).to include("Diary can't be blank")  
+      expect(@diary.errors.full_messages).to include("Diary can't be blank")
     end
 
     it 'userが紐付いていないと登録できない' do
       @diary.user = nil
       @diary.valid?
-      expect(@diary.errors.full_messages).to include("User must exist")  
+      expect(@diary.errors.full_messages).to include('User must exist')
     end
-    
   end
 end
-
