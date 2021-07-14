@@ -12,10 +12,10 @@
 </div>
 
 <div class="main-main">
-  <%= render partial: "message", collection: @messages %>
+  <%= render partial: "message", collection: @chat_messages %>
 </div>
 
-<%= form_with model: [@room, @message], class: "main-footer", local: true do |f| %>
+<%= form_with model: [@room, @chat_message], class: "main-footer", local: true do |f| %>
   <div class="forms">
     <%= f.text_field :content, class: "text", placeholder: "type amessage" %>
       <label class="form-image">

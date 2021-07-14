@@ -5,6 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :diaries
   has_many :comments
+  has_many :room_users
+  has_many :rooms, through: :room_users
+  has_many :chat_messages
 
   extend ActiveHash::Associations::ActiveRecordExtensions
     belongs_to :grade
