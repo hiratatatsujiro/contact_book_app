@@ -1,0 +1,12 @@
+<div class="messi">
+  <div class="one-message">
+    <div class="name-date">
+      <div class="name"><%= message.user.name %></div>
+      <div class="date"><%= l message.created_at %></div>
+    </div>
+    <div class="message"><%= message.content %></div>
+  </div>
+    <div>
+      <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+    </div>
+   </div>
