@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   resources :rooms, only: [:index, :new, :create, :destroy] do
     resources :chat_messages, only: [:index, :create]
   end
+  resources :items do
+    resources :orders, only: [:index, :create]
+  end
 end

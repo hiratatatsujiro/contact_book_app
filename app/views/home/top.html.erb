@@ -5,6 +5,7 @@
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
 <%= link_to "日記", diaries_path %>
 <%= link_to "チャット", rooms_path %>
+<%= link_to "フリマ", items_path %>
 <% if user_signed_in? %>
-<img src=<%= current_user.image %> class = "icon_image">
+<%= image_tag current_user.image ,class:"item-box-img" %> 
 <% end %>

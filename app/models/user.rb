@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :room_users
   has_many :rooms, through: :room_users
   has_many :chat_messages
+  has_many :items
+  has_one_attached :image
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :grade
@@ -37,7 +39,7 @@ class User < ApplicationRecord
   end
   validates :password, on: :create, length: { minimum: 6 },
                        format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message: 'is invalid. Include both letters and numbers' }
-  mount_uploader :image, ImageUploader
+ 
 
   def update_with_password(params, *options)
     current_password = params.delete(:current_password)

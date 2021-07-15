@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   before do
     @user = FactoryBot.build(:user)
-    @user.image = fixture_file_upload('app/assets/images/output-image1.png')
   end
 
   context '内容に問題がない場合' do
@@ -14,7 +13,7 @@ RSpec.describe User, type: :model do
 
   context '内容に問題がある場合' do
     it 'imageが空だと登録できない' do
-      @user.image = ''
+      @user.image = nil
       @user.valid?
       expect(@user.errors.full_messages).to include("Image can't be blank")
     end
