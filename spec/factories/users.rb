@@ -17,5 +17,9 @@ FactoryBot.define do
     first_name            { person.first.kanji }
     last_name_reading     { person.last.katakana }
     first_name_reading    { person.first.katakana }
+
+    after(:build) do |message|
+      message.image.attach(io: File.open('public/images/output-image1.png'), filename: 'test_image.png')
+    end
   end
 end
