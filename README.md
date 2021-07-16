@@ -156,11 +156,12 @@ Things you may want to cover:
 - belongs_to :order
 
 ## class_communicationsテーブル
-| Column             | Type       | Options           |
-|--------------------|------------|-------------------|
-| title              | string     | null: false       |
-| text               | text       | null: false       |
-| user               | references | foreign_key: true |
+| Column                  | Type       | Options           |
+|-------------------------|------------|-------------------|
+| class_communication_day | date       | null: false       |
+| title                   | string     | null: false       |
+| text                    | text       | null: false       |
+| user                    | references | foreign_key: true |
 
 ### Association
 - belongs_to :user
