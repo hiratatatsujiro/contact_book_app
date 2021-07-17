@@ -17,19 +17,27 @@ class ClassCommunicationsController < ApplicationController
   end
 
   def show
-    
+    @class_communication = ClassCommunication.find(params[:id])
   end
 
   def edit
-    
+    @class_communication = ClassCommunication.find(params[:id])
   end
 
   def update
-    
+    @class_communication = ClassCommunication.find(params[:id])
+    @class_communication.update(class_communication_params)
+    if @class_communication.save
+      redirect_to class_communications_path
+    else
+      render :edit
+    end
   end
 
   def destroy
-    
+    @class_communication = ClassCommunication.find(params[:id])
+    @class_communication.destroy
+    redirect_to class_communications_path
   end
 
   private

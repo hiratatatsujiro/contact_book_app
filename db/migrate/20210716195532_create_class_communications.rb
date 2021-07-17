@@ -3,7 +3,7 @@ class CreateClassCommunications < ActiveRecord::Migration[6.0]
     create_table :class_communications do |t|
       t.date :class_communication_day, null: false
       t.string :title,   null: false
-      t.text :diary,     null: false
+      t.text :text,     null: false
       t.references :user, foreign_key: true 
       t.timestamps
     end
