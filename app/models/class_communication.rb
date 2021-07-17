@@ -1,11 +1,11 @@
 class ClassCommunication < ApplicationRecord
   belongs_to :user
-  has_one_attached :image
+  has_many_attached :images
 
   with_options presence: true do
     validates :class_communication_day
     validates :title
     validates :text
-    validates :image
+    validates :images
   end
 end
