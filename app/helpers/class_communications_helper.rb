@@ -1,0 +1,2 @@
+module ClassCommunicationsHelper
+end

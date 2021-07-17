@@ -1,0 +1,7 @@
+<h1>学級通信一覧</h1>
+<%= link_to "学級作成", new_class_communication_path %>
+<% @class_communications.each do |class_communication|%>
+  <div>
+    <%= link_to class_communication.title, class_communication_path(class_communication)%>
+  </div>
+<% end %>
