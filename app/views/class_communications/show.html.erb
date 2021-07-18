@@ -3,12 +3,13 @@
     <li>登校日：<%= @class_communication.class_communication_day %></li>
     <li>タイトル：<%= @class_communication.title %></li>
     <div class="class_communication_image">
-      <% @class_communication.images.each do |image|%>
-        <%= image_tag image %>
+     <div class="class_communication">
+      <% @class_communication.images.each do |image| %>
+       <%= image_tag image %>
       <% end %>
+      </div> 
     </div>
     <li>本文：<%= @class_communication.text %></li>
-    xxx
   </ul>
   <%= link_to "学級通信編集", edit_class_communication_path(@class_communication)%>
   <%= link_to "学級通信削除", class_communication_path(@class_communication), method: :delete %>

@@ -42,6 +42,6 @@ class ClassCommunicationsController < ApplicationController
 
   private
   def class_communication_params
-    params.require(:class_communication).permit(:class_communication_day, :title, :text, {images: []}).merge(user_id: current_user.id)
+    params.require(:class_communication).permit(:class_communication_day, :title, :text, images: []).merge(user_id: current_user.id)
   end
 end
