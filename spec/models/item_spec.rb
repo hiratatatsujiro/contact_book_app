@@ -10,7 +10,7 @@ RSpec.describe Item, type: :model do
       expect(@item).to be_valid
     end
 
-    it "gradeが1でも登録できる" do
+    it 'gradeが1でも登録できる' do
       @item.grade_id = 1
       expect(@item).to be_valid
     end

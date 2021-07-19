@@ -31,7 +31,7 @@ class Size < ActiveHash::Base
     { id: 29, name: '19cm' },
     { id: 30, name: '19.5cm' },
     { id: 31, name: '20cm' },
-    { id: 32, name: 'その他'}
+    { id: 32, name: 'その他' }
   ]
 
   include ActiveHash::Associations

@@ -10,6 +10,8 @@ class User < ApplicationRecord
   has_many :chat_messages
   has_many :items
   has_one_attached :image
+  has_many :class_communications
+  has_many :likes
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :grade
@@ -39,7 +41,6 @@ class User < ApplicationRecord
   end
   validates :password, on: :create, length: { minimum: 6 },
                        format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message: 'is invalid. Include both letters and numbers' }
- 
 
   def update_with_password(params, *options)
     current_password = params.delete(:current_password)
@@ -66,5 +67,9 @@ class User < ApplicationRecord
     return if password.present?
 
     errors.add(:base, '')
+  end
+
+  def liked_by?(class_communication_id)
+    likes.where(class_communication_id: class_communication_id).exists?
   end
 end
