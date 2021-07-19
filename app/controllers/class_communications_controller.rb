@@ -18,6 +18,7 @@ class ClassCommunicationsController < ApplicationController
 
   def show
     @class_communication = ClassCommunication.find(params[:id])
+    @class_communications = ClassCommunication.all
   end
 
   def edit
@@ -41,7 +42,9 @@ class ClassCommunicationsController < ApplicationController
   end
 
   private
+
   def class_communication_params
-    params.require(:class_communication).permit(:class_communication_day, :title, :text, images: []).merge(user_id: current_user.id)
+    params.require(:class_communication).permit(:class_communication_day, :title, :text,
+                                                images: []).merge(user_id: current_user.id)
   end
 end

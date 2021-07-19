@@ -20,6 +20,6 @@ class OrderInformation
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
     Information.create(postal_code: postal_code, delivery_area_id: delivery_area_id, city: city,
-                               house_number: house_number, building: building, phone_number: phone_number, order_id: order.id)
+                       house_number: house_number, building: building, phone_number: phone_number, order_id: order.id)
   end
 end

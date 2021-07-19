@@ -11,6 +11,13 @@
     </div>
     <li>本文：<%= @class_communication.text %></li>
   </ul>
+
+  
+   <div id="likes_buttons_<%= @class_communication.id %>">
+     <%= render partial: 'likes/like', locals: {class_communication: @class_communication} %>
+   </div>
+  
+  
   <%= link_to "学級通信編集", edit_class_communication_path(@class_communication)%>
   <%= link_to "学級通信削除", class_communication_path(@class_communication), method: :delete %>
 </div>
