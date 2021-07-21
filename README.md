@@ -181,9 +181,9 @@ Things you may want to cover:
 - belongs_to :class_communication 
 
 ## tagsテーブル
-| Column              | Type       | Options           |
-|---------------------|------------|-------------------|
-| tag_name            | string     | null: false       |
+| Column              | Type       | Options                        |
+|---------------------|------------|--------------------------------|
+| tag_name            | string     | null: false,  uniqueness: true |
 
 ### Association
 - has_many :class_communications, through :tag_class_communications

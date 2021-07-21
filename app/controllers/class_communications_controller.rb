@@ -1,14 +1,15 @@
 class ClassCommunicationsController < ApplicationController
+  
   def index
     @class_communications = ClassCommunication.all
   end
 
   def new
-    @class_communication = ClassCommunication.new
+    @class_communication = ClassCommunicationsTag.new
   end
 
   def create
-    @class_communication = ClassCommunication.new(class_communication_params)
+    @class_communication = ClassCommunicationsTag.new(class_communication_params)
     if @class_communication.save
       redirect_to class_communications_path
     else
@@ -44,7 +45,6 @@ class ClassCommunicationsController < ApplicationController
   private
 
   def class_communication_params
-    params.require(:class_communication).permit(:class_communication_day, :title, :text,
-                                                images: []).merge(user_id: current_user.id)
+    params.require(:class_communications_tag).permit(:class_communication_day, :title, :text, :tag_name, images: []).merge(user_id: current_user.id)
   end
 end
