@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'chat_messages/index'
   devise_for :users
   root to: "home#top"
   resources :diaries do
