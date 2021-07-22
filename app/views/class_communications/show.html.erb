@@ -11,12 +11,10 @@
     </div>
     <li>本文：<%= @class_communication.text %></li>
   </ul>
-  <% @class_communications.each do |class_communication|%>
+  <% @class_communication.tags.each do |tag|%>
         <ul class="tag">
           <li class="tag-list">
-            <%class_communication.tags.each do |tag| %>
               #<%=tag.tag_name%>
-            <%end%>
           </li>
         </ul>
     <%end%>
