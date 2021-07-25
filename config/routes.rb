@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "home#top"
   resources :diaries do
+    collection do
+      get 'search'
+    end
     resources :comments, only: :create
   end
   resources :users, only: [:show, :edit, :update]
@@ -11,8 +14,7 @@ Rails.application.routes.draw do
   resources :items do
     resources :orders, only: [:index, :create]
   end
-  resources :class_communications do
-  end
+  resources :class_communications
   post 'like/:id' => 'likes#create', as: 'create_like'
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
 end

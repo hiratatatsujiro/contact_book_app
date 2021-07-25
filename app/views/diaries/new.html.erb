@@ -1,3 +1,4 @@
+
 <h1>日記投稿</h1>
 <%= form_with model: @diary, url: diaries_path, class: 'registration-main', local: true do |f| %>
 
@@ -34,7 +35,7 @@
       <label class="form-text">画像</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.file_field :image, class:"profile_image", id:"profile_image" %>
+    <%= f.file_field :image, class:"profile_image", id:"image-list" %>
   </div>  
 
   <div class="form-group">
@@ -53,8 +54,6 @@
     </div>
       <%= f.text_area :diary, class:"input-introduction", id:"introduction", placeholder:"例)楽ちょ太郎です。みんなと仲良く、力を合わせていきます！よろしく！" %>
   </div>
-
-
   
 <div class='register-btn'>
     <%= f.submit "登録" ,class:"register-yellow-btn" %>

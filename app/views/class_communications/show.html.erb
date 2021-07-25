@@ -11,7 +11,7 @@
     </div>
     <li>本文：<%= @class_communication.text %></li>
   </ul>
-
+  
   
    <div id="likes_buttons_<%= @class_communication.id %>">
      <%= render partial: 'likes/like', locals: {class_communication: @class_communication} %>

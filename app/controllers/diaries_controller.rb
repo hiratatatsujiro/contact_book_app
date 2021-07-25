@@ -9,8 +9,9 @@ class DiariesController < ApplicationController
 
   def create
     @diary = Diary.new(diary_params)
-    if @diary.save
-      redirect_to root_path
+    if @diary.valid?
+      @diary.save
+      redirect_to diaries_path
     else
       render :new
     end
@@ -28,8 +29,9 @@ class DiariesController < ApplicationController
 
   def update
     @diary = Diary.find(params[:id])
-    if @diary.update(diary_params)
-      redirect_to root_path
+    if @diary.valid? 
+      @diary.update(diary_params)
+      redirect_to diaries_path
     else
       render :edit
     end
@@ -41,6 +43,7 @@ class DiariesController < ApplicationController
     redirect_to root_path
   end
 
+  
   private
 
   def diary_params
