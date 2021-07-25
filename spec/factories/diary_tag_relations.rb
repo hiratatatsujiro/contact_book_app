@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :tag do
+  factory :diary_tag_relation do
     
   end
 end

@@ -166,9 +166,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_many :likes, dependent: :destroy
-- has_many :tags, through :tag_class_communications
-- has_many :tag_class_communications
-
 
 ## likesテーブル
 | Column              | Type       | Options           |
@@ -178,25 +175,6 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- belongs_to :class_communication 
-
-## tagsテーブル
-| Column              | Type       | Options                        |
-|---------------------|------------|--------------------------------|
-| tag_name            | string     | null: false,  uniqueness: true |
-
-### Association
-- has_many :class_communications, through :tag_class_communications
-- has_many :tag_class_communications
-
-## tag_class_communicationsテーブル
-| Column              | Type       | Options           |
-|---------------------|------------|-------------------|
-| tag                 | references | foreign_key: true |
-| class_communication | references | foreign_key: true |
-
-### Association
-- belongs_to :tag
 - belongs_to :class_communication 
 
 ## timetablesテーブル

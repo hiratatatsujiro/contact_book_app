@@ -4,15 +4,17 @@
   <div>
     <%= image_tag @diary.image ,class:"item-box-img" %>
   </div>
-    <table class="table">
-        <tbody>
-          <div>
-            <th class="table__col1">日記</th>
-            <td class="table__cal3"><%= @diary.title %></td>
-            <td class="table__col2"><%= @diary.diary %></td>
-          </div>
-        </tbody>
-    </table>
+
+   <div>
+    <p>日記</p>
+      <div>
+      <ul>
+      <li><%= @diary.title %></li>
+      <li><%= @diary.diary %></li>
+      </ul>
+  </div>
+        
+ 
 
   <div>
     <h4>コメント</h4>

@@ -11,16 +11,7 @@
     </div>
     <li>本文：<%= @class_communication.text %></li>
   </ul>
-  <% @class_communications.each do |class_communication|%>
-        <ul class="tag">
-          <li class="tag-list">
-            <%class_communication.tags.each do |tag| %>
-              #<%=tag.tag_name%>
-            <%end%>
-          </li>
-        </ul>
-    <%end%>
-
+  
   
    <div id="likes_buttons_<%= @class_communication.id %>">
      <%= render partial: 'likes/like', locals: {class_communication: @class_communication} %>
