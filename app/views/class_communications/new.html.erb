@@ -35,7 +35,7 @@
       <label class="form-text">画像</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.file_field :images, name: "class_communication[images][]", class:"profile_image", id:"profile_image" %>
+    <%= f.file_field :images, name: "class_communication[images][]", class:"profile_image", id:"profile_image", multiple: true %>
   </div>
   <div id="image-list"></div>  
    
