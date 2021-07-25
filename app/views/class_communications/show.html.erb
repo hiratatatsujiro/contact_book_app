@@ -11,13 +11,6 @@
     </div>
     <li>本文：<%= @class_communication.text %></li>
   </ul>
-  <% @class_communication.tags.each do |tag|%>
-        <ul class="tag">
-          <li class="tag-list">
-              #<%=tag.tag_name%>
-          </li>
-        </ul>
-    <%end%>
 
   
    <div id="likes_buttons_<%= @class_communication.id %>">
