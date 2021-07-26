@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_one_attached :image
   has_many :class_communications
   has_many :likes
+  has_many :timetables
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :grade

@@ -181,15 +181,16 @@ Things you may want to cover:
 | Column              | Type        | Options           |
 |---------------------|-------------|-------------------|
 | next_day            | date        | null: false       |
-| first_hour          | integer     | null: false       |
-| second_hour         | integer     | null: false       |
-| third_hour          | integer     | null: false       |
-| fourth_hour         | integer     | null: false       |
-| fifth_hour          | integer     | null: false       |
-| sixth_hour          | integer     | null: false       |
+| first_class_id      | integer     | null: false       |
+| second_class_id     | integer     | null: false       |
+| third_class_id      | integer     | null: false       |
+| fourth_class_id     | integer     | null: false       |
+| fifth_class_id      | integer     | null: false       |
+| sixth_class_id      | integer     | null: false       |
 | homework            | string      | null: false       |
 | preparation         | string      | null: false       |
 | leave_time          | string      | null: false       |
+| notice              | text        |                   |
 | user                | references  | foreign_key: true |
 
 ### Association
