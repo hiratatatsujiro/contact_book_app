@@ -29,7 +29,7 @@ class DiariesController < ApplicationController
 
   def update
     @diary = Diary.find(params[:id])
-    if @diary.valid? 
+    if @diary.valid?
       @diary.update(diary_params)
       redirect_to diaries_path
     else
@@ -43,7 +43,6 @@ class DiariesController < ApplicationController
     redirect_to root_path
   end
 
-  
   private
 
   def diary_params
