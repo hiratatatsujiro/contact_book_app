@@ -190,6 +190,7 @@ Things you may want to cover:
 | homework            | string      | null: false       |
 | preparation         | string      | null: false       |
 | leave_time          | string      | null: false       |
+| notice              | text        |                   |
 | user                | references  | foreign_key: true |
 
 ### Association
