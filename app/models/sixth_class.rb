@@ -1,4 +1,4 @@
-class Category < ActiveHash::Base
+class SixthClass < ActiveHash::Base
   self.data = [
     { id: 1, name: '---' },
     { id: 2, name: '国語' },
@@ -10,9 +10,10 @@ class Category < ActiveHash::Base
     { id: 8, name: '音楽' },
     { id: 9, name: '道徳' },
     { id: 10, name: '体育' },
-    { id: 11, name: 'その他' }
+    { id: 11, name: '総合' },
+    { id: 12, name: 'その他' }
   ]
 
   include ActiveHash::Associations
-  has_many :items
+  has_many :timetables
 end

@@ -153,12 +153,12 @@ ActiveRecord::Schema.define(version: 2021_07_26_043217) do
 
   create_table "timetables", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "next_day", null: false
-    t.integer "first_hour", null: false
-    t.integer "second_hour", null: false
-    t.integer "third_hour", null: false
-    t.integer "fourth_hour", null: false
-    t.integer "fifth_hour", null: false
-    t.integer "sixth_hour", null: false
+    t.integer "first_class_id", null: false
+    t.integer "second_class_id", null: false
+    t.integer "third_class_id", null: false
+    t.integer "fourth_class_id", null: false
+    t.integer "fifth_class_id", null: false
+    t.integer "sixth_class_id", null: false
     t.string "homework", null: false
     t.string "preparation", null: false
     t.string "leave_time", null: false

@@ -1,0 +1,96 @@
+<div class="items-sell-contents">
+  <header class="items-sell-header">
+
+  </header>
+  <div class="items-sell-main">
+    <h2 class="items-sell-title">時間割を入力</h2>
+    <%= form_with model: @timetable, url: timetables_path, local: true do |f| %>
+
+    <%=render 'shared/error_messages', model: f.object %>
+
+    <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">学校にくる日</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <div class='input-birth-wrap'>
+      <%= raw sprintf(
+                  f.date_select(
+                    :next_day,
+                    class:'select-birth',
+                    id:"birth-date",
+                    use_month_numbers: true,
+                    prompt:'--',
+                    start_year: 2021,
+                    end_year: (Time.now.year + 5),
+                    date_separator: '%s'),
+                  "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+    </div>
+  </div>
+
+        <div class="weight-bold-text">
+          １時間目
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:first_class_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <div class="weight-bold-text">
+          ２時間目
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:second_class_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <div class="weight-bold-text">
+          ３時間目
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:third_class_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <div class="weight-bold-text">
+          ４時間目
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:fourth_class_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <div class="weight-bold-text">
+          ５時間目
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:fifth_class_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <div class="weight-bold-text">
+          ６時間目
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.collection_select(:sixth_class_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">下校時刻</label>
+          <span class="indispensable">必須</span>
+        </div>
+          <%= f.text_area :leave_time, class:"input-introduction", id:"introduction", placeholder:"例)16:10" %>
+        </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">宿題</label>
+          <span class="indispensable">必須</span>
+        </div>
+          <%= f.text_area :homework, class:"input-introduction", id:"introduction", placeholder:"例)計算ドリル３０、漢字１ページ" %>
+        </div>
+
+        <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">持ってくるもの</label>
+          <span class="indispensable">必須</span>
+        </div>
+          <%= f.text_area :preparation, class:"input-introduction", id:"introduction", placeholder:"例)絵の具" %>
+        </div>
+
+        <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">お知らせ</label>
+        </div>
+          <%= f.text_area :notice, class:"input-introduction", id:"introduction", placeholder:"例)明日の２時間目に眼科検診があります" %>
+        </div>
+
+        <div class='register-btn'>
+        <%= f.submit "登録" ,class:"register-yellow-btn" %>
+        </div>
+        <% end %>

@@ -1,0 +1,20 @@
+<h1>時間割</h1>
+<div>
+  <ul>
+    <li>日付：<%= @timetable.next_day %></li>
+    <li>１時間目：<%= @timetable.first_class.name %></li>
+    <li>２時間目：<%= @timetable.second_class.name %></li>
+    <li>３時間目：<%= @timetable.third_class.name %></li>
+    <li>４時間目：<%= @timetable.fourth_class.name %></li>
+    <li>５時間目：<%= @timetable.fifth_class.name %></li>
+    <li>６時間目：<%= @timetable.sixth_class.name %></li>
+    <li>下校時刻：<%= @timetable.leave_time %></li>
+    <li>宿題：<%= @timetable.homework %></li>
+    <li>持ってくるもの：<%= @timetable.preparation %></li>
+    <li>お知らせ：<%= @timetable.notice %></li>   
+  </ul>
+</div>
+<div>
+  <%= link_to "編集する", edit_timetable_path(@timetable) %>
+  <%= link_to "削除する", timetable_path(@timetable), method: :delete %>
+</div>
