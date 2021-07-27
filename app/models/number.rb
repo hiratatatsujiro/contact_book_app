@@ -50,7 +50,8 @@ class Number < ActiveHash::Base
     { id: 48, name: '47番' },
     { id: 49, name: '48番' },
     { id: 50, name: '49番' },
-    { id: 51, name: '50番' }
+    { id: 51, name: '50番' },
+    { id: 52, name: '先生' }
   ]
 
   include ActiveHash::Associations

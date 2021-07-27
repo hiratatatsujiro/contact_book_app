@@ -1,4 +1,6 @@
 class ClassCommunicationsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @class_communications = ClassCommunication.all
   end

@@ -1,18 +1,20 @@
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
   <div class='form-wrap'>
-  <div class='form-header'>
-    <h1 class='form-header-text'>
-      児童情報入力
-    </h1>
-  </div>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
-<div class="form-group">
-    <div class='form-text-wrap'>
+   <div class='form-header'>
+      <h1 class='form-header-text'>
+      <i class="fas fa-book-reader"></i> あなたの情報を入力してね！
+      </h1>
+   </div>
+
+   <%= render "devise/shared/error_messages", resource: resource %>
+
+   <div class="form-group">
+      <div class='form-text-wrap'>
       <label class="form-text">プロフィール画像</label>
       <span class="indispensable">必須</span>
-    </div>
-    <%= f.file_field :image, class:"profile_image", id:"profile_image" %>
+      </div>
+      <%= f.file_field :image, class:"profile_image", id:"profile_image" %>
   </div>  
 
   <div class="form-group">
@@ -20,7 +22,7 @@
       <label class="form-text">ニックネーム</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) 楽ちょ太郎", maxlength:"40" %>
+    <%= f.text_field :nickname, class:"input-default", id:"nickname", placeholder:"例) 楽ちょ太郎", maxlength:"40", autofocus: true %>
   </div>
 
   <div class="form-group">
@@ -28,7 +30,7 @@
       <label class="form-text">メールアドレス</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可", autofocus: true %>
+    <%= f.email_field :email, class:"input-default", id:"email", placeholder:"PC・携帯どちらでも可" %>
   </div>
 
   <div class="form-group">
@@ -53,26 +55,17 @@
       <label class="form-text">自己紹介</label>
       <span class="indispensable">必須</span>
     </div>
-      <%= f.text_area :introduction, class:"input-introduction", id:"introduction", placeholder:"例)楽ちょ太郎です。みんなと仲良く、力を合わせていきます！よろしく！" %>
+      <%= f.text_area :introduction, class:"input-introduction", id:"introduction", placeholder:"例)楽ちょ太郎です。みんなと仲良く、力を合わせていきます！よろしくお願いします！" %>
   </div>
 
-<div class="form-group">
-    <p class='form-info-header'>
-      本人確認
-    </p>
-    <p class='form-info-text'>
-      安心・安全にご利用いただくために、個人情報の登録にご協力ください。学級以外の第三者に公開されることはありません。
-    </p>
-  </div>
-
-<div class="form-group">
+  <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">お名前(全角)</label>
       <span class="indispensable">必須</span>
     </div>
     <div class='input-name-wrap'>
-      <%= f.text_area :last_name, class:"input-name", id:"last-name", placeholder:"例) 山田" %>
-      <%= f.text_area :first_name, class:"input-name", id:"first-name", placeholder:"例) 陸太郎" %>
+      <%= f.text_field :last_name, class:"input-name", id:"last-name", placeholder:"例) 電子" %>
+      <%= f.text_field :first_name, class:"input-name", id:"first-name", placeholder:"例) 楽太郎" %>
     </div>
   </div>
 
@@ -82,24 +75,24 @@
       <span class="indispensable">必須</span>
     </div>
     <div class='input-name-wrap'>
-      <%= f.text_area :last_name_reading, class:"input-name", id:"last-name-kana", placeholder:"例) ヤマダ" %>
-      <%= f.text_area :first_name_reading, class:"input-name", id:"first-name-kana", placeholder:"例) リクタロウ" %>
+      <%= f.text_field :last_name_reading, class:"input-name", id:"last-name-kana", placeholder:"例) デンシ" %>
+      <%= f.text_field :first_name_reading, class:"input-name", id:"first-name-kana", placeholder:"例) ラクタロウ" %>
     </div>
   </div>
 
-    <div class="form-group">
+  <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">年組番号</label>
       <span class="indispensable">必須</span>
     </div>
     <div class='input-gradeinfo'>
-      <%= f.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"grade_class_number_select"}) %>
-      <%= f.collection_select(:classroom_id, Classroom.all, :id, :name, {}, {class:"grade_class_number_select"}) %>
-      <%= f.collection_select(:number_id, Number.all, :id, :name, {}, {class:"grade_class_number_select"}) %>
+      <%= f.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"grade_class_number_select"}) %>年
+      <%= f.collection_select(:classroom_id, Classroom.all, :id, :name, {}, {class:"grade_class_number_select"}) %>組
+      <%= f.collection_select(:number_id, Number.all, :id, :name, {}, {class:"grade_class_number_select"}) %>番
     </div>
   </div>
 
-<div class="form-group">
+  <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">生年月日</label>
       <span class="indispensable">必須</span>
@@ -119,12 +112,11 @@
     </div>
   </div>
   
-<div class='register-btn'>
-    <%= f.submit "登録" ,class:"register-yellow-btn" %>
+  <div class='register-btn'>
+    <%= f.submit "登録" ,class:"register-pink-btn" %>
   </div>
-  <%= link_to "トップページへ", root_path, class: 'register-info' %>
-  <%= link_to "ログイン画面へ", new_user_session_path, class: 'register-info' %>
-</div>
+
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+

@@ -1,10 +1,61 @@
-<h1>トップページ</h1>
-<%= link_to "新規登録", new_user_registration_path %>
-<%= link_to "ログイン", new_user_session_path %>
-<%= link_to "ユーザー情報編集", edit_user_registration_path %>
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-<%= link_to "日記", diaries_path %>
-<%= link_to "チャット", rooms_path %>
-<%= link_to "フリマ", items_path %>
-<%= link_to "学級通信", class_communications_path %>
-<%= link_to "時間割", timetables_path %>
+<header>
+  <div class="header-left">
+    <i class="fas fa-book-reader"></i>  楽ちょ〜電子連絡帳〜
+  </div>
+  <div class="header-right">
+    <ul class="header-list">
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.nickname, user_path(current_user) %></li>
+        <li class="top-tag"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+        <li><%= link_to "新規登録", new_user_registration_path %></li>
+        <li class="top-tag"><%= link_to "ログイン", new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
+<main>
+  <div class="main-left">
+    <div class="left-menu">
+      <div class="border-box">
+        <ul class="select-menu">
+          <li><%= link_to "日記", diaries_path %></li>        
+          <li class="menu-list"><%= link_to "学級通信", class_communications_path %></li>
+          <li class="menu-list"><%= link_to "フリーマーケット", items_path %></li>
+          <li class="menu-list"><%= link_to "チャットルーム", rooms_path %></li>
+          <li class="menu-list"><%= link_to "時間わり", timetables_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="main-right">
+
+  </div>
+  
+
+
+
+
+
+
+
+</main>
+<footer>
+<div class="footer-left">
+  <i class="fas fa-book-reader"></i>  楽ちょ〜電子連絡帳〜
+</div>
+<div class="footer-right">
+  <ul class="footer-list"> 
+     <li><%= link_to "会社概要（運営会社)", "#" %></li>
+     <li class="top-tag"><%= link_to "プライバシーポリシー", "#" %><li>
+     <li class="top-tag"><%= link_to "楽ちょ利用規約", "#" %></li>
+     <li class="top-tag"><%= link_to "ポイントに関する特約", "#" %></li>
+ </ul>
+</div>
+</footer>
+
+
+
+
+
+
