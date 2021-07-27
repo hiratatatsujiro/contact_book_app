@@ -1,5 +1,6 @@
 <div class="side-header">
   <div class="user-name">
+    <% if user_signed_in? %>
     <%= link_to current_user.nickname, edit_user_path(current_user) %>
   </div>
   <div class="make-chat">
@@ -13,6 +14,7 @@
           <%= link_to room.name, room_chat_messages_path(room) %>
         </div>
       </div>
+  <% end %>
   <% end %>
   <%= link_to "トップページへ", root_path%>
 </div>

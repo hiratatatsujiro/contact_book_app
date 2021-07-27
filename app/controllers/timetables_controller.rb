@@ -1,4 +1,5 @@
 class TimetablesController < ApplicationController
+  before_action :authenticate_user!
   def index
     @timetables = Timetable.all.order(created_at: :desc)
   end
