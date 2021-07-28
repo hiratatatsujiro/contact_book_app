@@ -12,7 +12,7 @@
   margin-left: 8px;
   padding: 3px;
   border-radius: 2px;
-  color:black;
+  color: black;
   font-size: 12px;
   font-weight: bold;
 }
@@ -35,6 +35,7 @@
   line-height: 100px;
   font-weight: bold;
   background-color: #ff99c8;
+  color: white;
 }
 
 .form-group {
@@ -169,7 +170,7 @@
   width: 100%;
   background: #ff99c8;
   border: 1px solid #ff99c8;
-  color: black;
+  color: white;
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
