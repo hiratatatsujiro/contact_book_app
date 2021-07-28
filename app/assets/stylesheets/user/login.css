@@ -4,11 +4,11 @@
   margin-top: 50px;
 }
 
-.login-red-btn {
+.login-pink-btn {
   width: 100%;
-  background: yellow;
-  border: 1px solid yellow;
-  color: black;
+  background: #ff99c8;
+  border: 1px solid #ff99c8;
+  color: white;
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
