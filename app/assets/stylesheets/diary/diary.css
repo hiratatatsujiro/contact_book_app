@@ -1,0 +1,123 @@
+.diary-main {
+  background-color: #D0F4De;
+  height: calc( 100vh - 160px );
+  display: flex; 
+}
+
+.diary-left {
+  width: 20%;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+}
+
+.new-diary {
+  font-size: 32px;
+  border: 2px solid black;
+  box-shadow: 4px 2px 2px -2px;
+  margin-bottom: 20px;
+}
+
+.new-diary a {
+  text-decoration: none;
+  color: black;
+}
+
+.diary-index {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.diary-index a {
+  color: black;
+}
+
+.left-diary-title {
+  margin-bottom: 10px;
+}
+
+.diary-right {
+  width: 80%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.diary-detail {
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  background-color: white;
+  display: flex;
+  padding: 20px;
+}
+
+.detail-left {
+  border: 1px solid black;
+}
+
+.hidden {
+  display: none;
+}
+
+.detail-diary {
+  padding: 0px 20px;
+}
+
+.right {
+  width: 550px;
+  height: 500px;
+}
+
+.top-detail {
+  border: 1px solid black;
+  width: 100%;
+  height: 10%;
+  padding: 5px;
+}
+
+.second-detail {
+  border: 1px solid black;
+  width: 100%;
+  height: 10%;
+  padding: 5px;
+}
+
+.third-detail {
+  border: 1px solid black;
+  width: 100%;
+  height: 95%;
+  padding: 10px;
+}
+
+.diary-end {
+  padding: 20px;
+} 
+
+.diary-comment h4 {
+  font-size: 24px;
+}
+
+.third-detail-show {
+  border: 1px solid black;
+  width: 100%;
+  height: 95%;
+  padding: 10px;
+}
+
+.detail-left-show {
+  border: 1px solid black;
+  height: 95%;
+}
+
+.diary-edit-delete a{
+  color: red;
+  font-size: 24px;
+}
+
+.diary-errors {
+  color: red;
+  text-align: center;
+
+}

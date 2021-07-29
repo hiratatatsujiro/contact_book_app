@@ -1,8 +1,8 @@
 <%= form_with(model: [diary, comment]) do |form| %>
   <div>
-    <%= form.text_area :comment %>
+    <%= form.text_area :comment, class: "comment-area" %>
   </div>
   <div class="actions">
-    <%= form.submit "コメントをする" %>
+    <%= form.submit "コメントをする", class: "register-pink-btn"%>
   </div>
 <% end %>

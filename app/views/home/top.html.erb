@@ -1,19 +1,4 @@
-<header>
-  <div class="header-left">
-    <i class="fas fa-book-reader"></i>  楽ちょ〜電子連絡帳〜
-  </div>
-  <div class="header-right">
-    <ul class="header-list">
-      <% if user_signed_in? %>
-        <li><%= link_to "#{current_user.nickname}さん", user_path(current_user) %></li>
-        <li class="top-tag"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-      <% else %>
-        <li><%= link_to "新規登録", new_user_registration_path %></li>
-        <li class="top-tag"><%= link_to "ログイン", new_user_session_path %></li>
-      <% end %>
-    </ul>
-  </div>
-</header>
+<%= render "shared/home_header" %>
 <main>
   <div class="main-left">
     <div class="left-menu">
@@ -28,31 +13,9 @@
       </div>
     </div>
   </div>
-  <div class="main-right">
-
-  </div>
-  
-
-
-
-
-
-
-
 </main>
-<footer>
-<div class="footer-left">
-  <i class="fas fa-book-reader"></i>  楽ちょ〜電子連絡帳〜
-</div>
-<div class="footer-right">
-  <ul class="footer-list"> 
-     <li><%= link_to "会社概要（運営会社)", "#" %></li>
-     <li class="top-tag"><%= link_to "プライバシーポリシー", "#" %><li>
-     <li class="top-tag"><%= link_to "楽ちょ利用規約", "#" %></li>
-     <li class="top-tag"><%= link_to "ポイントに関する特約", "#" %></li>
- </ul>
-</div>
-</footer>
+<%= render "shared/home_footer" %>
+
 
 
 
