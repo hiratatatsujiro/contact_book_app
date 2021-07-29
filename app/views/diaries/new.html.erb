@@ -1,5 +1,4 @@
 
-<h1>日記投稿</h1>
 <%= form_with model: @diary, url: diaries_path, class: 'registration-main', local: true do |f| %>
 
   <div class='form-wrap'>
@@ -14,8 +13,9 @@
     <div class='form-text-wrap'>
       <label class="form-text">書いた日</label>
       <span class="indispensable">必須</span>
-    </div>
-    <div class='input-birth-wrap'>
+  </div>
+    
+  <div class='input-birth-wrap'>
       <%= raw sprintf(
                   f.date_select(
                     :diary_day,
@@ -30,7 +30,7 @@
     </div>
   </div>
 
-<div class="form-group">
+  <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">画像</label>
       <span class="indispensable">必須</span>
@@ -43,7 +43,7 @@
       <label class="form-text">タイトル</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :title, class:"input-default", id:"nickname", placeholder:"例) 楽ちょ太郎", maxlength:"40" %>
+    <%= f.text_field :title, class:"input-default", id:"nickname", placeholder:"例) 運動会がありました！", maxlength:"40" %>
   </div>
 
 
@@ -52,15 +52,13 @@
       <label class="form-text">日記</label>
       <span class="indispensable">必須</span>
     </div>
-      <%= f.text_area :diary, class:"input-introduction", id:"introduction", placeholder:"例)楽ちょ太郎です。みんなと仲良く、力を合わせていきます！よろしく！" %>
+      <%= f.text_area :diary, class:"input-introduction", id:"introduction", placeholder:"例)いつ、どこで、誰が、誰と、何をどうしましたか？" %>
   </div>
   
-<div class='register-btn'>
-    <%= f.submit "登録" ,class:"register-yellow-btn" %>
+  <div class='register-btn'>
+    <%= f.submit "登録" ,class:"register-pink-btn" %>
   </div>
-  <%= link_to "トップページへ", root_path, class: 'register-info' %>
-  <%= link_to "ログイン画面へ", new_user_session_path, class: 'register-info' %>
-</div>
+  </div>
 <% end %>
 
 

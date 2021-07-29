@@ -1,5 +1,7 @@
 class DiariesController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_diary_params, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:show, :edit, :update, :delete]
   
   def index
     @diaries = Diary.all
@@ -20,17 +22,14 @@ class DiariesController < ApplicationController
   end
 
   def show
-    @diary = Diary.find(params[:id])
-    @comment = Comment.new # ①
-    @comments = @diary.comments # ②
+    @comment = Comment.new 
+    @comments = @diary.comments
   end
 
-  def edit
-    @diary = Diary.find(params[:id])
+  def edit  
   end
 
   def update
-    @diary = Diary.find(params[:id])
     if @diary.valid?
       @diary.update(diary_params)
       redirect_to diaries_path
@@ -40,7 +39,6 @@ class DiariesController < ApplicationController
   end
 
   def destroy
-    @diary = Diary.find(params[:id])
     @diary.destroy
     redirect_to root_path
   end
@@ -49,5 +47,15 @@ class DiariesController < ApplicationController
 
   def diary_params
     params.require(:diary).permit(:diary_day, :title, :diary, :image).merge(user_id: current_user.id)
+  end
+
+  def find_diary_params
+    @diary = Diary.find(params[:id])
+  end
+
+  def move_to_index
+    unless @diary.user_id == current_user.id
+      redirect_to diaries_path
+    end
   end
 end

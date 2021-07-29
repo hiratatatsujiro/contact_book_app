@@ -1,38 +1,55 @@
-<h2 class="page-heading">
-  <%= @diary.diary_day %>
-</h2>
-  <div>
-    <%= image_tag @diary.image ,class:"item-box-img" %>
-  </div>
+<%= render "shared/home_header" %>
 
-   <div>
-    <p>日記</p>
+<div class="diary-main">
+    
+  <div class="diary-right">
+  
+    <div class="diary-detail">
       <div>
-      <ul>
-      <li><%= @diary.title %></li>
-      <li><%= @diary.diary %></li>
-      </ul>
+      <div class="detail-left-show">
+         <%= image_tag @diary.image.variant(resize: '500x500') %> 
+      </div>
+      <div class="diary-edit-delete">
+          日記を
+          <%= link_to "編集する", edit_diary_path(@diary) %>・
+          <%= link_to "削除する", diary_path(@diary), method: :delete %>
+      </div>
+      </div>
+    
+      <div class="detail-diary">
+        <div class="right">
+          <div class="top-detail">書いた日：<%= @diary.diary_day %></div>
+          <div class="second-detail">タイトル：<%= @diary.title %></div>
+          <div class="third-detail-show"><%= @diary.diary %></div>
+        </div>
+      </div>
+
   </div>
-        
+     </div>
+
+       <div class="diary-end">
+          <div class="diary-comment">
+            <h4 class="comment-title">コメント</h4>
+            <div id="comments_area">
+              <%= render partial: 'comments/index', locals: { comments: @comments } %>
+            </div>  
+            <% if user_signed_in? %>
+              <%= render partial: 'comments/form', locals: { comment: @comment, diary: @diary } %>
+            <% end %>
+          </div>
+       </div>
  
+</div>
 
-  <div>
-    <h4>コメント</h4>
-    <div id="comments_area"><!-- #① -->
-      <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
-      <%= render partial: 'comments/index', locals: { comments: @comments } %>
-    </div>  
-    <% if user_signed_in? %>
-      <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
-      <%= render partial: 'comments/form', locals: { comment: @comment, diary: @diary } %>
-    <% end %>
-  </div>
 
-     
-  <div>
-    <%= link_to "編集する", edit_diary_path(@diary) %>
-    <%= link_to "削除する", diary_path(@diary), method: :delete %>
-  </div>
+<%= render "shared/home_footer" %>
+
+
+
+
+
+
+
 
     
 
