@@ -1,5 +1,6 @@
 class ClassCommunicationsController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_class_communication_params, only: [:show, :edit, :update, :delete]
 
   def index
     @class_communications = ClassCommunication.all
@@ -7,6 +8,9 @@ class ClassCommunicationsController < ApplicationController
 
   def new
     @class_communication = ClassCommunication.new
+    unless current_user.number_id == 52 
+      redirect_to class_communications_path
+    end 
   end
 
   def create
@@ -20,25 +24,25 @@ class ClassCommunicationsController < ApplicationController
   end
 
   def show
-    @class_communication = ClassCommunication.find(params[:id])
   end
 
   def edit
-    @class_communication = ClassCommunication.find(params[:id])
+    unless current_user.number_id == 52 
+      redirect_to class_communications_path
+    end 
   end
 
-  def update
-    @class_communication = ClassCommunication.find(params[:id])
+  def update  
     @class_communication.update(class_communication_params)
-    if @class_communication.save
+    if @class_communication.valid? 
+      @class_communication.save
       redirect_to class_communications_path
     else
       render :edit
     end
   end
 
-  def destroy
-    @class_communication = ClassCommunication.find(params[:id])
+  def destroy 
     @class_communication.destroy
     redirect_to class_communications_path
   end
@@ -49,4 +53,9 @@ class ClassCommunicationsController < ApplicationController
     params.require(:class_communication).permit(:class_communication_day, :title, :text,
                                                 images: []).merge(user_id: current_user.id)
   end
+
+  def find_class_communication_params
+    @class_communication = ClassCommunication.find(params[:id])
+  end
+  
 end

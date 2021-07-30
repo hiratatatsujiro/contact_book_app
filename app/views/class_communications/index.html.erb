@@ -1,7 +1,52 @@
-<h1>学級通信一覧</h1>
-<%= link_to "学級作成", new_class_communication_path %>
-<% @class_communications.each do |class_communication|%>
-  <div>
-    <%= link_to class_communication.title, class_communication_path(class_communication)%>
+<%= render "shared/home_header" %>
+<div class="diary-main">
+  <div class="diary-left">
+   <% if current_user.number_id == 52 %>
+    <div class="new-diary">
+      <%= link_to "学級通信を書く", new_class_communication_path %>
+    </div>
+   <% end %>
+    <div class="left-diary-title">
+      <p>これまでの学級通信</p>
+    </div>
+    
+    <div class="left-diary-index">
+      <% @class_communications.each do |class_communication|%>
+      <% if class_communication.user.grade_id == current_user.grade_id && class_communication.user.classroom_id == current_user.classroom_id %>
+        <div class="diary-index" id="diary-index">
+          <div class="diary-day">
+            <%= link_to class_communication.class_communication_day, class_communication_path(class_communication)%>
+          </div>
+          <div class="diary-title">
+            <%= link_to class_communication.title, class_communication_path(class_communication)%>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+
   </div>
-<% end %>
+  <div class="diary-right hidden" id="diary-detail">
+  <% @class_communications.each do |class_communication| %>
+   <div class="diary-detail">
+     <div class="detail-left-communication">
+      <% class_communication.images.each do |image| %>
+        <div class="class_communication_images">
+          <%= image_tag image.variant(resize: '250x250') %>
+        </div>
+      <% end %>
+     </div>
+     <div class="detail-diary">
+      <div class="right">
+       <div class="top-detail">書いた日：<%= class_communication.class_communication_day %></div>
+       <div class="second-detail">タイトル：<%= class_communication.title %></div>
+       <div class="third-detail"><%= class_communication.text %></div>
+       </div>
+     </div>
+   </div>
+   <% end %>
+  </div>
+</div>
+
+<%= render "shared/home_footer" %>
+

@@ -1,10 +1,10 @@
 class CommentsController < ApplicationController
   def create
-    @diary = Diary.find(params[:diary_id]) # ①
-    @comment = @diary.comments.build(comment_params) # ②
-    @comment.user_id = current_user.id # ③
+    @diary = Diary.find(params[:diary_id])
+    @comment = @diary.comments.build(comment_params) 
+    @comment.user_id = current_user.id 
     if @comment.save
-      render :index # ④
+      render :index
     end
   end
 

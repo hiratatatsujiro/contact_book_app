@@ -1,10 +1,9 @@
-<h1>学級通信編集</h1>
 <%= form_with model: @class_communication, url: class_communication_path, method: :PATCH, class: 'registration-main', local: true do |f| %>
 
   <div class='form-wrap'>
   <div class='form-header'>
     <h1 class='form-header-text'>
-      学級通信
+      学級通信編集
     </h1>
   </div>
  
@@ -46,7 +45,7 @@
       <label class="form-text">タイトル</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :title, class:"input-default", id:"nickname", placeholder:"例) 楽ちょ太郎", maxlength:"40" %>
+    <%= f.text_field :title, class:"input-default", id:"nickname", placeholder:"例) 楽ちょ太郎", maxlength:"40" %>
   </div>
 
 
