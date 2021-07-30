@@ -1,28 +1,32 @@
-<div class="main">
-  <div class="inner">
-    <div class="user__wrapper">
-      <h2 class="page-heading">
-        <%= @user.nickname %>
-         <div>
-         <img src=<%= current_user.image %> class = "icon_image">
-         </div>
-      </h2>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th class="table__col1">年組番号</th>
-            <td class="table__col2"><%= @user.grade.name %><%= @user.classroom.name %><%= @user.number.name %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">名前</th>
-            <td class="table__col2"><%= @user.last_name %><%= @user.first_name %></td>
-          </tr>
-          <tr>
-            <th class="table__col1">自己紹介</th>
-            <td class="table__col2"><%= @user.introduction %></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<%= render "shared/home_header" %>
+  <div class="diary-main">
+    
+  <div class="diary-right">
+  
+    <div class="diary-detail">
+      <div>
+      <div class="detail-left-show">
+         <%= image_tag @user.image.variant(resize: '500x500') %> 
+      </div>
+      <div class="diary-edit-delete">
+          ユーザー情報を
+          <%= link_to "編集する", edit_user_registration_path(@user) %>
+      </div>
+      </div>
+    
+      <div class="detail-diary">
+        <div class="right">
+          <div class="top-detail"><%= @user.grade.name %> <%= @user.classroom.name %> <%= @user.number.name %></div>
+          <div class="second-detail">タイトル：名前：<%= @user.last_name %><%= @user.first_name %></div>
+          <div class="third-detail-show"><%= @user.introduction %></div>
+        </div>
+      </div>
+
   </div>
+     </div>
+
+       
 </div>
+
+
+<%= render "shared/home_footer" %>

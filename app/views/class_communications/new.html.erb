@@ -1,4 +1,3 @@
-<h1>学級通信作成</h1>
 <%= form_with model: @class_communication, url: class_communications_path, class: 'registration-main', local: true do |f| %>
 
   <div class='form-wrap'>
@@ -45,7 +44,7 @@
       <label class="form-text">タイトル</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :title, class:"input-default", id:"nickname", placeholder:"例) 楽ちょ太郎", maxlength:"40" %>
+    <%= f.text_field :title, class:"input-default", id:"title", placeholder:"例) 文化祭を終えました！", maxlength:"40" %>
   </div>
 
 
@@ -54,11 +53,11 @@
       <label class="form-text">学級通信</label>
       <span class="indispensable">必須</span>
     </div>
-      <%= f.text_area :text, class:"input-introduction", id:"introduction", placeholder:"例)楽ちょ太郎です。みんなと仲良く、力を合わせていきます！よろしく！" %>
+      <%= f.text_area :text, class:"input-introduction", id:"introduction", placeholder:"例)文化祭を終えましたね。お疲れ様でした。・・・" %>
   </div>
   
 <div class='register-btn'>
-    <%= f.submit "登録" ,class:"register-yellow-btn" %>
+    <%= f.submit "登録" ,class:"register-pink-btn" %>
   </div>
   <%= link_to "トップページへ", root_path, class: 'register-info' %>
   <%= link_to "ログイン画面へ", new_user_session_path, class: 'register-info' %>
