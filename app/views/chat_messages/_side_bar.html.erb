@@ -1,21 +1,32 @@
-<div class="side-header">
-  <div class="user-name">
-    <% if user_signed_in? %>
-    <%= link_to current_user.nickname, edit_user_path(current_user) %>
-  </div>
-  <div class="make-chat">
-    <%= link_to "チャットを作成する", new_room_path %>
-  </div>
-  </div>
-<div class="side-main">
-   <% current_user.rooms.each do |room| %>
-      <div class="room">
-        <div class="room-name">
-          <%= link_to room.name, room_chat_messages_path(room) %>
-        </div>
-      </div>
-  <% end %>
-  <% end %>
-  <%= link_to "トップページへ", root_path%>
-</div>
 
+  <div class="chat-left">
+
+    <div class="chat-left-title">
+      <div class="make-chatroom">
+        <%= link_to "チャットルーム作成", new_room_path %>
+      </div>
+    </div>
+    
+    <div class="chat-side-index">
+      <div class="chat-side-title">
+        チャットルーム一覧
+      </div>
+      <% current_user.rooms.each do |room| %>
+        <div class="room">
+          <div class="room-name">
+            <%= link_to room.name, room_chat_messages_path(room) %>
+          </div>
+        </div>
+      <% end %>
+ 
+    </div>
+
+  </div>
+
+
+
+
+
+
+  
+  
