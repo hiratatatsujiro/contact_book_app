@@ -1,20 +1,27 @@
-<div class='chat-room-form'>
-  <h1>新規チャットルーム</h1>
-  <%=form_with model: @room, local: true do |f|%>
-    <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'>
-        <%= f.label :チャットルーム名, class: 'chat-room-form__label'%>
-      </div>
-      <div class='chat-room-form__field--right'>
-        <%= f.text_field :name, class: 'chat__room_name chat-room-form__input', placeholder: 'チャットルーム名を入力してください'%>
-      </div>
+<%=form_with model: @room, class: 'registration-main', local: true do |f|%>
+
+  <div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      新規チャットルーム作成
+    </h1>
+  </div>
+    
+    <%=render 'shared/error_messages', model: f.object %>
+
+    <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">チャットルーム名</label>
+      <span class="indispensable">必須</span>
     </div>
-    <div class='chat-room-form__field'>
+    <%= f.text_field :name, class:"profile_image", id:"image-list" %>
+  </div>  
+
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">チャットメンバー</label>
+      <span class="indispensable">必須</span>
     </div>
-    <div class='chat-room-form__field'>
-      <div class='chat-room-form__field--left'>
-        <label class='chat-room-form__label' for='chat_room_チャットメンバー'>チャットメンバー</label>
-      </div>
       <div class='chat-room-form__field--right'>
         <select name="room[user_ids][]">
           <option value="">チャットメンバーを登録してください</option>
@@ -24,12 +31,10 @@
         </select>
           <input type="hidden" name="room[user_ids][]" value=<%= current_user.id %>>
       </div>
-    </div>
-    <div class='chat-room-form__field'> 
-      <div class='chat-room-form__field--left'></div>
-      <div class='chat-room-form__field--right'>
-        <%= f.submit class: 'chat-room-form__action-btn'%>
+  </div>  
+
+      <div class='chat-room-form_field'>
+        <%= f.submit class: 'register-pink-btn-chat'%>
       </div>
-    </div>
+
   <% end %>
-</div>
