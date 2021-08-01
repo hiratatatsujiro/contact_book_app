@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
     @room = Room.new(room_params)
     if @room.valid? 
       @room.save
-      redirect_to rooms_path
+      redirect_to room_chat_messages_path(@room.id)
     else
       render :new
     end
