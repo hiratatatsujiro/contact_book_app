@@ -38,7 +38,11 @@
       <li>宿題：<%= timetable.homework %></li>
       <li>持ってくるもの：<%= timetable.preparation %></li>
       <li>お知らせ：<%= timetable.notice %></li>
-    </ul>   
+      <li>時間わりを<%= link_to "編集する", edit_timetable_path(timetable) %></li>
+      <li>時間わりを<%= link_to "削除する", timetable_path(timetable), method: :delete %></li>
+    </ul>
+    
+      
 <% end %>
      
 

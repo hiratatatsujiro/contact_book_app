@@ -1,10 +1,12 @@
-<div class="items-sell-contents">
-  <header class="items-sell-header">
+  <%= form_with model: @timetable, url: timetable_path(@timetable), class: 'registration-main', local: true do |f| %>
 
-  </header>
-  <div class="items-sell-main">
-    <h2 class="items-sell-title">時間割を入力</h2>
-    <%= form_with model: @timetable, url: timetable_path, local: true do |f| %>
+    <div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      時間割作成
+    </h1>
+  </div>
+
 
     <%=render 'shared/error_messages', model: f.object %>
 
@@ -27,44 +29,45 @@
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
     </div>
   </div>
-
-        <div class="weight-bold-text">
+    <div class="timetable-menu">
+        <div class="weight-bold-timetable">
           １時間目
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:first_class_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-        <div class="weight-bold-text">
+        <div class="weight-bold-timetable">
           ２時間目
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:second_class_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-        <div class="weight-bold-text">
+        <div class="weight-bold-timetable">
           ３時間目
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:third_class_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-        <div class="weight-bold-text">
+        <div class="weight-bold-timetable">
           ４時間目
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:fourth_class_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-        <div class="weight-bold-text">
+        <div class="weight-bold-timetable">
           ５時間目
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:fifth_class_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-        <div class="weight-bold-text">
+        <div class="weight-bold-timetable">
           ６時間目
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:sixth_class_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+</div>
 
       <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">下校時刻</label>
           <span class="indispensable">必須</span>
         </div>
-          <%= f.text_area :leave_time, class:"input-introduction", id:"introduction", placeholder:"例)16:10" %>
+          <%= f.text_field :leave_time, class:"leave-time", id:"introduction", placeholder:"例)16:10" %>
         </div>
 
       <div class="form-group">
@@ -91,6 +94,6 @@
         </div>
 
         <div class='register-btn'>
-        <%= f.submit "登録" ,class:"register-yellow-btn" %>
+        <%= f.submit "登録" ,class:"register-pink-btn" %>
         </div>
         <% end %>

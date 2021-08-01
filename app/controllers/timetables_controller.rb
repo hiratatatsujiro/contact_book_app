@@ -47,4 +47,5 @@ class TimetablesController < ApplicationController
   def timetable_params
     params.require(:timetable).permit(:next_day, :first_class_id, :second_class_id, :third_class_id, :fourth_class_id, :fifth_class_id, :sixth_class_id, :leave_time, :homework, :preparation, :notice).merge(user_id: current_user.id)
   end
+
 end
