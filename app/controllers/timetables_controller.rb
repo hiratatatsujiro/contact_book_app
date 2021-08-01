@@ -20,6 +20,7 @@ class TimetablesController < ApplicationController
 
   def show
     @timetable = Timetable.find(params[:id])
+    @timetables = Timetable.all
   end
 
   def edit

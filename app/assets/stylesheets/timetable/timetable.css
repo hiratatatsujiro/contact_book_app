@@ -1,0 +1,39 @@
+.show-detail {
+  display: flex;
+  background-color: white;
+  border: 1px solid black;
+  width: 100%;
+  
+}
+
+.show-left {
+  margin-right: 60px;
+}
+
+.show-detail li {
+  font-size: 42px;
+}
+
+.select-box {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  background-color: white;;
+}
+
+.timetable-menu {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.weight-bold-timetable {
+  margin: 10px 0px;
+}
+
+
+
+
+
+
+
+

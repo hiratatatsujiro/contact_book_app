@@ -1,32 +1,37 @@
-<div class="diary-main">
 
-
+<div class="chat-head">
     <div class="chat-title">
-      <%= @room.name %>
+      チャットルーム名  <%= @room.name %>
     </div>
 
-  <div class="header-right">
-    <div class="chat-end"> 
+    <div class="chatroom-end"> 
       <%= link_to "チャットを終了する", room_path(@room), method: :delete%>
     </div>
-  </div>
+</div>
 
 <div class="main-main">
   <%= render partial: "message", collection: @chat_messages %>
 </div>
 
-<%= form_with model: [@room, @chat_message], class: "main-footer", local: true do |f| %>
+
+<%= form_with model: [@room, @chat_message], local: true do |f| %>
+<div class="chat-foot">
   <div class="forms">
-    <%= f.text_field :content, class: "text", placeholder: "type amessage" %>
+    <%= f.text_field :content, class: "form-message", placeholder: "type amessage" %>
       <label class="form-image">
-        <span class="image">画像</span>
-        <%= f.file_field :image, class: "image-choice" %>
+        <span class="image-file">画像</span>
+        <%= f.file_field :image, class: "hidden"%>
       </label>
    </div>
-      <%= f.submit "送信", class:"send" %>
+   <div class="chat-submit">
+      <%= f.submit "送信", class: "register-pink-btn-submit" %>
+  </div>
+  </div>
 <% end %>
 
-</div>
+
+
+
 
 
 
