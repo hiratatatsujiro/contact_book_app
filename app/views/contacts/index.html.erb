@@ -1,0 +1,33 @@
+<%= render "shared/home_header" %>
+<div class="diary-main">
+  <div class="diary-left">
+    <div class="new-diary">
+      <%= link_to "連絡する", new_contact_path %>
+    </div>
+    
+    <div class="left-diary-index">
+    <% @contacts.each do |contact|%>
+      <% if contact.user.grade_id == contact.grade_id && contact.user.classroom_id == current_user.classroom_id && current_user.number_id = 52 %>
+        <div class="diary-index" id="diary-index">
+          <div class="diary-day">
+            <%= link_to "#{contact.user.last_name}  #{contact.user.first_name}", diary_path(diary)%>
+          </div>
+        </div>
+      <% elsif contact.user_id == current_user.id %>  
+        <div class="diary-index" id="diary-index">
+          <div class="diary-day">
+            <%= link_to contact.created_at, diary_path(diary)%>
+          </div>
+        </div>  
+      <% end %>
+    <% end %>
+    </div>
+
+  </div>
+  <div class="diary-right hidden" id="diary-detail">
+  
+  </div>
+</div>
+
+<%= render "shared/home_footer" %>
+

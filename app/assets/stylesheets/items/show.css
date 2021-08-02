@@ -60,6 +60,16 @@
   padding: 2vh 10vw;
 }
 
+.item-pink-btn {
+  text-align: center;
+  background-color: #FF99C8;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+}
+
 .or-text {
   font-size: 20px;
 }

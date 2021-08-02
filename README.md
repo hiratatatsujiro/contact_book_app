@@ -56,6 +56,7 @@ Things you may want to cover:
 - has_many :class_communications
 - has_many :likes
 - has_many :timetables
+- has_many :contacts
 
 ## diariesテーブル
 | Column             | Type       | Options           |
@@ -191,6 +192,18 @@ Things you may want to cover:
 | preparation         | string      | null: false       |
 | leave_time          | string      | null: false       |
 | notice              | text        |                   |
+| user                | references  | foreign_key: true |
+
+### Association
+- belongs_to :user
+
+## contactsテーブル
+| Column              | Type        | Options           |
+|---------------------|-------------|-------------------|
+| condition_id        | integer     |                   |
+| reason              | string      |                   |
+| pool_marathon_id    | integer     |                   |
+| contact             | text        |                   |
 | user                | references  | foreign_key: true |
 
 ### Association
