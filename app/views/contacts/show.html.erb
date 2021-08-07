@@ -1,0 +1,35 @@
+<%= render "shared/home_header" %>
+
+<div class="diary-main">
+    
+  <div class="diary-right">
+  
+    <div class="diary-detail">
+      <div>
+      
+      <div class="diary-edit-delete">
+          連絡を
+          <%= link_to "編集する", edit_contact_path(@contact) %>・
+          <%= link_to "削除する", contact_path(@contact), method: :delete %>
+      </div>
+      </div>
+    
+      <div class="detail-diary">
+        <div class="right">
+          <div class="top-detail">連絡した日：<%= @contact.created_at %></div>
+          <div class="second-detail">連絡事項：<%= @contact.condition.name %></div>
+          <div class="third-detail-contact">理由：<%= @contact.reason %></div>
+          <div class="fourth-detail">プール・持久走への参加：<%= @contact.pool_marathon.name %></div>
+          <div class="fifth-detail">連絡事項<%= @contact.contact %></div>
+        </div>
+      </div>
+
+  </div>
+     </div>
+
+       
+ 
+</div>
+
+
+<%= render "shared/home_footer" %>
