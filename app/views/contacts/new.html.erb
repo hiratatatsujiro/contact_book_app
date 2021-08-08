@@ -1,0 +1,44 @@
+
+<%= form_with model: @contact, url: contacts_path, class: 'registration-main', local: true do |f| %>
+
+  <div class='form-wrap'>
+  <div class='form-header'>
+    <h1 class='form-header-text'>
+      連絡する
+    </h1>
+  </div>
+ 
+  <div class="timetable-menu">
+        <div class="weight-bold-timetable">
+            連絡事項
+        </div>
+        <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"select-box-timetable", id:"item-category"}) %>
+
+        <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">理由</label>
+        </div>
+          <%= f.text_area :reason, class:"input-introduction", id:"introduction", placeholder:"例)溶連菌のため" %>
+        </div>
+
+        <div class="weight-bold-timetable">
+            プール・マラソン等
+        </div>
+        <%= f.collection_select(:pool_marathon_id, PoolMarathon.all, :id, :name, {}, {class:"select-box-timetable", id:"item-category"}) %>
+
+        <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">連絡</label>
+        </div>
+          <%= f.text_area :contact, class:"input-introduction", id:"introduction", placeholder:"例)右足のくるぶしを痛めています" %>
+        </div>
+
+        
+  
+  <div class='register-btn'>
+    <%= f.submit "登録" ,class:"register-pink-btn" %>
+  </div>
+  </div>
+<% end %>
+
+
