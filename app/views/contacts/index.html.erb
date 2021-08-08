@@ -10,7 +10,11 @@
       <% if contact.user.grade_id == current_user.grade_id && contact.user.classroom_id == current_user.classroom_id && current_user.number_id = 52 %>
         <div class="diary-index" id="diary-index">
           <div class="diary-day">
-            <%= link_to "#{contact.user.last_name}  #{contact.user.first_name}", contact_path(contact)%>
+
+            <%= link_to "#{contact.created_at} #{contact.user.last_name} #{contact.user.first_name}", contact_path(contact)%>
+
+               
+             
           </div>
         </div>
       <% elsif contact.user_id == current_user.id %>  
