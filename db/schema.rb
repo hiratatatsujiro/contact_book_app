@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_26_043217) do
+ActiveRecord::Schema.define(version: 2021_08_02_091305) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -61,6 +61,17 @@ ActiveRecord::Schema.define(version: 2021_07_26_043217) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["diary_id"], name: "index_comments_on_diary_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "contacts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "condition_id"
+    t.string "reason"
+    t.integer "pool_marathon_id"
+    t.text "contact"
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
   create_table "diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -197,6 +208,7 @@ ActiveRecord::Schema.define(version: 2021_07_26_043217) do
   add_foreign_key "class_communications", "users"
   add_foreign_key "comments", "diaries"
   add_foreign_key "comments", "users"
+  add_foreign_key "contacts", "users"
   add_foreign_key "diaries", "users"
   add_foreign_key "information", "orders"
   add_foreign_key "items", "users"
