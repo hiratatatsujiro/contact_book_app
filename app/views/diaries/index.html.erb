@@ -15,7 +15,7 @@
             <%= link_to diary.diary_day, diary_path(diary)%>
           </div>
           <div class="diary-title">
-            <%= link_to diary.title, diary_path(diary)%>
+            <%= link_to "#{diary.user.last_name} #{diary.user.first_name}", diary_path(diary)%>
           </div>
         </div>
         <% end %>
@@ -31,6 +31,7 @@
      </div>
      <div class="detail-diary">
       <div class="right">
+       <div class="first-detail"><%= diary.user.nickname %>さんの日記</div>
        <div class="top-detail">書いた日：<%= diary.diary_day %></div>
        <div class="second-detail">タイトル：<%= diary.title %></div>
        <div class="third-detail"><%= diary.diary %></div>
