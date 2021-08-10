@@ -16,7 +16,7 @@ class Timetable < ApplicationRecord
     validates :leave_time
   end
 
-  with_options numericality: { other_than: 1, message: "can't be blank" } do
+  with_options numericality: { other_than: 1, message: "が選択されていません" } do
     validates :first_class_id 
     validates :second_class_id
     validates :third_class_id

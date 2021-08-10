@@ -1,0 +1,43 @@
+ja:
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"
+
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        image: 画像
+        introduction: 自己紹介
+        birthday: 生年月日
+        last_name_reading: 苗字の読み方
+        first_name_reading: 名前の読み方
+        grade_id: 学年
+        classroom_id: 組
+        number_id: 出席番号
+        last_name: 苗字
+        first_name: 名前
+      diary: 
+        image: 画像
+        diary_day: 書いた日
+        title: タイトル
+        diary: 日記
+      class_communication:
+        class_communication_day: 書いた日
+        title: タイトル
+        text: 本文
+        images: 画像
+      timetable:
+        timetable: 時間わり
+        next_day: 学校に来る日
+        homework: 宿題
+        preparation: 持ってくるもの
+        leave_time: 下校時刻
+        first_class_id: 1時間目
+        second_class_id: 2時間目
+        third_class_id: 3時間目
+        fourth_class_id: 4時間目
+        fifth_class_id: 5時間目
+        sixth_class_id: 6時間目
+      

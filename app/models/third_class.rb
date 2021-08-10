@@ -11,7 +11,8 @@ class ThirdClass < ActiveHash::Base
     { id: 9, name: '道徳' },
     { id: 10, name: '体育' },
     { id: 11, name: '総合' },
-    { id: 12, name: 'その他' }
+    { id: 12, name: 'その他' },
+    { id: 13, name: 'なし' }
   ]
 
   include ActiveHash::Associations

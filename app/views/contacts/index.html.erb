@@ -11,7 +11,7 @@
         <div class="diary-index" id="diary-index">
           <div class="diary-day">
 
-            <%= link_to "#{contact.created_at} #{contact.user.last_name} #{contact.user.first_name}", contact_path(contact)%>
+            <%= link_to "#{l contact.created_at} #{contact.user.last_name} #{contact.user.first_name}", contact_path(contact)%>
 
                
              
@@ -20,7 +20,7 @@
       <% elsif contact.user_id == current_user.id %>  
         <div class="diary-index" id="diary-index">
           <div class="diary-day">
-            <%= link_to contact.created_at, diary_path(diary)%>
+            <%= link_to l contact.created_at, diary_path(diary)%>
           </div>
         </div>  
       <% end %>

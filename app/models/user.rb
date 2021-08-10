@@ -25,24 +25,24 @@ class User < ApplicationRecord
     validates :nickname
     validates :introduction
     validates :birthday
-    with_options format: { with: /\A[ァ-ヶー－]+\z/, message: 'is invalid. Input full-width katakana characters.' } do
+    with_options format: { with: /\A[ァ-ヶー－]+\z/, message: 'に誤りがあります。全角カタカナで入力してください' } do
       validates :last_name_reading
       validates :first_name_reading
     end
 
-    with_options numericality: { other_than: 1, message: "can't be blank" } do
+    with_options numericality: { other_than: 1, message: "を選択して下さい" } do
       validates :grade_id
       validates :classroom_id
       validates :number_id
     end
 
-    with_options format: { with: /\A[ぁ-んァ-ン一-龥々]+\z/, message: 'is invalid. Input full-width characters.' } do
+    with_options format: { with: /\A[ぁ-んァ-ン一-龥々]+\z/, message: 'に誤りがあります。全角で入力してください' } do
       validates :last_name
       validates :first_name
     end
   end
   validates :password, on: :create, length: { minimum: 6 },
-                       format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message: 'is invalid. Include both letters and numbers' }
+                       format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/, message: 'に誤りがあります。文字と数字の両方を含める必要があります' }
 
   def update_with_password(params, *options)
     current_password = params.delete(:current_password)
