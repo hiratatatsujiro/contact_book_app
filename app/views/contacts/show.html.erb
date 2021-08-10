@@ -16,7 +16,7 @@
     
       <div class="detail-diary">
         <div class="right">
-          <div class="top-detail">連絡した日：<%= @contact.created_at %></div>
+          <div class="top-detail">連絡した日：<%= l @contact.created_at %></div>
           <div class="second-detail">連絡事項：<%= @contact.condition.name %></div>
           <div class="third-detail-contact">理由：<%= @contact.reason %></div>
           <div class="fourth-detail">プール・持久走への参加：<%= @contact.pool_marathon.name %></div>
