@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_10_001324) do
+ActiveRecord::Schema.define(version: 2021_08_10_001310) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -77,7 +77,7 @@ ActiveRecord::Schema.define(version: 2021_08_10_001324) do
   create_table "diaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "diary_day", null: false
     t.string "title", null: false
-    t.text "diary", null: false
+    t.text "diary"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -147,19 +147,6 @@ ActiveRecord::Schema.define(version: 2021_08_10_001324) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "tags_relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "diary_id"
-    t.bigint "tag_id"
-    t.index ["diary_id"], name: "index_tags_relationships_on_diary_id"
-    t.index ["tag_id"], name: "index_tags_relationships_on_tag_id"
-  end
-
   create_table "timetables", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "next_day", null: false
     t.integer "first_class_id", null: false
@@ -216,7 +203,5 @@ ActiveRecord::Schema.define(version: 2021_08_10_001324) do
   add_foreign_key "orders", "users"
   add_foreign_key "room_users", "rooms"
   add_foreign_key "room_users", "users"
-  add_foreign_key "tags_relationships", "diaries"
-  add_foreign_key "tags_relationships", "tags"
   add_foreign_key "timetables", "users"
 end
