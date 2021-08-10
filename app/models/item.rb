@@ -16,13 +16,13 @@ class Item < ApplicationRecord
     validates :image
     validates :name, length: { maximum: 40 }
     validates :introduce, length: { maximum: 1000 }
-    validates :price, numericality: { with: /\A[0-9]+\z/, message: 'Input half-width characters.' }
+    validates :price, numericality: { with: /\A[0-9]+\z/, message: 'は半角で入力してください' }
   end
   validates :price,
             numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999,
-                            message: 'is out of setting range' }
+                            message: 'が設定の範囲外です' }
 
-  with_options numericality: { other_than: 1, message: "can't be blank" } do
+  with_options numericality: { other_than: 1, message: "を選択してください" } do
     validates :size_id
     validates :category_id
     validates :status_id
