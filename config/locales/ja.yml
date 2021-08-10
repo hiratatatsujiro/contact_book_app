@@ -4,7 +4,23 @@ ja:
       default: "%Y/%m/%d %H:%M:%S"
 
 ja:
+  activemodel:
+    models: 
+      order_information: 個人情報
+    attributes:
+      order_information:
+        token: カード情報
+        postal_code: 郵便番号
+        delivery_area_id: 都道府県
+        city: 市区町村
+        house_number: 番地
+        phone_number: 電話番号
   activerecord:
+    models:
+      diary: 日記
+      class_communication: 学級通信
+      timetable: 時間わり
+      item: 商品情報
     attributes:
       user:
         nickname: ニックネーム
@@ -40,4 +56,15 @@ ja:
         fourth_class_id: 4時間目
         fifth_class_id: 5時間目
         sixth_class_id: 6時間目
+      item:
+        image: 商品画像
+        name: 商品名
+        introduce: 商品紹介
+        price: 価格
+        size_id: サイズ
+        category_id: カテゴリー
+        status_id: 商品の状態
+        pay_for_shopping_id: 配送料の負担
+        delivery_area_id: 発送元の地域
+        day_to_ship_id: 発送までの日数
       
