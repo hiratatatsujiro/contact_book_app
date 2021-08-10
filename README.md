@@ -69,11 +69,31 @@ Things you may want to cover:
 ### Association
 - has_many :comments, dependent: :destroy
 - belongs_to :user
+- has_many :tag_relationships, dependent: :destroy
+- has_many :tags, through: :tag_relationship
+
+## tagsテーブル
+| Column             | Type       | Options           |
+|--------------------|------------|-------------------|
+| name               | string     | null: false       |
+
+### Association
+- has_many :tag_relationships, dependent: :destroy
+- has_many :diaries, through: :tag_relationship
+
+## tag_relationshipテーブル
+| Column    | Type       | Options                        |
+|-----------|------------|--------------------------------|
+| diary     | references | null: false, foreign_kye: true |
+| tag       | references | null: false, foreign_kye: true |
+
+### Association
+- belongs_to :diary
+- belongs_to :tag
 
 ## diary_comments
 | Column             | Type       | Options           |
 |--------------------|------------|-------------------|
-| comment            | string     | null: false       |
 | user               | references | foreign_key: true |
 | diary              | references | foreign_key: true |
 

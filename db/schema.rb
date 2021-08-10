@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_02_091305) do
+ActiveRecord::Schema.define(version: 2021_08_10_001324) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -147,19 +147,17 @@ ActiveRecord::Schema.define(version: 2021_08_02_091305) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "tag_class_communications", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "class_communication_id"
-    t.bigint "tag_id"
+  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["class_communication_id"], name: "index_tag_class_communications_on_class_communication_id"
-    t.index ["tag_id"], name: "index_tag_class_communications_on_tag_id"
   end
 
-  create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "tag_name", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table "tags_relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "diary_id"
+    t.bigint "tag_id"
+    t.index ["diary_id"], name: "index_tags_relationships_on_diary_id"
+    t.index ["tag_id"], name: "index_tags_relationships_on_tag_id"
   end
 
   create_table "timetables", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -218,7 +216,7 @@ ActiveRecord::Schema.define(version: 2021_08_02_091305) do
   add_foreign_key "orders", "users"
   add_foreign_key "room_users", "rooms"
   add_foreign_key "room_users", "users"
-  add_foreign_key "tag_class_communications", "class_communications"
-  add_foreign_key "tag_class_communications", "tags"
+  add_foreign_key "tags_relationships", "diaries"
+  add_foreign_key "tags_relationships", "tags"
   add_foreign_key "timetables", "users"
 end
