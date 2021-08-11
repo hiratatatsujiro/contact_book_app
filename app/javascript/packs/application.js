@@ -13,7 +13,6 @@ require('../profit_calculation')
 require("../card")
 require("../preview")
 require("../preview1")
-require("../index")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
