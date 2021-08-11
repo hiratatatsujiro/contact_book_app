@@ -84,3 +84,12 @@
 .name {
   margin-right: 10px;
 }
+
+.check-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.messi {
+  margin-bottom: 10px;
+}

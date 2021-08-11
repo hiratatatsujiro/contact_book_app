@@ -18,9 +18,11 @@
         <p>
           クリックしてファイルをアップロード
         </p>
-        <%= f.file_field :image, id:"item-image" %>
+        <%= f.file_field :image, class:"profile_image", id:"profile_image_new" %>
       </div>
     </div>
+    <div id="image-list-preview" class="image-preview">
+  </div>
 
     <div class="new-items">
       <div class="weight-bold-text">
