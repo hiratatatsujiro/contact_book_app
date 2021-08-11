@@ -1,3 +1,40 @@
+.contact-main {
+  background-color: #D0F4De;
+  height: calc( 100% - 160px );
+  min-height: calc( 100vh - 160px );;
+  display: flex; 
+}
+
+.contact-left {
+  width: 20%;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+}
+
+.new-contact {
+  font-size: 32px;
+  border: 2px solid black;
+  box-shadow: 4px 2px 2px -2px;
+  margin-bottom: 20px;
+}
+
+.new-contact a {
+  text-decoration: none;
+  color: black;
+}
+
+.contact-index {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.contact-index a {
+  color: black;
+}
+
+
 .third-detail-contact {
   border: 1px solid black;
   width: 100%;
