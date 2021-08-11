@@ -197,3 +197,12 @@
   cursor: pointer;
 }
 
+.image-preview img {
+  height: 200px;
+  width: 300px;
+  margin-top: 20px;
+}
+
+.image-preview {
+  text-align: center;
+}

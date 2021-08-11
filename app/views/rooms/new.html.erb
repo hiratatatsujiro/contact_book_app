@@ -22,13 +22,10 @@
       <label class="form-text">チャットメンバー</label>
       <span class="indispensable">必須</span>
     </div>
-      <div class='chat-room-form__field--right'>
-        <select name="room[user_ids][]">
-          <option value="">チャットメンバーを登録してください</option>
-          <% User.where.not(id: current_user.id).each do |user| %>
-          <option value=<%= user.id %>><%= user.nickname %></option>
-          <% end %>
-        </select>
+    <div class="check-box">
+      <%= f.collection_check_boxes :user_ids, User.all, :id, :nickname %>
+    </div>
+      <div class='chat-room-form__field'>
           <input type="hidden" name="room[user_ids][]" value=<%= current_user.id %>>
       </div>
   </div>  

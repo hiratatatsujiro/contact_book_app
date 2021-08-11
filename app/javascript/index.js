@@ -1,5 +1,6 @@
 window.addEventListener('load', function(){
 
+  if (!pullDownButton){ return false;}
   const pullDownButton = document.getElementById("diary-index");
   const diaryDetail = document.getElementById("diary-detail");
   const diaryIndex = document.querySelectorAll(".diary-index")

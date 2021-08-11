@@ -1,6 +1,6 @@
 .diary-main {
   background-color: #D0F4De;
-  height: calc( 100vh - 160px );
+  height: calc( 100% - 160px );
   display: flex; 
 }
 
@@ -63,11 +63,12 @@
 
 .detail-diary {
   padding: 0px 20px;
+  height: 100%;
 }
 
 .right {
   width: 550px;
-  height: 500px;
+  height: 100%px;
 }
 
 .first-detail {
@@ -95,7 +96,7 @@
 .third-detail {
   border: 1px solid black;
   width: 100%;
-  height: 80%;
+  height: 50%;
   padding: 10px;
 }
 
