@@ -1,9 +1,10 @@
 class ContactsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_params, only: [:edit, :update, :show, :destroy]
+  before_action :move_to_index, only: [:edit, :update, :show, :destroy]
 
   def index
-    @contacts = Contact.all
+    @contacts = Contact.includes(:user)
   end
 
   def new
@@ -21,9 +22,11 @@ class ContactsController < ApplicationController
   end
 
   def show
+   
   end
 
   def edit
+    
   end
 
   def update
@@ -48,5 +51,11 @@ class ContactsController < ApplicationController
 
   def find_params
     @contact = Contact.find(params[:id])
+  end
+
+  def move_to_index
+    unless @contact.user.id == current_user.id
+      redirect_to contacts_path
+    end
   end
 end

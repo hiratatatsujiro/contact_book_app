@@ -1,15 +1,15 @@
 
 <%= form_with model: @contact, url: contacts_path, class: 'registration-main', local: true do |f| %>
 
-  <div class='form-wrap'>
-  <div class='form-header'>
-    <h1 class='form-header-text'>
-      連絡する
-    </h1>
-  </div>
+    <div class='form-wrap'>
+
+      <div class='form-header'>
+         <h1 class='form-header-text'>連絡する</h1>
+      </div>
  
-  <div class="timetable-menu">
-        <div class="weight-bold-timetable">
+      <div class="timetable-menu">
+        
+        <div class="weight-bold-text">
             連絡事項
         </div>
         <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"select-box-timetable", id:"item-category"}) %>
@@ -21,7 +21,7 @@
           <%= f.text_area :reason, class:"input-introduction", id:"introduction", placeholder:"例)溶連菌のため" %>
         </div>
 
-        <div class="weight-bold-timetable">
+        <div class="weight-bold-text">
             プール・マラソン等
         </div>
         <%= f.collection_select(:pool_marathon_id, PoolMarathon.all, :id, :name, {}, {class:"select-box-timetable", id:"item-category"}) %>
@@ -35,10 +35,11 @@
 
         
   
-  <div class='register-btn'>
-    <%= f.submit "登録" ,class:"register-pink-btn" %>
-  </div>
-  </div>
+         <div class='register-btn'>
+          <%= f.submit "登録" ,class:"register-pink-btn" %>
+         </div>
+      </div>
+    </div>
 <% end %>
 
 
