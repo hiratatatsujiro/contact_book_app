@@ -1,31 +1,30 @@
 <%= render "shared/home_header" %>
 
-<div class="diary-main">
+    <div class="diary-main">
     
-  <div class="diary-right">
-  
-    <div class="diary-detail">
-      <div>
-      <div class="detail-left-show">
-         <%= image_tag @diary.image.variant(resize: '500x500') %> 
-      </div>
-      <div class="diary-edit-delete">
-          日記を
-          <%= link_to "編集する", edit_diary_path(@diary) %>・
-          <%= link_to "削除する", diary_path(@diary), method: :delete %>
-      </div>
-      </div>
+      <div class="diary-right">
+         <div class="diary-detail">
+            <div class="diary-title-right">
+                <div class="top-detail"><%= @diary.diary_day %></div> 
+                <div class="first-detail"><%= @diary.user.last_name %> <%= @diary.user.first_name %>さんの日記</div>
+             </div>
+             <div class="second-detail">タイトル：<%= @diary.title %></div>
+           
+            <div class="detail-pic">
+               <%= image_tag @diary.image.variant(resize: '680x680') %> 
+            </div>
     
-      <div class="detail-diary">
-        <div class="right">
-          <div class="first-detail"><%= @diary.user.nickname %>さんの日記</div>
-          <div class="top-detail">書いた日：<%= @diary.diary_day %></div>
-          <div class="second-detail">タイトル：<%= @diary.title %></div>
-          <div class="third-detail-show"><%= @diary.diary %></div>
-        </div>
-      </div>
+            <div class="diary-under">
+                <div class="third-detail-show"><%= @diary.diary %></div>
+            </div>
+             <div class="diary-edit-delete">
+              日記を
+                <%= link_to "編集する", edit_diary_path(@diary) %>・
+                <%= link_to "削除する", diary_path(@diary), method: :delete %>
+              </div>
+         </div>
+        
 
-  </div>
      </div>
 
        <div class="diary-end">
@@ -40,7 +39,7 @@
           </div>
        </div>
  
-</div>
+    </div>
 
 
 <%= render "shared/home_footer" %>
