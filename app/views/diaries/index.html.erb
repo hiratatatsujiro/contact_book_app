@@ -13,7 +13,17 @@
     
            <div class="left-diary-index">
              <% @diaries.each do |diary|%>
-              <% if diary.user_id == current_user.id || (diary.user.grade_id == current_user.grade_id && diary.user.classroom_id == current_user.classroom_id && current_user.number_id = 52)%>
+              <% if diary.user.id == current_user.id %>
+                <div class="diary-index" id="diary-index">
+                    <div class="diary-day">
+                      <%= link_to diary.diary_day, diary_path(diary)%>
+                    </div>
+         
+                    <div class="diary-title">
+                      <%= link_to diary.title, diary_path(diary)%>
+                    </div>
+               </div>
+              <% elsif diary.user.grade_id == current_user.grade_id && diary.user.classroom_id == current_user.classroom_id && current_user.number_id == 52 %>
                 <div class="diary-index" id="diary-index">
                     <div class="diary-day">
                       <%= link_to diary.diary_day, diary_path(diary)%>
@@ -30,6 +40,7 @@
   
       <div class="diary-right">
         <% @diaries.each do |diary| %>
+          <% if diary.user.id == current_user.id || diary.user.grade_id == current_user.grade_id && diary.user.classroom_id == current_user.classroom_id && current_user.number_id == 52 %>
           <div class="diary-detail">
              <div class="diary-title-right">
                 <div class="top-detail"><%= diary.diary_day %></div> 
@@ -43,9 +54,8 @@
                 <div class="diary-under">
                     <div class="third-detail"><%= diary.diary %></div>
                 </div>
-            
-
           </div>
+          <% end %>
         <% end %>
       </div>
 
