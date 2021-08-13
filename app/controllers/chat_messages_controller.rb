@@ -1,5 +1,6 @@
 class ChatMessagesController < ApplicationController
   before_action :authenticate_user!
+  
   def index
     @chat_message = ChatMessage.new
     @room = Room.find(params[:room_id])

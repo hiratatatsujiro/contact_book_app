@@ -1,12 +1,14 @@
 
 <div class="chat-head">
+
     <div class="chat-title">
       チャットルーム名  <%= @room.name %>
     </div>
 
-    <div class="chatroom-end"> 
-      <%= link_to "チャットを終了する", room_path(@room), method: :delete%>
+    <div class="chatroom-end">
+        <%= link_to "チャットを削除する", room_path(@room), method: :delete%>
     </div>
+
 </div>
 
 <div class="main-main">
@@ -14,19 +16,25 @@
 </div>
 
 
-<%= form_with model: [@room, @chat_message], local: true do |f| %>
-<div class="chat-foot">
-  <div class="forms">
-    <%= f.text_field :content, class: "form-message", placeholder: "type amessage" %>
-      <label class="form-image">
-        <span class="image-file">画像</span>
-        <%= f.file_field :image, class: "hidden"%>
-      </label>
-   </div>
-   <div class="chat-submit">
-      <%= f.submit "送信", class: "register-pink-btn-submit" %>
-  </div>
-  </div>
+<%= form_with model: [@room, @chat_message], autofocus: true, local: true do |f| %>
+    <div class="chat-foot">
+      
+      <div class="forms">
+        <%= f.text_field :content, class: "form-message", placeholder: "メッセージを入力してください" %>
+      </div>
+
+      <div class="image-submit">
+        <label class="form-image">
+           <span class="image-file">画像</span>
+            <%= f.file_field :image, class: "hidden"%>
+        </label>
+
+        <div class="submit-chat">
+          <%= f.submit "送信", class: "register-pink-btn-submit-chat" %>
+        </div>
+      </div>
+
+    </div>
 <% end %>
 
 

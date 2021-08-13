@@ -7,7 +7,7 @@
     </h1>
   </div>
     
-    <%=render 'shared/error_messages', model: f.object %>
+   <%= render "error_messages", resource: @room %>
 
     <div class="form-group">
     <div class='form-text-wrap'>
@@ -22,16 +22,18 @@
       <label class="form-text">チャットメンバー</label>
       <span class="indispensable">必須</span>
     </div>
+
     <div class="check-box">
-      <%= f.collection_check_boxes :user_ids, User.all, :id, :nickname %>
+       <%= f.collection_check_boxes(:user_ids, User.where.not(id: current_user.id).all, :id, :nickname, class: "check-box-chat")  %>
     </div>
-      <div class='chat-room-form__field'>
-          <input type="hidden" name="room[user_ids][]" value=<%= current_user.id %>>
-      </div>
+
+    <div class='chat-room-form__field'>
+       <input type="hidden" name="room[user_ids][]" value=<%= current_user.id %>>
+    </div>
   </div>  
 
-      <div class='chat-room-form_field'>
-        <%= f.submit class: 'register-pink-btn-chat'%>
-      </div>
+   <div class='chat-room-form_field'>
+     <%= f.submit class: 'register-pink-btn-chat'%>
+   </div>
 
-  <% end %>
+<% end %>

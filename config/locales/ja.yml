@@ -21,6 +21,7 @@ ja:
       class_communication: 学級通信
       timetable: 時間わり
       item: 商品情報
+      room: チャットルーム
     attributes:
       user:
         nickname: ニックネーム
@@ -67,4 +68,7 @@ ja:
         pay_for_shopping_id: 配送料の負担
         delivery_area_id: 発送元の地域
         day_to_ship_id: 発送までの日数
+      room:
+        name: チャットルーム名
+      
       
