@@ -1,6 +1,7 @@
 class ClassCommunicationsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_class_communication_params, only: [:show, :edit, :update, :delete]
+  before_action :move_to_index, except: [:index, :show]
 
   def index
     @class_communications = ClassCommunication.all
@@ -8,9 +9,6 @@ class ClassCommunicationsController < ApplicationController
 
   def new
     @class_communication = ClassCommunication.new
-    unless current_user.number_id == 52 
-      redirect_to class_communications_path
-    end 
   end
 
   def create
@@ -27,9 +25,7 @@ class ClassCommunicationsController < ApplicationController
   end
 
   def edit
-    unless current_user.number_id == 52 
-      redirect_to class_communications_path
-    end 
+    
   end
 
   def update  
@@ -56,6 +52,12 @@ class ClassCommunicationsController < ApplicationController
 
   def find_class_communication_params
     @class_communication = ClassCommunication.find(params[:id])
+  end
+
+  def move_to_index
+    unless current_user.number_id == 52 
+      redirect_to class_communications_path
+    end 
   end
   
 end

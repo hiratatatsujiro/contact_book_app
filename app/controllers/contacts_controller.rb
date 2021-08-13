@@ -52,7 +52,7 @@ class ContactsController < ApplicationController
   end
 
   def move_to_index
-    unless @contact.user.id == current_user.id
+    unless @contact.user.id == current_user.id || @contact.user.grade_id == current_user.grade_id && @contact.user.classroom_id == current_user.classroom_id && current_user.number_id == 52
       redirect_to contacts_path
     end
   end

@@ -35,10 +35,14 @@
     </div>
     <%= f.file_field :images, name: "class_communication[images][]", class:"profile_image", id:"profile_image" %>
   </div>  
-  <div id="image-list"></div> 
-   <% @class_communication.images.each do |image| %>
-    <%= image_tag image, class: 'images' %>
+  <div id="image-list" class="image-preview">
+  </div> 
+  <% @class_communication.images.each do |image| %>
+     <div class="image-index">
+      <%= image_tag image.variant(resize: '680x680') %>
+     </div>
    <% end %> 
+   
   
   <div class="form-group">
     <div class='form-text-wrap'>

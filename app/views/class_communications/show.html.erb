@@ -1,41 +1,40 @@
 <%= render "shared/home_header" %>
 
-<div class="diary-main"> 
-  <div class="diary-right">
-    <div class="diary-detail">
-      <div>
-      <div class="detail-left-communication">
-      <% @class_communication.images.each do |image| %>
-        <div class="class_communication_images">
-          <%= image_tag image.variant(resize: '250x250') %>
-        </div>
-      <% end %>
-     </div>
-     <div id="likes_buttons_<%= @class_communication.id %>">
-      <%= render partial: 'likes/like', locals: {class_communication: @class_communication} %>
-     </div>
-     <% if current_user.number_id == 52 %>
-      <div class="diary-edit-delete">
-          学級通信を
-          <%= link_to "編集する", edit_class_communication_path(@class_communication) %>・
-          <%= link_to "削除する", class_communication_path(@class_communication), method: :delete %>
-      </div>
-      <% end %>
-      </div>
-    
-      <div class="detail-diary">
-        <div class="right">
-          <div class="top-detail">書いた日：<%= @class_communication.class_communication_day %></div>
-          <div class="second-detail">タイトル：<%= @class_communication.title %></div>
-          <div class="third-detail-show"><%= @class_communication.text %></div>
-        </div>
-      </div>
-
-  </div>
-     </div>
+<div class="class-communication-main"> 
+   <div class="class-communication-right">
+      <div class="class-communication-detail">
        
- 
-</div>
+          
+          <div class="detail-left-communication">
+            <div class="class-communication-title-right">
+               <div class="top-detail-class-communication"><%= @class_communication.class_communication_day %></div>
+               <div class="second-detail-class-communication">タイトル：<%= @class_communication.title %></div>
+            </div>
+            <% @class_communication.images.each do |image| %>
+              <div class="class_communication-images">
+                <%= image_tag image.variant(resize: '680x680') %>
+              </div>
+            <% end %>
+          </div>
+
+          <div id="likes_buttons_<%= @class_communication.id %>">
+            <%= render partial: 'likes/like', locals: {class_communication: @class_communication} %>
+          </div>
+
+          <div class="class-communication-under">
+             <div class="third-detail-class-communication"><%= @class_communication.text %></div>
+          </div>
+
+          <% if current_user.number_id == 52 %>
+            <div class="class-communication-edit-delete">
+              学級通信を
+                <%= link_to "編集する", edit_class_communication_path(@class_communication) %>・
+                <%= link_to "削除する", class_communication_path(@class_communication), method: :delete %>
+            </div>
+          <% end %>
+      </div>
+    </div>
+  </div>
 
 
 <%= render "shared/home_footer" %>
