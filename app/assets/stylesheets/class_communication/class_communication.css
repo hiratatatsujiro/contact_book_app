@@ -1,5 +1,97 @@
-.detail-left-communication {
-  width: 100%;
+.class-communication-main {
+  background-color: #D0F4De;
+  height: calc( 100% - 160px );
+  min-height: calc( 100vh - 160px );
+  display: flex; 
+}
+
+.class-communication-left {
+  width: 20%;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+}
+
+.new-class-communication {
+  font-size: 32px;
+  border: 2px solid black;
+  box-shadow: 4px 2px 2px -2px;
+  margin-bottom: 20px;
+}
+
+.new-class-communication a {
+  text-decoration: none;
+  color: black;
+}
+
+.class-communication-index {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.class-communication-index a {
+  color: black;
+}
+
+.left-class-communication-title {
+  margin-bottom: 10px;
+}
+
+.class-communication-right {
+  width: 50%;
+  margin: 20px auto;
+}
+
+.class-communication-detail {
+  border: 1px solid black;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.class-communication-title-right {
   display: flex;
- 
+  justify-content: left;
+}
+
+.image-data {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.top-detail-class-communication {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.class_communication-images {
+  margin-bottom: 10px;
+}
+
+.class-communication-end {
+  padding: 20px;
+} 
+
+.class-communication-comment h4 {
+  font-size: 24px;
+}
+
+.class-communication-under {
+  margin-bottom: 10px;
+}
+
+.class-communication-edit-delete a{
+  color: red;
+  font-size: 24px;
+}
+
+.class-communication-errors {
+  color: red;
+  text-align: center;
+}
+
+.image-index {
+  margin-top: 10px;
+  text-align: center;
 }
