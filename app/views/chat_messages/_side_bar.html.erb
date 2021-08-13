@@ -2,24 +2,23 @@
   <div class="chat-left">
 
     <div class="chat-left-title">
-      <div class="make-chatroom">
-        <%= link_to "チャットルーム作成", new_room_path %>
-      </div>
+        <div class="make-chatroom">
+          <%= link_to "チャットルーム作成", new_room_path %>
+        </div>
     </div>
     
     <div class="chat-side-index">
-      <div class="chat-side-title">
-        チャットルーム一覧
-      </div>
-      <% current_user.rooms.each do |room| %>
-        <div class="room">
-          <div class="room-name">
-            <%= link_to room.name, room_chat_messages_path(room) %>
-          </div>
+        <div class="chat-side-title">
+          チャットルーム一覧
         </div>
-      <% end %>
- 
-    </div>
+        <% current_user.rooms.each do |room| %>
+         <div class="room">
+            <div class="room-name">
+              <%= link_to room.name, room_chat_messages_path(room) %>
+            </div>
+         </div>
+        <% end %>
+     </div>
 
   </div>
 
