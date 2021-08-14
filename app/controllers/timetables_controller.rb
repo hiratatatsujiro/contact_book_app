@@ -1,7 +1,10 @@
 class TimetablesController < ApplicationController
   before_action :authenticate_user!
+  before_action :find_params, only: [:show, :edit, :update, :destroy]
+  before_action :move_to_index, only: [:show, :edit, :update, :destroy]
+
   def index
-    @timetables = Timetable.all.order(created_at: :desc)
+    @timetables = Timetable.all.order(created_at: :desc).limit(3)
   end
 
   def new
@@ -19,16 +22,13 @@ class TimetablesController < ApplicationController
   end
 
   def show
-    @timetable = Timetable.find(params[:id])
-    @timetables = Timetable.all
   end
 
-  def edit
-    @timetable = Timetable.find(params[:id])
+  def edit 
   end
 
   def update
-    @timetable = Timetable.find(params[:id])
+    
     if @timetable.valid?
       @timetable.update(timetable_params)
       redirect_to timetable_path(@timetable)
@@ -38,7 +38,6 @@ class TimetablesController < ApplicationController
   end
 
   def destroy
-    @timetable = Timetable.find(params[:id])
     @timetable.destroy
     redirect_to timetables_path
   end
@@ -48,4 +47,13 @@ class TimetablesController < ApplicationController
     params.require(:timetable).permit(:next_day, :first_class_id, :second_class_id, :third_class_id, :fourth_class_id, :fifth_class_id, :sixth_class_id, :leave_time, :homework, :preparation, :notice).merge(user_id: current_user.id)
   end
 
+  def find_params
+    @timetable = Timetable.find(params[:id])
+  end
+
+  def move_to_index
+    unless @timetable.user.grade_id == current_user.grade_id && @timetable.user.classroom_id == current_user.classroom_id
+      redirect_to timetables_path
+    end
+  end
 end
