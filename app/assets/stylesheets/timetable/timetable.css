@@ -1,9 +1,90 @@
+.timetable-main {
+  background-color: #D0F4De;
+  min-height: calc( 100％ - 190px );
+  display: flex; 
+}
+
+.timetable-left {
+  width: 20%;
+  background-color: white;
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+  min-height: calc( 100％ - 190px );
+}
+
+.new-timetable {
+  font-size: 32px;
+  border: 2px solid black;
+  box-shadow: 4px 2px 2px -2px;
+  margin-bottom: 20px;
+}
+
+.new-timetable a {
+  text-decoration: none;
+  color: black;
+}
+
+.timetable-index {
+  margin-top: 10px;
+  text-align: center;
+}
+
+.timetable-index a {
+  color: black;
+}
+
+.left-timetable-title {
+  margin-bottom: 10px;
+}
+
+.timetable-right {
+  width: 50%;
+  margin: 20px auto;
+  min-height: calc( 100vh - 190px );
+}
+
 .show-detail {
   display: flex;
   background-color: white;
   border: 1px solid black;
   width: 100%;
-  
+}
+
+
+.index-timetable {
+  background-color: white;
+  border: 1px solid black;
+  display: flex;
+  margin-top: 20px;
+}
+
+.index-timetable li{
+  font-size: 24px;
+}
+
+.timetable-index-left {
+  width: 50%;
+  padding: 30px;
+  border-right: 1px solid black;
+}
+
+.timetable-index-right {
+  width: 50%;
+  padding: 30px;
+  font-size: 24px;
+}
+
+.homework-area {
+  height: 50%;
+}
+
+.timetable-index-under {
+  border: 1px solid black;
+  border-top: none;
+  background-color: white;
+  padding: 30px;
+  font-size: 24px;
 }
 
 .show-left {
@@ -34,12 +115,29 @@
 }
 
 .weight-bold-timetable {
-  margin: 10px 0px;
+  text-align: left;
+  margin-top: 10px;
+  margin-left: 215px;
 }
 
+.select-box-leave-time {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  background-color: white;
+  margin-top: 5px;
+  padding: 5px 8px 4px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 16px;
+  resize: none;
+}
 
-
-
+.timetable-edit-delete a{
+  color: red;
+  font-size: 24px;
+}
 
 
 
