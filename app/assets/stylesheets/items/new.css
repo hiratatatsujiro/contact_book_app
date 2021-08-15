@@ -16,11 +16,16 @@
   text-align: center;
 }
 
-.items-sell-main {
+.form-header-item h1 {
+  font-size: 22px;
+  text-align: center;
+}
+
+.items-sell-main-second {
   background-color: #FFF;
   width: 70vw;
   min-width: 450px;
-  padding: 10vh 15vw;
+  padding: 0 15vw;
 }
 
 .items-sell-title {

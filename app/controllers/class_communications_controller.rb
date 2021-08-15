@@ -1,7 +1,7 @@
 class ClassCommunicationsController < ApplicationController
   before_action :authenticate_user!
   before_action :find_class_communication_params, only: [:show, :edit, :update, :delete]
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     @class_communications = ClassCommunication.all
@@ -24,8 +24,11 @@ class ClassCommunicationsController < ApplicationController
   def show
   end
 
+  def search
+    @class_communications = ClassCommunication.search(params[:keyword])
+  end
+
   def edit
-    
   end
 
   def update  

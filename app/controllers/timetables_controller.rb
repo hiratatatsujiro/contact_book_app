@@ -24,6 +24,10 @@ class TimetablesController < ApplicationController
   def show
   end
 
+  def search
+    @timetables =Timetable.search(params[:keyword])
+  end
+
   def edit 
   end
 

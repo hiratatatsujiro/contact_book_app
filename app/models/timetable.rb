@@ -24,4 +24,12 @@ class Timetable < ApplicationRecord
     validates :fifth_class_id
     validates :sixth_class_id
   end
+
+  def self.search(search)
+    if search != ""
+      Timetable.where('next_day LIKE(?)', "%#{search}%")
+    else
+      Timetable.all
+    end
+  end
 end

@@ -1,6 +1,5 @@
 <%= render "shared/home_header" %>
 
-<%# 商品の概要 %>
 <div class="item-show">
   <div class="item-box">
     <h2 class="name">
@@ -64,10 +63,21 @@
         </tr>
       </tbody>
     </table>
-   
+    <div class="item-end">
+          <div class="item-comment">
+            <div id="comments_area">
+              <%= render partial: 'item_comments/index', locals: { item_comments: @item_comments } %>
+            </div>  
+            <% if user_signed_in? %>
+              <h4 class="comment-title">コメントする</h4>
+              <%= render partial: 'item_comments/form', locals: { item_comment: @item_comment, item: @item } %>
+            <% end %>
+          </div>
+       </div>
   </div>
+ </div> 
 </div>
-  <%= render "shared/home_footer" %>
+ <%= render "shared/home_footer" %>
 
   
 

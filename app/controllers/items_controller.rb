@@ -22,7 +22,14 @@ class ItemsController < ApplicationController
   end
 
   def show
+    @item_comment = ItemComment.new 
+    @item_comments = @item.item_comments
   end
+
+  def search
+    @items =Item.search(params[:keyword])
+  end
+
 
   def edit
   end

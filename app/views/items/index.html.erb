@@ -1,20 +1,15 @@
 <%= render "shared/home_header" %>
-<div class='main'>
-
-
-  
-
-  <%# FURIMAの特徴 %>
-  <div class='feature-contents'>
-    <h2 class='title'>
-      家にある使わなくなった教科書や道具を売っちゃおう！！
-    </h2>
-    <ul class='feature-lists'>
-      <li class='list'>
-        <%= image_tag "item-list1.png", class:"list-pict" %>
-        <h3 class='feature-list-text'>
+  <div class='main'>
+      <div class='feature-contents'>
+        <h2 class='title'>
+          家にある使わなくなった教科書や道具を売っちゃおう！！
+        </h2>
+        <ul class='feature-lists'>
+          <li class='list'>
+            <%= image_tag "item-list1.png", class:"list-pict" %>
+         <h3 class='feature-list-text'>
           楽ちょメンバーで取引！
-        </h3>
+         </h3>
         <p class='feature-list-description'>
           学校で使った教科書、買ったけど使わなかったものありませんか？
         </p>
@@ -31,7 +26,7 @@
       <li class='list'>
         <%= image_tag "item-list2.png", class:"list-pict" %>
         <h3 class='feature-list-text'>
-          クレジット決済に対応
+          クレジット決済
         </h3>
         <p class='feature-list-description'>
           お支払いは、クレジットカードをご用意ください。
@@ -39,11 +34,15 @@
       </li>
     </ul>
   </div>
-  <%# /FURIMAの特徴 %>
-
-  <%# 商品一覧 %>
+  
   <div class='item-contents'>
     <h2 class='title'>ピックアップカテゴリー</h2>
+      <div class="search-index-item">
+            <%= form_with(url: search_items_path, local: true, method: :get, class: "search-form-item") do |form| %>
+            <%= form.text_field :keyword, placeholder: "商品を検索する", class: "search-input-item" %>
+            <%= form.submit "検索", class: "search-btn-item" %>
+            <% end %>
+      </div>
     <div class="subtitle" >
       新規投稿商品
     </div>
@@ -92,7 +91,7 @@
       <% end %>
     </ul>
   </div>
-  <%# /商品一覧 %>
+  
 </div>
 <%= link_to(new_item_path, class: 'order-btn') do %>
   <span class='purchase-btn-text'>出品する</span>
