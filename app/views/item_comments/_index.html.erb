@@ -1,0 +1,6 @@
+<% item_comments.each do |item_comment| %>
+  <% unless item_comment.id.nil? %>
+    <p><%= link_to "名前：#{item_comment.user.nickname}さん", user_path(item_comment.user.id), class: "comment-name" %></p>
+    <p class="comment-text-item"><%= item_comment.comment %></p>
+  <% end %>
+<% end %>

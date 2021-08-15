@@ -13,11 +13,23 @@ Rails.application.routes.draw do
     resources :chat_messages, only: [:index, :create]
   end
   resources :items do
+    collection do
+      get 'search'
+    end
+    resources :item_comments, only: :create
     resources :orders, only: [:index, :create]
   end
-  resources :class_communications
+  resources :class_communications do
+    collection do
+      get 'search'
+    end
+  end
   post 'like/:id' => 'likes#create', as: 'create_like'
   delete 'like/:id' => 'likes#destroy', as: 'destroy_like'
-  resources :timetables
+  resources :timetables do
+    collection do
+      get 'search'
+    end
+  end
   resources :contacts
 end

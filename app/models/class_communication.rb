@@ -9,4 +9,12 @@ class ClassCommunication < ApplicationRecord
     validates :text
     validates :images
   end
+
+  def self.search(search)
+    if search != ""
+      ClassCommunication.where('text LIKE(?)', "%#{search}%")
+    else
+      ClassCommunication.all
+    end
+  end
 end

@@ -1,0 +1,9 @@
+<%= form_with(model: [item, item_comment]) do |form| %>
+  <div class="comment-flex">
+  <div>
+    <%= form.text_area :comment, class: "comment-area-item" %>
+  </div>
+  <div class="actions">
+    <%= form.submit "コメントをする", class: "register-pink-btn-item"%>
+  </div>
+<% end %>

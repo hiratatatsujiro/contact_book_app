@@ -45,6 +45,8 @@ main {
   background-color: white;
   height: calc( 100vh - 160px );
   display: flex; 
+  background-image: url(../classroom1.png);
+  background-size: cover;
 }
 
 .left-menu {

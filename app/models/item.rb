@@ -2,6 +2,7 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   has_one :order
+  has_many :item_comments
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category
@@ -29,5 +30,13 @@ class Item < ApplicationRecord
     validates :pay_for_shopping_id
     validates :delivery_area_id
     validates :day_to_ship_id
+  end
+
+  def self.search(search)
+    if search != ""
+      Item.where('name LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
   end
 end

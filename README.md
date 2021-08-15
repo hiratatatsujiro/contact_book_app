@@ -57,6 +57,7 @@ Things you may want to cover:
 - has_many :likes
 - has_many :timetables
 - has_many :contacts
+- has_many :item_comments
 
 ## diariesテーブル
 | Column             | Type       | Options           |
@@ -69,12 +70,11 @@ Things you may want to cover:
 ### Association
 - has_many :comments, dependent: :destroy
 - belongs_to :user
-- has_many :tag_relationships, dependent: :destroy
-- has_many :tags, through: :tag_relationship
 
-## diary_comments
+## comments
 | Column             | Type       | Options           |
 |--------------------|------------|-------------------|
+| comment            | string     | null: false       |          
 | user               | references | foreign_key: true |
 | diary              | references | foreign_key: true |
 
@@ -131,6 +131,18 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - has_one :order
+- has_many :item_comments
+
+## item_comments
+| Column             | Type       | Options           |
+|--------------------|------------|-------------------|
+| comment            | string     | null: false       |          
+| user               | references | foreign_key: true |
+| item               | references | foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :item
 
 ## ordersテーブル
 | Column             | Type       | Options           |

@@ -26,6 +26,10 @@ class DiariesController < ApplicationController
     @comments = @diary.comments
   end
 
+  def search
+    @diaries = Diary.search(params[:keyword])
+  end
+
   def edit  
   end
 
