@@ -220,7 +220,7 @@
   width: 100%;
   padding: 20px;
   border: 1px solid black;
-  background-color: #E4C1F9;
+  background-color: #D0F4DE;
 }
 
 .comment-text-item {
@@ -250,3 +250,37 @@
   border: 1px solid black;
   padding: 10px;
 }
+<<<<<<< Updated upstream
+=======
+
+@media (max-width: 1000px) {
+  .item-show {
+    background-color: #f8f8f8;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  .detail-table {
+    margin-bottom: 30px;
+    width: 50%;
+  }
+
+
+.item-end {
+  background-color: white;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: #E4C1F9;
+}
+}
+
+/* スマホ表示時 */
+@media (max-width: 500px) {
+  p {
+    font-size: 20px;
+  }
+}
+>>>>>>> Stashed changes

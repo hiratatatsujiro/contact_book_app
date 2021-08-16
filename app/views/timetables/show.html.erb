@@ -34,6 +34,9 @@
                 <%= link_to "編集する", edit_timetable_path(@timetable) %>・
                 <%= link_to "削除する", timetable_path(@timetable), method: :delete %>
               </div>
+              <div class="back-btn-new-show">
+          <%=link_to 'もどる', timetables_path, class: "back-btn-show"%>
+        </div>
       </div>
    </div>
 

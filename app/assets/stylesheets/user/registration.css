@@ -165,6 +165,13 @@
   margin-top: 50px;
 }
 
+.register-btn-new {
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 50px;
+  height: 100px;
+}
+
 .register-pink-btn {
   width: 100%;
   background: #ff99c8;

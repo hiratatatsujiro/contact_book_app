@@ -176,6 +176,7 @@
 .sell-btn-contents {
   width: 100%;
   text-align: center;
+ 
 }
 
 .sell-btn {
@@ -197,7 +198,29 @@
   text-decoration: none;
 }
 
-/* /下部ボタン */
+.back-btn-show {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 15px 35%;
+  text-decoration: none;
+  line-height: 100px;
+}
+
+
+
+.back-btn-new {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.back-btn-new-show {
+  width: 50%;
+  margin: 0 auto;
+  height: 100px;
+}
+
 
 .items-sell-footer {
   background-color: #f5f5f5;
