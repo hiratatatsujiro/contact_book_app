@@ -1,10 +1,6 @@
 .timetable-main {
   background-color: #D0F4De;
-<<<<<<< Updated upstream
-  min-height: calc( 100％ - 190px );
-=======
-  min-height: calc( 100vh - 160px );
->>>>>>> Stashed changes
+  min-height: calc( 100% - 160px );
   display: flex; 
 }
 
@@ -14,11 +10,7 @@
   border: 1px solid black;
   text-align: center;
   padding: 10px;
-<<<<<<< Updated upstream
   min-height: calc( 100％ - 190px );
-=======
-  min-height: calc( 100vh - 160px );
->>>>>>> Stashed changes
 }
 
 .new-timetable {
@@ -49,10 +41,8 @@
 .timetable-right {
   width: 50%;
   margin: 20px auto;
-<<<<<<< Updated upstream
-  min-height: calc( 100vh - 190px );
-=======
-  min-height: calc( 100vh - 160px );
+  height: calc( 100% - 160px );
+
 }
 
 .timetable-right-show {
@@ -60,7 +50,6 @@
   margin: 20px auto;
   height: calc( 100% - 160px );
   min-height: calc( 100vh - 160px );
->>>>>>> Stashed changes
 }
 
 .show-detail {
@@ -158,6 +147,44 @@
   font-size: 24px;
 }
 
+@media (max-width: 1000px) {
+  .timetable-left {
+    width: 60%;
+    margin:0 auto;
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;  
+  }
 
+  .timetable-right {
+    display: none;
+  }
 
+  .timetable-right-show {
+    margin: 20px auto;
+  }
+
+  .index-timetable li{
+    font-size: 18px;
+  }
+
+  .timetable-index-right {
+    font-size: 18px;
+  }
+
+  .timetable-index-under {
+    font-size: 18px;
+  }
+
+  
+
+}
+
+/* スマホ表示時 */
+@media (max-width: 500px) {
+  p {
+    font-size: 20px;
+  }
+}
 
