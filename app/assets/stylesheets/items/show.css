@@ -274,14 +274,11 @@
   border: 1px solid black;
   background-color: #E4C1F9;
 
-
-
-
 }
-
+}
 /* スマホ表示時 */
 @media (max-width: 500px) {
   p {
     font-size: 20px;
   }
-
+}
