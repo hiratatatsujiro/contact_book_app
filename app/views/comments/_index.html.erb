@@ -1,7 +1,7 @@
 <% comments.each do |comment| %>
   <% unless comment.id.nil? %>
     <p><%= link_to "名前：#{comment.user.nickname}さん", user_path(comment.user.id), class: "comment-name" %></p>
-    <p><%= comment.comment %></p>
-    <p>-------------------------------------------</p>
+    <p class="comment-name" ><%= comment.comment %></p>
+    <p class="comment-line">-------------------------------------------</p>
   <% end %>
 <% end %>
