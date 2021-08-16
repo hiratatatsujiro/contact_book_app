@@ -15,7 +15,7 @@ class Diary < ApplicationRecord
     if search != ""
       Diary.where('diary LIKE(?)', "%#{search}%")
     else
-      Diary.all
+      Diary.includes(:user)
     end
   end
 end

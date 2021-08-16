@@ -23,7 +23,7 @@ class ItemsController < ApplicationController
 
   def show
     @item_comment = ItemComment.new 
-    @item_comments = @item.item_comments
+    @item_comments = @item.item_comments.includes(:user)
   end
 
   def search
@@ -35,8 +35,8 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @item.update(item_params)
     if @item.valid? 
-      @item.update(item_params)
       redirect_to items_path
     else
       render :edit
