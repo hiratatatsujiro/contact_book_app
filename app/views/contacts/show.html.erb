@@ -19,8 +19,10 @@
           <% end %>
           <%= link_to "削除する", contact_path(@contact), method: :delete %>
       </div>
-
     </div>
+      <div class="back-btn-new-show">
+          <%=link_to 'もどる', contacts_path, class: "back-btn-show"%>
+        </div>
   </div>
 
   <%= render "shared/home_footer" %>

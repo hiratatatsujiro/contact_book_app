@@ -25,7 +25,9 @@
                 <%= link_to "削除する", diary_path(@diary), method: :delete %>
               </div>
          </div>
-        
+        <div class="back-btn-new-show">
+          <%=link_to 'もどる', diaries_path, class: "back-btn-show"%>
+        </div>
 
      </div>
 

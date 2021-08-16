@@ -219,7 +219,7 @@
   width: 100%;
   padding: 20px;
   border: 1px solid black;
-  background-color: #E4C1F9;
+  background-color: #D0F4DE;
 }
 
 .comment-text-item {
@@ -250,6 +250,7 @@
   padding: 10px;
 }
 
+
 @media (max-width: 1000px) {
   .item-show {
     background-color: #f8f8f8;
@@ -267,12 +268,15 @@
 
 .item-end {
   background-color: white;
-  width: 50%;
+
+  width: 100%;
   padding: 20px;
   border: 1px solid black;
   background-color: #E4C1F9;
 
-}
+
+
+
 }
 
 /* スマホ表示時 */
@@ -280,4 +284,4 @@
   p {
     font-size: 20px;
   }
-}
+

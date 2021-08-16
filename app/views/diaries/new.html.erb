@@ -58,9 +58,12 @@
       <%= f.text_area :diary, class:"input-introduction", placeholder:"例)いつ、どこで、誰が、誰と、何をどうしましたか？" %>
   </div>
   
-  <div class='register-btn'>
+  <div class='register-btn-new'>
     <%= f.submit "登録" ,class:"register-pink-btn" %>
   </div>
+  <div class="back-btn-new">
+    <%=link_to 'もどる', contacts_path, class:"back-btn" %>
+   </div>
   </div>
 <% end %>
 
