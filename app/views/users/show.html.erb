@@ -6,22 +6,26 @@
     <div class="diary-detail">
       <div>
       <div class="detail-left-show">
-         <%= image_tag @user.image.variant(resize: '500x500') %> 
+         <%= image_tag @user.image.variant(resize: '680x680') %> 
       </div>
-      <div class="diary-edit-delete">
-          ユーザー情報を
-          <%= link_to "編集する", edit_user_registration_path(@user) %>
-      </div>
+      
       </div>
     
       <div class="detail-diary">
         <div class="right">
           <div class="top-detail"><%= @user.grade.name %> <%= @user.classroom.name %> <%= @user.number.name %></div>
           <div class="second-detail">名前：<%= @user.last_name %><%= @user.first_name %></div>
+          <div class="second-detail">名前：<%= @user.last_name %><%= @user.first_name %></div>
+          <div class="second-detail">名前：<%= @user.last_name %><%= @user.first_name %></div>
+          <div class="second-detail">名前：<%= @user.last_name %><%= @user.first_name %></div>
+          <div class="second-detail">名前：<%= @user.last_name %><%= @user.first_name %></div>
           <div class="third-detail-show"><%= @user.introduction %></div>
         </div>
       </div>
-
+<div class="diary-edit-delete">
+          ユーザー情報を
+          <%= link_to "編集する", edit_user_registration_path(@user) %>
+      </div>
   </div>
      </div>
 

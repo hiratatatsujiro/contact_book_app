@@ -45,7 +45,6 @@ main {
   background-color: white;
   height: calc( 100vh - 160px );
   display: flex; 
-  background-image: url(../classroom1.png);
   background-size: cover;
 }
 
@@ -104,4 +103,22 @@ footer a{
 
 .home-image {
   width: 100%;
+}
+
+@media (max-width: 1000px) {
+  .border-box {
+    border: 1px solid black;
+    width: 40vw;
+    height: 50vh;
+    background-color: #D0F4De;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 2px 2px 4px -2px black;
+    border-radius: 4px;
+  }
+  
+}
+/* スマホ表示時 */
+@media (max-width: 500px) {
+  
 }
