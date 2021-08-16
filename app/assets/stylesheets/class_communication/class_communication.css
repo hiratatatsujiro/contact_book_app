@@ -43,6 +43,11 @@
   margin: 20px auto;
 }
 
+.class-communication-right-show {
+  width: 50%;
+  margin: 20px auto;
+}
+
 .class-communication-detail {
   border: 1px solid black;
   background-color: white;
@@ -94,4 +99,45 @@
 .image-index {
   margin-top: 10px;
   text-align: center;
+}
+
+@media (max-width: 1000px) {
+  .class-communication-left {
+    width: 60%;
+    margin:0 auto;
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;  
+  }
+
+  .class-communication-right {
+    display: none;
+  }
+
+  .class-communication-right-show {
+    margin: 20px auto;
+    width: 95%;
+  }
+
+  .class-communication-title-right {
+    font-size: 24px;
+  }
+
+  .third-detail-class-communication {
+    font-size: 24px;
+  }
+
+
+
+
+}
+
+
+
+/* スマホ表示時 */
+@media (max-width: 500px) {
+  p {
+    font-size: 20px;
+  }
 }
