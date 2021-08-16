@@ -31,6 +31,7 @@
         </div>
         <% @timetables.each do |timetable| %>
           <% if timetable.user.grade_id == current_user.grade_id && timetable.user.classroom_id == current_user.classroom_id %>
+             <%= link_to timetable_path(timetable) , class: "link-font" do %>
              <div class="index-timetable">
                 <div class="timetable-index-left">
                   <ul>
@@ -58,6 +59,7 @@
                     お知らせ<br><%= timetable.notice %>
                   </div>
              </div>
+            <% end %>
           <% end %>
         <% end %>
         

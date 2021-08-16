@@ -115,4 +115,48 @@
 .diary-errors {
   color: red;
   text-align: center;
+<<<<<<< Updated upstream
+=======
+}
+
+.link-font {
+  color: black;
+}
+
+@media (max-width: 1000px) {
+  
+  .diary-left {
+    width: 60%;
+    margin:0 auto;
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    padding: 10px;  
+  }
+
+  .diary-right {
+    display: none;
+  }
+
+  .diary-right-show {
+    padding: 10px;
+    width: 100%;
+  }
+
+  .comment-name {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .comment-line {
+    display: none;
+  }
+}
+
+/* スマホ表示時 */
+@media (max-width: 500px) {
+  p {
+    font-size: 20px;
+  }
+>>>>>>> Stashed changes
 }

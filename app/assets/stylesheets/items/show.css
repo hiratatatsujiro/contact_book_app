@@ -274,7 +274,14 @@
   padding: 20px;
   border: 1px solid black;
   background-color: #E4C1F9;
+<<<<<<< Updated upstream
 }
+=======
+
+
+}
+
+>>>>>>> Stashed changes
 }
 
 /* スマホ表示時 */
@@ -282,5 +289,10 @@
   p {
     font-size: 20px;
   }
+<<<<<<< Updated upstream
+}
+>>>>>>> Stashed changes
+=======
+
 }
 >>>>>>> Stashed changes
