@@ -34,7 +34,6 @@ class ClassCommunicationsController < ApplicationController
   def update  
     @class_communication.update(class_communication_params)
     if @class_communication.valid? 
-      @class_communication.save
       redirect_to class_communications_path
     else
       render :edit

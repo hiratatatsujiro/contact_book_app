@@ -4,7 +4,7 @@ class DiariesController < ApplicationController
   before_action :move_to_index, only: [:show, :edit, :update, :delete]
   
   def index
-    @diaries = Diary.all
+    @diaries = Diary.includes(:user)
   end
 
   def new
@@ -23,7 +23,7 @@ class DiariesController < ApplicationController
 
   def show
     @comment = Comment.new 
-    @comments = @diary.comments
+    @comments = @diary.comments.includes(:user)
   end
 
   def search
@@ -34,8 +34,8 @@ class DiariesController < ApplicationController
   end
 
   def update
+    @diary.update(diary_params)
     if @diary.valid?
-      @diary.update(diary_params)
       redirect_to diaries_path
     else
       render :edit

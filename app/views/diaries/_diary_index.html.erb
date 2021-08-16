@@ -1,0 +1,69 @@
+<%= render "shared/home_header" %>
+
+  <div class="diary-main">
+      
+      <div class="diary-left">     
+           <div class="new-diary">
+                <%= link_to "日記を書く", new_diary_path %>
+           </div>
+    
+           <div class="left-diary-title">
+            <p>これまでの日記</p>
+           </div>
+    
+           <div class="left-diary-index">
+             <% @diaries.each do |diary|%>
+              <% if diary.user.id == current_user.id %>
+                <div class="diary-index" id="diary-index">
+                    <div class="diary-day">
+                      <%= link_to diary.diary_day, diary_path(diary)%>
+                    </div>
+         
+                    <div class="diary-title">
+                      <%= link_to diary.title, diary_path(diary)%>
+                    </div>
+               </div>
+              <% elsif diary.user.grade_id == current_user.grade_id && diary.user.classroom_id == current_user.classroom_id && current_user.number_id == 52 %>
+                <div class="diary-index" id="diary-index">
+                    <div class="diary-day">
+                      <%= link_to diary.diary_day, diary_path(diary)%>
+                    </div>
+         
+                    <div class="diary-title">
+                      <%= link_to "#{diary.user.last_name} #{diary.user.first_name}", diary_path(diary)%>
+                    </div>
+               </div>
+              <% end %>
+             <% end %>
+         </div>  
+      </div>
+  
+      <div class="diary-right">
+        <div class="search-index">
+            <%= form_with(url: search_diaries_path, local: true, method: :get, class: "search-form") do |form| %>
+            <%= form.text_field :keyword, placeholder: "日記を検索する", class: "search-input" %>
+            <%= form.submit "検索", class: "search-btn" %>
+            <% end %>
+          </div>
+        <% @diaries.each do |diary| %>
+          <% if diary.user.id == current_user.id || diary.user.grade_id == current_user.grade_id && diary.user.classroom_id == current_user.classroom_id && current_user.number_id == 52 %>
+          <div class="diary-detail">
+             <div class="diary-title-right">
+                <div class="top-detail"><%= diary.diary_day %></div> 
+                <div class="first-detail"><%= diary.user.last_name %> <%= diary.user.first_name %>さんの日記</div>
+             </div>
+                <div class="second-detail">タイトル：<%= diary.title %></div>
+             <div class="detail-pic">
+                <%= image_tag diary.image.variant(resize: '680x680') %>
+             </div>
+                <div class="diary-under">
+                    <div class="third-detail"><%= diary.diary %></div>
+                </div>
+          </div>
+          <% end %>
+        <% end %>
+      </div>
+
+  </div>
+
+<%= render "shared/home_footer" %>

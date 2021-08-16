@@ -32,9 +32,8 @@ class TimetablesController < ApplicationController
   end
 
   def update
-    
+    @timetable.update(timetable_params)
     if @timetable.valid?
-      @timetable.update(timetable_params)
       redirect_to timetable_path(@timetable)
     else
       render "edit"
