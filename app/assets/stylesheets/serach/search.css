@@ -50,3 +50,40 @@
   border-radius: 5px;
   cursor: pointer;
 }
+
+@media (max-width: 500px) {
+  .order-btn {
+    width: 120px;
+    background: #FF99C8;
+    text-align: center;
+    border-radius: 4%;
+    bottom: 100px;
+    right: 30px;
+    position: fixed;
+    padding: 15px;
+  }
+
+  .item-contents>.title {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+
+  .search-form-item .search-input-item {
+    width: 70%;
+    height: 40px;
+    margin-right: 10px;
+    padding: 5px;
+    border: 1px solid black;
+  }
+  
+  .search-form-item .search-btn-item {
+    width: 10%;
+    height: 40px;
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}

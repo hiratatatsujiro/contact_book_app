@@ -9,7 +9,7 @@
 
 
    <%=render 'shared/error_messages', resource: @timetable %>
-
+    <div class="container">
     <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">学校にくる日</label>
@@ -96,7 +96,10 @@
         <div class='register-btn-new'>
         <%= f.submit "登録" ,class:"register-pink-btn" %>
         </div>
+
         <div class="back-btn-new">
          <%=link_to 'もどる', timetables_path, class:"back-btn" %>
         </div>
+        </div>
+
         <% end %>

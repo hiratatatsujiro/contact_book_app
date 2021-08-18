@@ -8,7 +8,7 @@
   </div>
     
    <%= render "shared/error_messages", resource: @room %>
-
+    <div class="container">
     <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">チャットルーム名</label>
@@ -35,8 +35,11 @@
    <div class='chat-room-form_field'>
      <%= f.submit class: 'register-pink-btn-chat'%>
    </div>
+
+  
    <div class="back-btn-new">
     <%=link_to 'もどる', rooms_path, class:"back-btn-show" %>
    </div>
+  </div>
 
 <% end %>

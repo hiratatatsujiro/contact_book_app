@@ -23,10 +23,11 @@
 
 .main_chat {
   width: 85%;
+  min-height: calc( 100% - 160px );
 }
 
 .main-main {
-  min-height: calc( 100% - 160px );
+  min-height: calc( 100vh - 290px );
   padding: 20px;
 }
 

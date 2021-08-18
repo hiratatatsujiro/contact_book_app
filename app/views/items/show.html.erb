@@ -30,9 +30,11 @@
       <% else %>
         <%= link_to "購入画面に進む", item_orders_path(@item), class:"item-pink-btn"%>
       <% end %>
-      <div class="back-btn-new">
+
+      <div class="back-btn-new-item">
           <%=link_to 'もどる', items_path, class: "back-btn-show"%>
       </div>
+
     <% end %>
 
     <div class="item-explain-box">

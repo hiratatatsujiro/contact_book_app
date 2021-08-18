@@ -8,7 +8,7 @@
    </div>
 
    <%= render "devise/shared/error_messages", resource: resource %>
-
+   <div class="container">
    <div class="form-group">
       <div class='form-text-wrap'>
       <label class="form-text">プロフィール画像</label>
@@ -114,10 +114,13 @@
     </div>
   </div>
   
-  <div class='register-btn'>
+  <div class='register-btn-new'>
     <%= f.submit "登録" ,class:"register-pink-btn" %>
   </div>
-
+  <div class="back-btn-new">
+    <%=link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
+<div class="container">
 <% end %>
 
 

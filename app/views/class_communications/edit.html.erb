@@ -8,6 +8,7 @@
   </div>
  
  <%= render "shared/error_messages", resource: @class_communication %>
+  <div class="container">
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">書いた日</label>
@@ -36,6 +37,7 @@
     <%= f.file_field :images, name: "class_communication[images][]", class:"profile_image", id:"profile_image" %>
   </div>  
   <div id="image-list" class="image-preview">
+  <div id="image-list" class="image-preview-responsive">
   </div> 
   <% @class_communication.images.each do |image| %>
      <div class="image-index">
@@ -69,6 +71,7 @@
   <div class="back-btn-new">
     <%=link_to 'もどる', class_communications_path, class:"back-btn" %>
    </div>
+</div>
 </div>
 <% end %>
 

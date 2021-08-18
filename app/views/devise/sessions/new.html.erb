@@ -12,7 +12,7 @@
     <%= flash[:notice] %>
     <%= flash[:alert] %>
   </div>
-
+  <div class="container">
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">メールアドレス</label>
@@ -32,7 +32,10 @@
   <div class='login-btn'>
     <%= f.submit "ログイン" ,class:"login-pink-btn" %>
   </div>
+  <div class="back-btn-new">
+    <%=link_to 'もどる', root_path, class:"back-btn-show" %>
+  </div>
   
 </div>
-
+</div>
 <% end %>

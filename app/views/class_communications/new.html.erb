@@ -8,7 +8,7 @@
   </div>
  
   <%= render "shared/error_messages", resource: @class_communication %>
-  
+  <div class="container">
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">書いた日</label>
@@ -62,6 +62,7 @@
 <div class="back-btn-new">
     <%=link_to 'もどる', class_communications_path, class:"back-btn" %>
    </div>
+</div>
 </div>
 <% end %>
 
