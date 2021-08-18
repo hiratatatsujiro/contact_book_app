@@ -47,6 +47,7 @@
           </div>
         <% @diaries.each do |diary| %>
           <% if diary.user.id == current_user.id || diary.user.grade_id == current_user.grade_id && diary.user.classroom_id == current_user.classroom_id && current_user.number_id == 52 %>
+          <%= link_to diary_path(diary) , class: "link-font" do %>
           <div class="diary-detail">
              <div class="diary-title-right">
                 <div class="top-detail"><%= diary.diary_day %></div> 
@@ -60,6 +61,7 @@
                     <div class="third-detail"><%= diary.diary %></div>
                 </div>
           </div>
+          <% end %>
           <% end %>
         <% end %>
       </div>

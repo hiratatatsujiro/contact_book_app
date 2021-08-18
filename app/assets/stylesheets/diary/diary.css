@@ -130,6 +130,10 @@
   text-align: center;
 }
 
+.link-font {
+  color: black;
+}
+
 @media (max-width: 1000px) {
   
   .diary-left {
@@ -162,11 +166,9 @@
 
 /* スマホ表示時 */
 @media (max-width: 500px) {
-<<<<<<< Updated upstream
-  p {
-    font-size: 20px;
-  }
-=======
+
+  
+
 
 .diary-end {
   padding: 20px;
@@ -190,5 +192,5 @@
   text-align: center;
 }
 
->>>>>>> Stashed changes
+
 }

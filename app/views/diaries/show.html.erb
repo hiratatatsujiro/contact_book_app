@@ -10,7 +10,7 @@
              </div>
              <div class="second-detail">タイトル：<%= @diary.title %></div>
            
-            <div class="detail-pic">
+             <div class="detail-pic">
                <%= image_tag @diary.image.variant(resize: '680x680')%> 
             </div>
             <div class="detail-pic-responsive">
@@ -20,17 +20,16 @@
             <div class="diary-under">
                 <div class="third-detail-show"><%= @diary.diary %></div>
             </div>
-             <div class="diary-edit-delete">
+            <div class="diary-edit-delete">
               日記を
               <% if @diary.user.id == current_user.id %>
                 <%= link_to "編集する", edit_diary_path(@diary) %>・
               <% end %>
                 <%= link_to "削除する", diary_path(@diary), method: :delete %>
-              </div>
-<<<<<<< Updated upstream
+             </div>
+
          </div>
-        
-=======
+
           </div>
              <div class="diary-end−responsive">
             <div class="diary-comment">
@@ -46,7 +45,11 @@
             <div class="back-btn-new-show">
              <%=link_to 'もどる', diaries_path, class: "back-btn-show"%>
           </div>
->>>>>>> Stashed changes
+
+        <div class="back-btn-new-show">
+          <%=link_to 'もどる', diaries_path, class: "back-btn-show"%>
+        </div>
+
 
          </div>
 

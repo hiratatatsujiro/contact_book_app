@@ -39,6 +39,7 @@
           </div>
           <% @class_communications.each do |class_communication| %>
           <% if class_communication.user.grade_id == current_user.grade_id && class_communication.user.classroom_id == current_user.classroom_id %>
+            <%= link_to class_communication_path(class_communication) , class: "link-font" do %>
              <div class="class-communication-detail">
                <div class="image-data">
                   <div class="top-detail-class-communication"><%= class_communication.class_communication_day %></div>
@@ -58,6 +59,7 @@
                    <div class="third-detail-class-communication"><%= class_communication.text %></div>
                </div>
              </div>
+             <% end %>
             <% end %>
            <% end %>
        </div>
