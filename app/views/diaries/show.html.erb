@@ -27,31 +27,29 @@
               <% end %>
                 <%= link_to "削除する", diary_path(@diary), method: :delete %>
              </div>
-
          </div>
-
-          </div>
-             <div class="diary-end−responsive">
+            <div class="diary-end−responsive">
             <div class="diary-comment">
-            <h4 class="comment-title">コメント</h4>
-            <div id="comments_area">
-              <%= render partial: 'comments/index', locals: { comments: @comments } %>
-            </div>  
-            <% if user_signed_in? %>
-              <%= render partial: 'comments/form', locals: { comment: @comment, diary: @diary } %>
-            <% end %>
+             <h4 class="comment-title">コメント</h4>
+              <div id="comments_area">
+                <%= render partial: 'comments/index', locals: { comments: @comments } %>
+              </div>  
+                 <% if user_signed_in? %>
+                    <%= render partial: 'comments/form', locals: { comment: @comment, diary: @diary } %>
+                 <% end %>
             </div>
          </div> 
-            <div class="back-btn-new-show">
+         <div class="back-btn-new-show">
              <%=link_to 'もどる', diaries_path, class: "back-btn-show"%>
-          </div>
-
-        <div class="back-btn-new-show">
-          <%=link_to 'もどる', diaries_path, class: "back-btn-show"%>
         </div>
+      </div>
 
+         
 
-         </div>
+          
+
+         
+         
 
          <div class="diary-end">
             <div class="diary-comment">
