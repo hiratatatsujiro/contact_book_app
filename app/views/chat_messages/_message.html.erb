@@ -1,12 +1,15 @@
 <div class="messi">
-  <div class="one-message">
-    <div class="name-date">
-      <div class="name"><%= message.user.nickname %></div>
-      <div class="date"><%= message.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+   <div class="one-message">
+      <div class="name-date">
+         <div class="name"><%= message.user.nickname %></div>
+         <div class="date"><%= message.created_at.strftime('%Y/%m/%d %H:%M') %></div>
+      </div>
+        <div class="message"><%= message.content %></div>
     </div>
-    <div class="message"><%= message.content %></div>
-  </div>
-    <div>
+    <div class="detail-pic">
       <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
     </div>
-   </div>
+    <div class="detail-pic-responsive">
+    <%= image_tag message.image.variant(resize: '200x200'), class: 'message-image' if message.image.attached? %>
+    </div>
+</div>

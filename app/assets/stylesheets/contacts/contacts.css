@@ -112,7 +112,11 @@
 
 /* スマホ表示時 */
 @media (max-width: 500px) {
-  p {
-    font-size: 20px;
+  .contact-show {
+    background-color: #D0F4DE;
+    padding: 3% 3%;
+    height: calc( 100% - 160px );
+    min-height: calc( 100vh - 160px );
+    font-size: 16px;
   }
 }

@@ -11,7 +11,10 @@
              <div class="second-detail">タイトル：<%= @diary.title %></div>
            
             <div class="detail-pic">
-               <%= image_tag @diary.image.variant(resize: '680x680') %> 
+               <%= image_tag @diary.image.variant(resize: '680x680')%> 
+            </div>
+            <div class="detail-pic-responsive">
+               <%= image_tag @diary.image.variant(resize: '300x300')%>
             </div>
     
             <div class="diary-under">
@@ -24,13 +27,13 @@
               <% end %>
                 <%= link_to "削除する", diary_path(@diary), method: :delete %>
               </div>
+<<<<<<< Updated upstream
          </div>
         
-
-     </div>
-
-       <div class="diary-end">
-          <div class="diary-comment">
+=======
+          </div>
+             <div class="diary-end−responsive">
+            <div class="diary-comment">
             <h4 class="comment-title">コメント</h4>
             <div id="comments_area">
               <%= render partial: 'comments/index', locals: { comments: @comments } %>
@@ -38,8 +41,26 @@
             <% if user_signed_in? %>
               <%= render partial: 'comments/form', locals: { comment: @comment, diary: @diary } %>
             <% end %>
+            </div>
+         </div> 
+            <div class="back-btn-new-show">
+             <%=link_to 'もどる', diaries_path, class: "back-btn-show"%>
           </div>
-       </div>
+>>>>>>> Stashed changes
+
+         </div>
+
+         <div class="diary-end">
+            <div class="diary-comment">
+            <h4 class="comment-title">コメント</h4>
+            <div id="comments_area">
+              <%= render partial: 'comments/index', locals: { comments: @comments } %>
+            </div>  
+            <% if user_signed_in? %>
+              <%= render partial: 'comments/form', locals: { comment: @comment, diary: @diary } %>
+            <% end %>
+            </div>
+         </div> 
  
     </div>
 

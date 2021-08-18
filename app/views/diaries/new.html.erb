@@ -2,22 +2,24 @@
 <%= form_with model: @diary, url: diaries_path, class: 'registration-main', local: true do |f| %>
 
   <div class='form-wrap'>
-  <div class='form-header'>
-    <h1 class='form-header-text'>
-      日記投稿
-    </h1>
-  </div>
+   
+       <div class='form-header'>
+          <h1 class='form-header-text'>
+            日記投稿
+         </h1>
+       </div>
  
-  <%= render "shared/error_messages", resource: @diary %>
-  
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">書いた日</label>
-      <span class="indispensable">必須</span>
-  </div>
+        <%= render "shared/error_messages", resource: @diary %>
+   <div class="container">
+       <div class="form-group">
+   
+         <div class='form-text-wrap'>
+            <label class="form-text">書いた日</label>
+               <span class="indispensable">必須</span>
+         </div>
     
-  <div class='input-birth-wrap'>
-      <%= raw sprintf(
+         <div class='input-birth-wrap'>
+            <%= raw sprintf(
                   f.date_select(
                     :diary_day,
                     class:'select-birth',
@@ -28,39 +30,53 @@
                     end_year: (Time.now.year + 5),
                     date_separator: '%s'),
                   "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
-    </div>
-  </div>
+         </div>
+       </div>
 
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">画像</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <%= f.file_field :image, class:"profile_image", id:"profile_image_new" %>
-  </div>
-  <div id="image-list-preview" class="image-preview">
-  </div>
-
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">タイトル</label>
-      <span class="indispensable">必須</span>
-    </div>
-    <%= f.text_field :title, class:"input-default", id:"nickname", placeholder:"例) 運動会がありました！", maxlength:"40" %>
-  </div>
-
-
-  <div class="form-group">
-    <div class='form-text-wrap'>
-      <label class="form-text">日記</label>
-      <span class="indispensable">必須</span>
-    </div>
-      <%= f.text_area :diary, class:"input-introduction", placeholder:"例)いつ、どこで、誰が、誰と、何をどうしましたか？" %>
-  </div>
+       <div class="form-group">
+          
+          <div class='form-text-wrap'>
+            <label class="form-text">画像</label>
+             <span class="indispensable">必須</span>
+          </div>
+          <%= f.file_field :image, class:"profile_image", id:"profile_image_new" %>
+       </div>
   
+        <div id="image-list-preview" class="image-preview"></div>
+
+        <div class="form-group">
+    
+          <div class='form-text-wrap'>
+            <label class="form-text">タイトル</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_field :title, class:"input-default", id:"nickname", placeholder:"例) 運動会がありました！", maxlength:"40" %>
+       </div>
+
+
+       <div class="form-group">
+
+          <div class='form-text-wrap'>
+            <label class="form-text">日記</label>
+            <span class="indispensable">必須</span>
+          </div>
+          <%= f.text_area :diary, class:"input-introduction", placeholder:"例)いつ、どこで、誰が、誰と、何をどうしましたか？" %>
+       </div>
+  
+<<<<<<< Updated upstream
   <div class='register-btn'>
     <%= f.submit "登録" ,class:"register-pink-btn" %>
   </div>
+=======
+       <div class='register-btn-new'>
+         <%= f.submit "登録" ,class:"register-pink-btn" %>
+       </div>
+
+       <div class="back-btn-new">
+         <%=link_to 'もどる', diaries_path, class:"back-btn" %>
+       </div>
+    </div>
+>>>>>>> Stashed changes
   </div>
 <% end %>
 

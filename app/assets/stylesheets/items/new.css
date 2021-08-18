@@ -197,7 +197,39 @@
   text-decoration: none;
 }
 
+<<<<<<< Updated upstream
 /* /下部ボタン */
+=======
+.back-btn-show {
+  background: #aaa;
+  border: 1px solid #aaa;
+  color: #fff;
+  padding: 15px 35%;
+  text-decoration: none;
+  line-height: 100px;
+}
+
+
+
+.back-btn-new {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.back-btn-new-item {
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.back-btn-new-show {
+  width: 50%;
+  margin: 0 auto;
+  height: 100px;
+}
+
+>>>>>>> Stashed changes
 
 .items-sell-footer {
   background-color: #f5f5f5;
@@ -224,4 +256,24 @@
 
 .inc {
   font-size: 13px;
+}
+
+@media (max-width: 500px) {
+  .items-sell-contents {
+    background-color: #f5f5f5;
+    font-family: "Source Sans Pro", Helvetica, Arial, "æ¸¸ã‚´ã‚·ãƒƒã‚¯ä½“", "YuGothic", "ãƒ¡ã‚¤ãƒªã‚ª", "Meiryo", sans-serif;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .back-btn-new-item {
+    width: 20%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+
 }

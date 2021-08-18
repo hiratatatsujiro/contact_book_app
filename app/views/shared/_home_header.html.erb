@@ -1,4 +1,5 @@
 <header>
+  
   <div class="header-left">
     <i class="fas fa-book-reader"></i>  <%= link_to "楽ちょ〜電子連絡帳〜", root_path %>
   </div>
@@ -6,10 +7,12 @@
     <ul class="header-list">
       <% if user_signed_in? %>
         <li><%= link_to "#{current_user.nickname}さん", user_path(current_user) %></li>
-        <li class="top-tag"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <li class="top-tag"><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li> 
       <% else %>
+        
         <li><%= link_to "新規登録", new_user_registration_path %></li>
         <li class="top-tag"><%= link_to "ログイン", new_user_session_path %></li>
+         
       <% end %>
     </ul>
   </div>

@@ -46,9 +46,10 @@
                </div>
                <div class="detail-left-class-communication">
                    <% class_communication.images.each do |image| %>
-                      <div class="class_communication_images">
+                      <div class="detail-pic">
                           <%= image_tag image.variant(resize: '680x680') %>
                      </div>
+                      
                    <% end %>
                </div>
 

@@ -1,6 +1,9 @@
 .timetable-main {
   background-color: #D0F4De;
+<<<<<<< Updated upstream
   height: calc( 100% - 160px );
+=======
+>>>>>>> Stashed changes
   min-height: calc( 100vh - 160px );
   display: flex; 
 }
@@ -11,8 +14,12 @@
   border: 1px solid black;
   text-align: center;
   padding: 10px;
+<<<<<<< Updated upstream
   height: calc( 100% - 160px );
   min-height: calc( 100vh - 160px );
+=======
+  min-height: calc( 100vh - 190px );
+>>>>>>> Stashed changes
 }
 
 .new-timetable {
@@ -185,8 +192,31 @@
 
 /* スマホ表示時 */
 @media (max-width: 500px) {
-  p {
-    font-size: 20px;
+  .timetable-right-show {
+    width: 90%;
+    margin: 20px auto;
+    height: calc( 100% - 160px );
+    min-height: calc( 100vh - 160px );
+  }
+
+  .index-timetable li{
+    font-size: 10px;
+  }
+
+  .timetable-index-right {
+    width: 50%;
+    padding: 30px;
+    font-size: 12px;
+  }
+  
+
+  
+  .timetable-index-under {
+    border: 1px solid black;
+    border-top: none;
+    background-color: white;
+    padding: 30px;
+    font-size: 12px;
   }
 }
 

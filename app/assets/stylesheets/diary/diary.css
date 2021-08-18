@@ -56,6 +56,10 @@
   margin-bottom: 20px;
 }
 
+.detail-pic-responsive {
+  display: none;
+}
+
 .diary-title-right {
   display: flex;
   justify-content: left;
@@ -95,6 +99,10 @@
 .diary-end {
   padding: 20px;
 } 
+
+.diary-end−responsive {
+  display: none
+}
 
 .diary-comment h4 {
   font-size: 24px;
@@ -154,7 +162,33 @@
 
 /* スマホ表示時 */
 @media (max-width: 500px) {
+<<<<<<< Updated upstream
   p {
     font-size: 20px;
   }
+=======
+
+.diary-end {
+  padding: 20px;
+  display: none;
+} 
+
+.diary-end−responsive {
+  display: block;
+}
+
+.detail-pic-responsive {
+  display: block;
+}
+
+.detail-pic {
+  display: none;
+}
+
+.container {
+  margin: 0 10px;
+  text-align: center;
+}
+
+>>>>>>> Stashed changes
 }

@@ -1,12 +1,15 @@
 <%= render "shared/home_header" %>
   <div class="diary-main">
     
-  <div class="diary-right">
+  <div class="diary-right-show">
   
     <div class="diary-detail">
       <div>
-      <div class="detail-left-show">
+      <div class="detail-pic">
          <%= image_tag @user.image.variant(resize: '680x680') %> 
+      </div>
+      <div class="detail-pic-responsive">
+         <%= image_tag @user.image.variant(resize: '300x300') %> 
       </div>
       
       </div>
@@ -14,12 +17,19 @@
       <div class="detail-diary">
         <div class="right">
           <div class="top-detail"><%= @user.grade.name %> <%= @user.classroom.name %> <%= @user.number.name %></div>
+<<<<<<< Updated upstream
           <div class="second-detail">名前：<%= @user.last_name %><%= @user.first_name %></div>
           <div class="second-detail">名前：<%= @user.last_name %><%= @user.first_name %></div>
           <div class="second-detail">名前：<%= @user.last_name %><%= @user.first_name %></div>
           <div class="second-detail">名前：<%= @user.last_name %><%= @user.first_name %></div>
           <div class="second-detail">名前：<%= @user.last_name %><%= @user.first_name %></div>
           <div class="third-detail-show"><%= @user.introduction %></div>
+=======
+          <div class="second-detail">名前：<%= @user.last_name %> <%= @user.first_name %>(<%= @user.last_name_reading %> <%= @user.first_name_reading %>)</div>
+          <div class="second-detail">生年月日：<%= @user.birthday %></div>
+          <div class="second-detail">メール：<%= @user.email %></div>
+          <div class="second-detail">自己紹介<br> <%= @user.introduction %></div>
+>>>>>>> Stashed changes
         </div>
       </div>
 <div class="diary-edit-delete">

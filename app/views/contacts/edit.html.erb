@@ -9,7 +9,7 @@
   </div>
  
   <div class="timetable-menu">
-        <div class="weight-bold-timetable">
+        <div class="weight-bold-text">
             休み・遅刻・早退
         </div>
         <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"select-box-timetable", id:"item-category"}) %>
@@ -21,7 +21,7 @@
           <%= f.text_area :reason, class:"input-introduction", id:"introduction", placeholder:"例)溶連菌のため" %>
         </div>
 
-        <div class="weight-bold-timetable">
+        <div class="weight-bold-text">
             プール・マラソン等
         </div>
         <%= f.collection_select(:pool_marathon_id, PoolMarathon.all, :id, :name, {}, {class:"select-box-timetable", id:"item-category"}) %>
@@ -37,6 +37,7 @@
   
   <div class='register-btn'>
     <%= f.submit "登録" ,class:"register-pink-btn" %>
+  </div>
   </div>
   </div>
 <% end %>

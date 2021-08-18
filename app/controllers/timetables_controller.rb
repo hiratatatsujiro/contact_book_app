@@ -4,7 +4,7 @@ class TimetablesController < ApplicationController
   before_action :move_to_index, only: [:show, :edit, :update, :destroy]
 
   def index
-    @timetables = Timetable.all.order(created_at: :desc).limit(3)
+    @timetables = Timetable.all.order(created_at: :desc).limit(5)
   end
 
   def new
@@ -22,10 +22,6 @@ class TimetablesController < ApplicationController
   end
 
   def show
-  end
-
-  def search
-    @timetables =Timetable.search(params[:keyword])
   end
 
   def edit 
