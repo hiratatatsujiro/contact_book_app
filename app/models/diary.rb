@@ -7,7 +7,6 @@ class Diary < ApplicationRecord
     validates :diary_day
     validates :title
     validates :image
-    validates :user_id
     validates :diary
   end
 

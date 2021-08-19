@@ -1,7 +1,7 @@
 .timetable-main {
   background-color: #D0F4De;
+  height: calc( 100% - 160px );
   min-height: calc( 100vh - 160px );
-  min-height: calc( 100% - 160px );
   display: flex; 
 }
 
@@ -11,9 +11,6 @@
   border: 1px solid black;
   text-align: center;
   padding: 10px;
-  height: calc( 100% - 160px );
-  min-height: calc( 100vh - 160px );
-
 }
 
 .new-timetable {
@@ -45,7 +42,7 @@
   width: 50%;
   margin: 20px auto;
   height: calc( 100% - 160px );
-
+  min-height: calc( 100vh - 160px );
 }
 
 .timetable-right-show {

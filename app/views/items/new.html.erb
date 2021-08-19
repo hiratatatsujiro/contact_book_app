@@ -54,7 +54,7 @@
         <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
         <div class="weight-bold-text">
           学年
-        <span class="indispensable">必須</span>
+        
         </div>
         <%= f.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
          <div class="weight-bold-text">

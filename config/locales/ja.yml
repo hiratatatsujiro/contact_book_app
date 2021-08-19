@@ -7,6 +7,8 @@ ja:
   activemodel:
     models: 
       order_information: 個人情報
+      item: 商品
+      user: ユーザー
     attributes:
       order_information:
         token: カード情報
@@ -15,6 +17,8 @@ ja:
         city: 市区町村
         house_number: 番地
         phone_number: 電話番号
+        item: 商品情報
+        user: ユーザー
   activerecord:
     models:
       diary: 日記
@@ -22,6 +26,9 @@ ja:
       timetable: 時間わり
       item: 商品情報
       room: チャットルーム
+      chat_message: チャットメッセージ 
+      comment: コメント
+      contact: 連絡
     attributes:
       user:
         nickname: ニックネーム
@@ -40,11 +47,13 @@ ja:
         diary_day: 書いた日
         title: タイトル
         diary: 日記
+        user: ユーザー
       class_communication:
         class_communication_day: 書いた日
         title: タイトル
         text: 本文
         images: 画像
+        user: ユーザー
       timetable:
         timetable: 時間わり
         next_day: 学校に来る日
@@ -57,6 +66,7 @@ ja:
         fourth_class_id: 4時間目
         fifth_class_id: 5時間目
         sixth_class_id: 6時間目
+        user: ユーザー
       item:
         image: 商品画像
         name: 商品名
@@ -68,7 +78,26 @@ ja:
         pay_for_shopping_id: 配送料の負担
         delivery_area_id: 発送元の地域
         day_to_ship_id: 発送までの日数
+        user: ユーザー
       room:
         name: チャットルーム名
+      chat_message:
+        content: 文章
+        room: チャットルーム
+        user: ユーザー
+      comment:
+        comment: コメント
+        user: ユーザー
+        diary: 日記
+      contact:
+        user: ユーザー
+      item_comment:
+        comment: コメント
+        item: 商品
+        user: ユーザー
+      like: 
+        user: ユーザー
+        class_communication: 学級通信
+
       
       
