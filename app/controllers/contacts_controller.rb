@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-  #before_action :authenticate_user!
+  before_action :authenticate_user!
   before_action :find_params, only: [:edit, :update, :show, :destroy]
   before_action :move_to_index, only: [:edit, :update, :show, :destroy]
 
