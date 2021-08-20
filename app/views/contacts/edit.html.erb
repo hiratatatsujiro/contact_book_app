@@ -12,25 +12,25 @@
         <div class="weight-bold-text">
             休み・遅刻・早退
         </div>
-        <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"select-box-timetable", id:"item-category"}) %>
+        <%= f.collection_select(:condition_id, Condition.all, :id, :name, {}, {class:"select-box-timetable", id:"condition"}) %>
 
         <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">理由</label>
         </div>
-          <%= f.text_area :reason, class:"input-introduction", id:"introduction", placeholder:"例)溶連菌のため" %>
+          <%= f.text_area :reason, class:"input-introduction", id:"reason", placeholder:"例)溶連菌のため" %>
         </div>
 
         <div class="weight-bold-text">
             プール・マラソン等
         </div>
-        <%= f.collection_select(:pool_marathon_id, PoolMarathon.all, :id, :name, {}, {class:"select-box-timetable", id:"item-category"}) %>
+        <%= f.collection_select(:pool_marathon_id, PoolMarathon.all, :id, :name, {}, {class:"select-box-timetable", id:"pool_marathon"}) %>
 
         <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">連絡</label>
         </div>
-          <%= f.text_area :contact, class:"input-introduction", id:"introduction", placeholder:"例)右足のくるぶしを痛めています" %>
+          <%= f.text_area :contact, class:"input-introduction", id:"contact", placeholder:"例)右足のくるぶしを痛めています" %>
         </div>
 
         
