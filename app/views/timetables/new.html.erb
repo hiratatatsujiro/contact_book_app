@@ -21,7 +21,7 @@
                   f.date_select(
                     :next_day,
                     class:'select-birth',
-                    id:"birth-date",
+                    id:"timetable-date",
                     use_month_numbers: true,
                     prompt:'--',
                     start_year: 2021,
@@ -35,32 +35,32 @@
           １時間目
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:first_class_id, Category.all, :id, :name, {}, {class:"select-box-timetable", id:"item-category"}) %>
+        <%= f.collection_select(:first_class_id, FirstClass.all, :id, :name, {}, {class:"select-box-timetable", id:"timetable-first-class"}) %>
         <div class="weight-bold-timetable">
           ２時間目
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:second_class_id, Category.all, :id, :name, {}, {class:"select-box-timetable", id:"item-category"}) %>
+        <%= f.collection_select(:second_class_id, SecondClass.all, :id, :name, {}, {class:"select-box-timetable", id:"timetable-second-class"}) %>
         <div class="weight-bold-timetable">
           ３時間目
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:third_class_id, Category.all, :id, :name, {}, {class:"select-box-timetable", id:"item-category"}) %>
+        <%= f.collection_select(:third_class_id, ThirdClass.all, :id, :name, {}, {class:"select-box-timetable", id:"timetable-third-class"}) %>
         <div class="weight-bold-timetable">
           ４時間目
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:fourth_class_id, Category.all, :id, :name, {}, {class:"select-box-timetable", id:"item-category"}) %>
+        <%= f.collection_select(:fourth_class_id, FourthClass.all, :id, :name, {}, {class:"select-box-timetable", id:"timetable-fourth-class"}) %>
         <div class="weight-bold-timetable">
           ５時間目
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:fifth_class_id, Category.all, :id, :name, {}, {class:"select-box-timetable", id:"item-category"}) %>
+        <%= f.collection_select(:fifth_class_id, FifthClass.all, :id, :name, {}, {class:"select-box-timetable", id:"timetable-fifth-class"}) %>
         <div class="weight-bold-timetable">
           ６時間目
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:sixth_class_id, Category.all, :id, :name, {}, {class:"select-box-timetable", id:"item-category"}) %>
+        <%= f.collection_select(:sixth_class_id, SixthClass.all, :id, :name, {}, {class:"select-box-timetable", id:"timetable-sixth-class"}) %>
 </div>
 
       <div class="form-group">
@@ -68,7 +68,7 @@
           <label class="form-text">下校時刻</label>
           <span class="indispensable">必須</span>
         </div>
-          <%= f.text_field :leave_time, class:"c", id:"introduction", placeholder:"例)16:10" %>
+          <%= f.text_field :leave_time, class:"select-box-leave-time", id:"leave_time", placeholder:"例)16:10" %>
         </div>
 
       <div class="form-group">
@@ -76,7 +76,7 @@
           <label class="form-text">宿題</label>
           <span class="indispensable">必須</span>
         </div>
-          <%= f.text_area :homework, class:"input-introduction", id:"introduction", placeholder:"例)計算ドリル３０、漢字１ページ" %>
+          <%= f.text_area :homework, class:"input-introduction", id:"homework", placeholder:"例)計算ドリル３０、漢字１ページ" %>
         </div>
 
         <div class="form-group">
@@ -84,14 +84,14 @@
           <label class="form-text">持ってくるもの</label>
           <span class="indispensable">必須</span>
         </div>
-          <%= f.text_area :preparation, class:"input-introduction", id:"introduction", placeholder:"例)絵の具" %>
+          <%= f.text_area :preparation, class:"input-introduction", id:"preparation", placeholder:"例)絵の具" %>
         </div>
 
         <div class="form-group">
         <div class='form-text-wrap'>
           <label class="form-text">お知らせ</label>
         </div>
-          <%= f.text_area :notice, class:"input-introduction", id:"introduction", placeholder:"例)明日の２時間目に眼科検診があります" %>
+          <%= f.text_area :notice, class:"input-introduction", id:"notice", placeholder:"例)明日の２時間目に眼科検診があります" %>
         </div>
 
         <div class='register-btn-new'>
