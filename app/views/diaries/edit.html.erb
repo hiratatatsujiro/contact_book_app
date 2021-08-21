@@ -19,7 +19,7 @@
                   f.date_select(
                     :diary_day,
                     class:'select-birth',
-                    id:"birth-date",
+                    id:"diary-date",
                     use_month_numbers: true,
                     prompt:'--',
                     start_year: 2021,
@@ -43,7 +43,7 @@
       <label class="form-text">タイトル</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_field :title, class:"input-default", id:"nickname", placeholder:"例) 楽ちょ太郎", maxlength:"40" %>
+    <%= f.text_field :title, class:"input-default", id:"title", placeholder:"例) 楽ちょ太郎", maxlength:"40" %>
   </div>
 
 
@@ -52,7 +52,7 @@
       <label class="form-text">日記</label>
       <span class="indispensable">必須</span>
     </div>
-      <%= f.text_area :diary, class:"input-introduction", id:"introduction", placeholder:"例)楽ちょ太郎です。みんなと仲良く、力を合わせていきます！よろしく！" %>
+      <%= f.text_area :diary, class:"input-introduction", id:"diary", placeholder:"例)楽ちょ太郎です。みんなと仲良く、力を合わせていきます！よろしく！" %>
   </div>
 
 

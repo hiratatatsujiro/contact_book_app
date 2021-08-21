@@ -55,7 +55,7 @@
              </div>
                 <div class="second-detail">タイトル：<%= diary.title %></div>
              <div class="detail-pic">
-                <%= image_tag diary.image.variant(resize: '680x680')%>
+                <%= image_tag diary.image.variant(resize: '680x680'), class: "image-content"%>
              </div>
                 <div class="diary-under">
                     <div class="third-detail"><%= diary.diary %></div>

@@ -1,10 +1,8 @@
 require 'rails_helper'
 
-RSpec.describe 'Contacts', type: :system do
+RSpec.describe 'Timetables', type: :system do
   before do
-    @contact = FactoryBot.create(:contact)
-    author = @contact.user
-    @user = FactoryBot.create(:user, grade_id: author.grade_id, classroom_id: author.classroom_id)
+    @Timetable = FactoryBot.create(:timetable)
   end
 
   context '連絡投稿ができるとき'do
