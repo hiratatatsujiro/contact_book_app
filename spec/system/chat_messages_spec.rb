@@ -8,7 +8,11 @@ RSpec.describe 'Chat_messages', type: :system do
     @chat_message = FactoryBot.create(:chat_message)
   end
 
+<<<<<<< Updated upstream
   context 'チャットメッセージが投稿できるとき'do
+=======
+  context 'メッセージが投稿できるとき' do
+>>>>>>> Stashed changes
     it 'ログインしたユーザーは新規投稿できる' do
         visit new_user_session_path
         fill_in 'user[email]', with: @user.email
