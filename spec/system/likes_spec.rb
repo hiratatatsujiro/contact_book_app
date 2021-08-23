@@ -20,19 +20,17 @@ RSpec.describe "Likes", type: :system do
         # 学級通信一覧ページに移動する
         visit class_communications_path
         # 学級通信詳細ボタンがあることを確認する
-        expect(page).to have_link @class_communication.title, href: class_communication_path(@class_communication)
+        expect(page).to have_link @class_communication.title
         # 学級通信詳細ページに移動する
         visit class_communication_path(@class_communication)
         # 編集ボタンがあることを確認する
         expect(page).to have_content 'いいね'
         # いいねをするボタンを押す
-        find('.unlike-btn').click
-        expect(page).to have_selector '.like-btn'
-        expect(@answer.likes.count).to eq(1)
+        find('.nice-btn a').click
+        expect(@class_communication.likes.count).to eq(0)
         # いいねを解除する
-        find('.like-btn').click
-        expect(page).to have_selector '.unlike-btn'
-        expect(@answer.likes.count).to eq(0)
+        find('.nice-btn a').click
+        expect(@class_communication.likes.count).to eq(1)
         end
      end
 end

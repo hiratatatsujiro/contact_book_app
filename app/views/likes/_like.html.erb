@@ -1,17 +1,17 @@
 <% if user_signed_in? %>
- <% if current_user.liked_by?(@class_communication.id) %>
+ <% if current_user.liked_by?(class_communication.id) %>
   <td>
-     <%= link_to destroy_like_path(@class_communication), method: :DELETE, remote: true do %> 
+     <%= link_to destroy_like_path(class_communication), method: :DELETE, remote: true do %> 
        <p class="nice-btn">いいね！<i class="fa fa-heart unlike-btn"></i> 
-     <% end %> 
-     <%= @class_communication.likes.count %></p>
+     <% end %>
+     <%= class_communication.likes.count %></p>
   </td>
  <% else %>
   <td>
-     <%= link_to create_like_path(@class_communication), method: :POST, remote: true do %> 
-       <p class="nice-btn">いいね！<i class="fa fa-heart like-btn"></i> 
+     <%= link_to create_like_path(class_communication), method: :POST, remote: true do %> 
+       <p class="nice-btn">いいね！<i class="fa fa-heart like-btn" id="like-btn"></i> 
      <% end %> 
-     <%= @class_communication.likes.count %></p>
+     <%= class_communication.likes.count %></p>
    </td>
  <% end %>
 <% end %>
