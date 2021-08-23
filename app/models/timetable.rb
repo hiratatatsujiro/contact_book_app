@@ -16,8 +16,8 @@ class Timetable < ApplicationRecord
     validates :leave_time
   end
 
-  with_options numericality: { other_than: 1, message: "が選択されていません" } do
-    validates :first_class_id 
+  with_options numericality: { other_than: 1, message: 'が選択されていません' } do
+    validates :first_class_id
     validates :second_class_id
     validates :third_class_id
     validates :fourth_class_id
@@ -26,7 +26,7 @@ class Timetable < ApplicationRecord
   end
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Timetable.where('next_day LIKE(?)', "%#{search}%")
     else
       Timetable.all

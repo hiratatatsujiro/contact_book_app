@@ -13,7 +13,11 @@ RSpec.describe Room, type: :model do
     it 'nameが空では登録できないこと' do
       @room.name = ''
       @room.valid?
+<<<<<<< Updated upstream
       expect(@room.errors.full_messages).to include("Name can't be blank")
+=======
+      expect(@room.errors.full_messages).to include('チャットルーム名を入力してください')
+>>>>>>> Stashed changes
     end
   end
 end

@@ -20,13 +20,21 @@ RSpec.describe Item, type: :model do
     it 'imageが空の場合は登録できない' do
       @item.image = nil
       @item.valid?
+<<<<<<< Updated upstream
       expect(@item.errors.full_messages).to include("Image can't be blank")
+=======
+      expect(@item.errors.full_messages).to include('商品画像を入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'nameが空の場合は登録できない' do
       @item.name = ''
       @item.valid?
+<<<<<<< Updated upstream
       expect(@item.errors.full_messages).to include("Name can't be blank")
+=======
+      expect(@item.errors.full_messages).to include('商品名を入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'nameは40字以上の場合は登録できない' do
@@ -38,7 +46,11 @@ RSpec.describe Item, type: :model do
     it 'introduceが空の場合は登録できない' do
       @item.introduce = ''
       @item.valid?
+<<<<<<< Updated upstream
       expect(@item.errors.full_messages).to include("Introduce can't be blank")
+=======
+      expect(@item.errors.full_messages).to include('商品紹介を入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'introduceが1000字以上の場合は登録できない' do
@@ -72,43 +84,71 @@ RSpec.describe Item, type: :model do
     it 'size_idが1の場合は登録できない' do
       @item.size_id = 1
       @item.valid?
+<<<<<<< Updated upstream
       expect(@item.errors.full_messages).to include("Size can't be blank")
+=======
+      expect(@item.errors.full_messages).to include('サイズを選択してください')
+>>>>>>> Stashed changes
     end
 
     it 'category_idが1の場合は登録できない' do
       @item.category_id = 1
       @item.valid?
+<<<<<<< Updated upstream
       expect(@item.errors.full_messages).to include("Category can't be blank")
+=======
+      expect(@item.errors.full_messages).to include('カテゴリーを選択してください')
+>>>>>>> Stashed changes
     end
 
     it 'status_idが1の場合は登録できない' do
       @item.status_id = 1
       @item.valid?
+<<<<<<< Updated upstream
       expect(@item.errors.full_messages).to include("Status can't be blank")
+=======
+      expect(@item.errors.full_messages).to include('商品の状態を選択してください')
+>>>>>>> Stashed changes
     end
 
     it 'pay_for_shopping_idが1の場合は登録できない' do
       @item.pay_for_shopping_id = 1
       @item.valid?
+<<<<<<< Updated upstream
       expect(@item.errors.full_messages).to include("Pay for shopping can't be blank")
+=======
+      expect(@item.errors.full_messages).to include('配送料の負担を選択してください')
+>>>>>>> Stashed changes
     end
 
     it 'delivery_area_idが1の場合は登録できない' do
       @item.delivery_area_id = 1
       @item.valid?
+<<<<<<< Updated upstream
       expect(@item.errors.full_messages).to include("Delivery area can't be blank")
+=======
+      expect(@item.errors.full_messages).to include('発送元の地域を選択してください')
+>>>>>>> Stashed changes
     end
 
     it 'day_to_ship_idが1の場合は登録できない' do
       @item.day_to_ship_id = 1
       @item.valid?
+<<<<<<< Updated upstream
       expect(@item.errors.full_messages).to include("Day to ship can't be blank")
+=======
+      expect(@item.errors.full_messages).to include('発送までの日数を選択してください')
+>>>>>>> Stashed changes
     end
 
     it 'priceが空の場合は登録できない' do
       @item.price = ''
       @item.valid?
+<<<<<<< Updated upstream
       expect(@item.errors.full_messages).to include("Price can't be blank")
+=======
+      expect(@item.errors.full_messages).to include('価格を入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'priceが299円以下の場合は登録できない' do

@@ -15,7 +15,11 @@ RSpec.describe Comment, type: :model do
     it 'commentが空だと登録できない' do
       @comment.comment = ''
       @comment.valid?
+<<<<<<< Updated upstream
       expect(@comment.errors.full_messages).to include("Comment can't be blank")
+=======
+      expect(@comment.errors.full_messages).to include('コメントを入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'userが紐付いていないと登録できない' do

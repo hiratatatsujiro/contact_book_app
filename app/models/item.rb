@@ -23,7 +23,7 @@ class Item < ApplicationRecord
             numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999,
                             message: 'が設定の範囲外です' }
 
-  with_options numericality: { other_than: 1, message: "を選択してください" } do
+  with_options numericality: { other_than: 1, message: 'を選択してください' } do
     validates :size_id
     validates :category_id
     validates :status_id
@@ -33,7 +33,7 @@ class Item < ApplicationRecord
   end
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Item.where('name LIKE(?)', "%#{search}%")
     else
       Item.all

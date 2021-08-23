@@ -9,4 +9,3 @@ class PoolMarathon < ActiveHash::Base
   include ActiveHash::Associations
   has_many :contacts
 end
-

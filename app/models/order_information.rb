@@ -8,7 +8,7 @@ class OrderInformation
     validates :item_id
     validates :postal_code, format: { with: /\A\d{3}-\d{4}\z/, message: 'に誤りがあります。次のように入力してください (例 123-4567)' }
   end
-  validates :delivery_area_id, numericality: { other_than: 1, message: "を選択してください" }
+  validates :delivery_area_id, numericality: { other_than: 1, message: 'を選択してください' }
   with_options presence: true do
     validates :city
     validates :house_number

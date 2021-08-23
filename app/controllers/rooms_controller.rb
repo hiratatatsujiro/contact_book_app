@@ -1,6 +1,6 @@
 class RoomsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
   end
 
@@ -10,7 +10,7 @@ class RoomsController < ApplicationController
 
   def create
     @room = Room.new(room_params)
-    if @room.valid? 
+    if @room.valid?
       @room.save
       redirect_to room_chat_messages_path(@room.id)
     else

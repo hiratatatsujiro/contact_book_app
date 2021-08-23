@@ -1,11 +1,9 @@
 class ItemCommentsController < ApplicationController
   def create
     @item = Item.find(params[:item_id])
-    @item_comment = @item.item_comments.build(comment_params) 
-    @item_comment.user_id = current_user.id 
-    if @item_comment.save
-      render :index
-    end
+    @item_comment = @item.item_comments.build(comment_params)
+    @item_comment.user_id = current_user.id
+    render :index if @item_comment.save
   end
 
   private

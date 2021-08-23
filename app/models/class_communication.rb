@@ -11,7 +11,7 @@ class ClassCommunication < ApplicationRecord
   end
 
   def self.search(search)
-    if search != ""
+    if search != ''
       ClassCommunication.where('text LIKE(?)', "%#{search}%")
     else
       ClassCommunication.all

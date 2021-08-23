@@ -31,7 +31,7 @@ class User < ApplicationRecord
       validates :first_name_reading
     end
 
-    with_options numericality: { other_than: 1, message: "を選択して下さい" } do
+    with_options numericality: { other_than: 1, message: 'を選択して下さい' } do
       validates :grade_id
       validates :classroom_id
       validates :number_id

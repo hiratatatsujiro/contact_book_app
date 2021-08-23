@@ -31,16 +31,16 @@ class ClassCommunicationsController < ApplicationController
   def edit
   end
 
-  def update  
+  def update
     @class_communication.update(class_communication_params)
-    if @class_communication.valid? 
+    if @class_communication.valid?
       redirect_to class_communications_path
     else
       render :edit
     end
   end
 
-  def destroy 
+  def destroy
     @class_communication.destroy
     redirect_to class_communications_path
   end
@@ -57,9 +57,6 @@ class ClassCommunicationsController < ApplicationController
   end
 
   def move_to_index
-    unless current_user.number_id == 52 
-      redirect_to class_communications_path
-    end 
+    redirect_to class_communications_path unless current_user.number_id == 52
   end
-  
 end

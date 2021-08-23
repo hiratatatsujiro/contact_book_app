@@ -17,18 +17,22 @@ class TimetablesController < ApplicationController
       @timetable.save
       redirect_to timetables_path
     else
-      render "new"
+      render 'new'
     end
   end
 
   def show
   end
 
+<<<<<<< Updated upstream
   def search
     @timetables =Timetable.search(params[:keyword])
   end
 
   def edit 
+=======
+  def edit
+>>>>>>> Stashed changes
   end
 
   def update
@@ -36,7 +40,7 @@ class TimetablesController < ApplicationController
     if @timetable.valid?
       redirect_to timetable_path(@timetable)
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -46,8 +50,10 @@ class TimetablesController < ApplicationController
   end
 
   private
+
   def timetable_params
-    params.require(:timetable).permit(:next_day, :first_class_id, :second_class_id, :third_class_id, :fourth_class_id, :fifth_class_id, :sixth_class_id, :leave_time, :homework, :preparation, :notice).merge(user_id: current_user.id)
+    params.require(:timetable).permit(:next_day, :first_class_id, :second_class_id, :third_class_id, :fourth_class_id,
+                                      :fifth_class_id, :sixth_class_id, :leave_time, :homework, :preparation, :notice).merge(user_id: current_user.id)
   end
 
   def find_params

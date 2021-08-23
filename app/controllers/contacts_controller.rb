@@ -36,15 +36,15 @@ class ContactsController < ApplicationController
     end
   end
 
-  def destroy 
+  def destroy
     @contact.destroy
     redirect_to contacts_path
   end
 
-
   private
+
   def contact_params
-    params.require(:contact).permit(:condition_id, :reason, :pool_marathon_id, :contact).merge(user_id: current_user.id)   
+    params.require(:contact).permit(:condition_id, :reason, :pool_marathon_id, :contact).merge(user_id: current_user.id)
   end
 
   def find_params

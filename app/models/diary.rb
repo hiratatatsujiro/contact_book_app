@@ -12,7 +12,7 @@ class Diary < ApplicationRecord
   end
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Diary.where('diary LIKE(?)', "%#{search}%")
     else
       Diary.includes(:user)

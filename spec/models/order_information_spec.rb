@@ -22,13 +22,21 @@ RSpec.describe OrderInformation, type: :model do
     it 'tokenがなければ保存できない' do
       @order_information.token = ''
       @order_information.valid?
+<<<<<<< Updated upstream
       expect(@order_information.errors.full_messages).to include("Token can't be blank")
+=======
+      expect(@order_information.errors.full_messages).to include('カード情報を入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'postal_codeがなければ保存できない' do
       @order_information.postal_code = ''
       @order_information.valid?
+<<<<<<< Updated upstream
       expect(@order_information.errors.full_messages).to include("Postal code can't be blank")
+=======
+      expect(@order_information.errors.full_messages).to include('郵便番号を入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'postal_codeが半角のハイフンを含んだ正しい形式でないと保存できないこと' do
@@ -76,25 +84,41 @@ RSpec.describe OrderInformation, type: :model do
     it 'delivery_area_idが1ならば保存できない' do
       @order_information.delivery_area_id = 1
       @order_information.valid?
+<<<<<<< Updated upstream
       expect(@order_information.errors.full_messages).to include("Delivery area can't be blank")
+=======
+      expect(@order_information.errors.full_messages).to include('都道府県を選択してください')
+>>>>>>> Stashed changes
     end
 
     it 'cityがなければ保存できない' do
       @order_information.city = ''
       @order_information.valid?
+<<<<<<< Updated upstream
       expect(@order_information.errors.full_messages).to include("City can't be blank")
+=======
+      expect(@order_information.errors.full_messages).to include('市区町村を入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'house_numberがなければ保存できない' do
       @order_information.house_number = ''
       @order_information.valid?
+<<<<<<< Updated upstream
       expect(@order_information.errors.full_messages).to include("House number can't be blank")
+=======
+      expect(@order_information.errors.full_messages).to include('番地を入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'phone_numberがなければ保存できない' do
       @order_information.phone_number = ''
       @order_information.valid?
+<<<<<<< Updated upstream
       expect(@order_information.errors.full_messages).to include("Phone number can't be blank")
+=======
+      expect(@order_information.errors.full_messages).to include('電話番号を入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'phone_numberが9字以下ならば保存できない' do
@@ -154,13 +178,21 @@ RSpec.describe OrderInformation, type: :model do
     it 'user_idが空なら保存できない' do
       @order_information.user_id = ''
       @order_information.valid?
+<<<<<<< Updated upstream
       expect(@order_information.errors.full_messages).to include("User can't be blank")
+=======
+      expect(@order_information.errors.full_messages).to include('Userを入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'item_idが空ならば保存できない' do
       @order_information.item_id = ''
       @order_information.valid?
+<<<<<<< Updated upstream
       expect(@order_information.errors.full_messages).to include("Item can't be blank")
+=======
+      expect(@order_information.errors.full_messages).to include('Itemを入力してください')
+>>>>>>> Stashed changes
     end
   end
 end

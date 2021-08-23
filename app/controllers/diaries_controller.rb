@@ -2,7 +2,7 @@ class DiariesController < ApplicationController
   before_action :authenticate_user!
   before_action :find_diary_params, only: [:show, :edit, :update, :destroy]
   before_action :move_to_index, only: [:show, :edit, :update, :delete]
-  
+
   def index
     @diaries = Diary.includes(:user)
   end
@@ -22,7 +22,7 @@ class DiariesController < ApplicationController
   end
 
   def show
-    @comment = Comment.new 
+    @comment = Comment.new
     @comments = @diary.comments.includes(:user)
   end
 
@@ -30,7 +30,7 @@ class DiariesController < ApplicationController
     @diaries = Diary.search(params[:keyword])
   end
 
-  def edit  
+  def edit
   end
 
   def update

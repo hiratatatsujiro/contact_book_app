@@ -15,25 +15,41 @@ RSpec.describe ClassCommunication, type: :model do
     it 'class_communication_dayが空だと登録できない' do
       @class_communication.class_communication_day = ''
       @class_communication.valid?
+<<<<<<< Updated upstream
       expect(@class_communication.errors.full_messages).to include("Class communication day can't be blank")
+=======
+      expect(@class_communication.errors.full_messages).to include('書いた日を入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'imageが空だと登録できない' do
       @class_communication.images = nil
       @class_communication.valid?
+<<<<<<< Updated upstream
       expect(@class_communication.errors.full_messages).to include("Images can't be blank")
+=======
+      expect(@class_communication.errors.full_messages).to include('画像を入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'titleが空だと登録できない' do
       @class_communication.title = ''
       @class_communication.valid?
+<<<<<<< Updated upstream
       expect(@class_communication.errors.full_messages).to include("Title can't be blank")
+=======
+      expect(@class_communication.errors.full_messages).to include('タイトルを入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'textが空だと登録できない' do
       @class_communication.text = ''
       @class_communication.valid?
+<<<<<<< Updated upstream
       expect(@class_communication.errors.full_messages).to include("Text can't be blank")
+=======
+      expect(@class_communication.errors.full_messages).to include('本文を入力してください')
+>>>>>>> Stashed changes
     end
 
     it 'userが紐付いていないと登録できない' do
