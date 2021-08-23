@@ -55,12 +55,12 @@
           学年
         <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"select-box", id:"item-grade"}) %>
          <div class="weight-bold-text">
           サイズ
           <span class="indispensable">必須</span>
         </div>
-        <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+        <%= f.collection_select(:size_id, Size.all, :id, :name, {}, {class:"select-box", id:"item-size"}) %>
       </div>
     </div>
   
