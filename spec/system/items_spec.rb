@@ -46,7 +46,7 @@ RSpec.describe 'Items', type: :system do
   end
   end
 
-  context '学級通信投稿ができないとき'do
+  context '商品投稿ができないとき'do
     it 'ログインしていないと学級通信投稿ページに遷移できない' do
      # トップページにいる
      visit root_path
