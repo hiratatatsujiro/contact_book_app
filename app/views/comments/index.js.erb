@@ -1,2 +1,5 @@
 $("#comments_area").html("<%= j(render 'index', { comments: @comment.diary.comments }) %>")
 $("textarea").val('')
+
+$("#comments_area_responsive").html("<%= j(render 'index', { comments: @comment.diary.comments }) %>")
+$("textarea").val('')

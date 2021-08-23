@@ -13,9 +13,9 @@ RSpec.describe 'Timetables', type: :system do
       fill_in 'user[password]', with: @timetable.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq(root_path)
-      # 連絡一覧ページへのボタンがあることを確認する
+      # 時間わり一覧ページへのボタンがあることを確認する
       expect(page).to have_content('時間わり')
-      # 連絡一覧ページに移動する
+      # 時間わり一覧ページに移動する
       visit timetables_path
       # 新規投稿ボタンがあることを確認する
       expect(page).to have_content('時間わり作成')
@@ -35,11 +35,11 @@ RSpec.describe 'Timetables', type: :system do
       fill_in 'timetable[homework]', with: @timetable.homework
       fill_in 'timetable[preparation]', with: @timetable.preparation
       fill_in 'timetable[notice]', with: @timetable.notice
-      # 送信するとcontactモデルのカウントが1上がることを確認する
+      # 送信するとtimetableモデルのカウントが1上がることを確認する
       expect{
         find('input[name="commit"]').click
       }.to change { Timetable.count }.by(1)
-      # 連絡一覧ページに遷移することを確認する
+      # 時間わり一覧ページに遷移することを確認する
       expect(current_path).to eq(timetables_path)
       # トップページには先ほど投稿した内容の連絡が存在することを確認する（日付）
       expect(page).to have_content(@timetable.next_day)
@@ -50,9 +50,9 @@ RSpec.describe 'Timetables', type: :system do
     it 'ログインしていないと時間わり投稿ページに遷移できない' do
      # トップページにいる
      visit root_path
-     # 連絡一覧ページへのボタンがあることを確認する
+     # 時間わり一覧ページへのボタンがあることを確認する
      expect(page).to have_content('時間わり')
-     # 連絡一覧ページに移動する
+     # 時間わり一覧ページに移動する
      visit timetables_path
      # ログインページへ戻されることを確認する
      expect(current_path).to eq(new_user_session_path)
@@ -73,15 +73,15 @@ RSpec.describe '時間わり編集', type: :system do
       fill_in 'user[password]', with: @timetable.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq(root_path)
-      # 連絡一覧ページへのボタンがあることを確認する
+      # 時間わり一覧ページへのボタンがあることを確認する
       expect(page).to have_content('時間わり')
-      # 連絡一覧ページに移動する
+      # 時間わり一覧ページに移動する
       visit timetables_path
-      # 連絡詳細ボタンがあることを確認する
+      # 時間わり詳細ボタンがあることを確認する
       expect(page).to have_link @timetable.next_day, href: timetable_path(@timetable)
-      # 連絡詳細ページに移動する
+      # 時間わり詳細ページに移動する
       visit timetable_path(@timetable)
-      # 連絡に「編集」へのリンクがあることを確認する
+      # 時間わりに「編集」へのリンクがあることを確認する
       expect(page).to have_link '編集', href: edit_timetable_path(@timetable)
       # 編集ページへ遷移する
       visit edit_timetable_path(@timetable)
@@ -139,13 +139,13 @@ RSpec.describe '時間わり編集', type: :system do
       fill_in 'timetable[homework]', with: @timetable.homework + "編集したテキスト"
       fill_in 'timetable[preparation]', with: @timetable.preparation + "編集したテキスト"
       fill_in 'timetable[notice]', with: @timetable.notice + "編集したテキスト"
-      # 編集してもTweetモデルのカウントは変わらないことを確認する
+      # 編集してもtimetableモデルのカウントは変わらないことを確認する
       expect{
         find('input[name="commit"]').click
       }.to change { Timetable.count }.by(0)
-      # 連絡一覧ページに遷移することを確認する
+      # 時間わり一覧ページに遷移することを確認する
       expect(current_path).to eq(timetable_path(@timetable))
-      # トップページには先ほど編集した内容の連絡が存在することを確認する（日付）
+      # トップページには先ほど編集した内容の時間わりが存在することを確認する（日付）
       expect(page).to have_content(@timetable.homework)
     end
   end
@@ -154,9 +154,9 @@ RSpec.describe '時間わり編集', type: :system do
     it 'ログインしていないとツイートの編集画面には遷移できない' do
       # トップページにいる
       visit root_path
-      # 連絡一覧ページへのボタンがあることを確認する
+      # 時間わり一覧ページへのボタンがあることを確認する
       expect(page).to have_content('時間わり')
-      # 連絡一覧ページに移動する
+      # 時間わり一覧ページに移動する
       visit timetables_path
       # ログインページへ戻されることを確認する
       expect(current_path).to eq(new_user_session_path)
@@ -176,23 +176,23 @@ RSpec.describe '削除', type: :system do
       fill_in 'user[password]', with: @timetable.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq(root_path)
-       # 連絡一覧ページへのボタンがあることを確認する
+       # 時間わり一覧ページへのボタンがあることを確認する
        expect(page).to have_content('時間わり')
-       # 連絡一覧ページに移動する
+       # 時間わり一覧ページに移動する
        visit timetables_path
        # 新規投稿ボタンがあることを確認する
        expect(page).to have_link @timetable.next_day
        # 新規投稿ページに移動する
        visit timetable_path(@timetable)
-       # 連絡1に「削除」のリンクがあることを確認する
+       # 時間わりに「削除」のリンクがあることを確認する
        expect(page).to have_link '削除', href: timetable_path(@timetable)
        # 投稿を削除するとレコードの数が1減ることを確認する
        expect{
        (page).find_link('削除', href: timetable_path(@timetable)).click
        }.to change { Timetable.count }.by(-1)
-       # 連絡一覧画面へ遷移する
+       # 時間わり一覧画面へ遷移する
        visit timetables_path
-       # トップページには連絡1の内容が存在しないことを確認する
+       # トップページには時間わりの内容が存在しないことを確認する
        expect(page).to have_no_link @timetable.next_day
     end
   end
@@ -200,9 +200,9 @@ RSpec.describe '削除', type: :system do
     it 'ログインしていないと削除ボタンがない' do
       # トップページにいる
       visit root_path
-      # 連絡一覧ページへのボタンがあることを確認する
+      # 時間わり一覧ページへのボタンがあることを確認する
       expect(page).to have_content('時間わり')
-      # 連絡一覧ページに移動する
+      # 時間わり一覧ページに移動する
       visit timetables_path
       # ログインページへ戻されることを確認する
       expect(current_path).to eq(new_user_session_path)
@@ -221,11 +221,11 @@ RSpec.describe '時間わり詳細', type: :system do
     fill_in 'user[password]', with: @timetable.user.password
     find('input[name="commit"]').click
     expect(current_path).to eq(root_path)
-    # 連絡一覧ページへのボタンがあることを確認する
+    # 時間わり一覧ページへのボタンがあることを確認する
     expect(page).to have_content('時間わり')
-    # 連絡一覧ページに移動する
+    # 時間わり一覧ページに移動する
     visit timetables_path
-    # 連絡詳細ボタンがあることを確認する
+    # 時間わり詳細ボタンがあることを確認する
     expect(page).to have_link @timetable.next_day
     # 詳細ページに遷移する
     visit timetable_path(@timetable)
@@ -235,9 +235,9 @@ RSpec.describe '時間わり詳細', type: :system do
   it 'ログインしていない状態で連絡詳細ページに遷移できない' do
     # トップページに移動する
     visit root_path
-    # 連絡一覧ページへのボタンがあることを確認する
+    # 時間わり一覧ページへのボタンがあることを確認する
     expect(page).to have_content('時間わり')
-    # 連絡一覧ページに移動する
+    # 時間わり一覧ページに移動する
     visit timetables_path
     # ログインページへ戻されることを確認する
     expect(current_path).to eq(new_user_session_path)
