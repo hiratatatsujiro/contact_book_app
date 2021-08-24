@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: contact_book_app_production
-  username: contact_book_app
-  password: <%= ENV['CONTACT_BOOK_APP_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
