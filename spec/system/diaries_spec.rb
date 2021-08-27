@@ -46,9 +46,9 @@ RSpec.describe 'Diaries', type: :system do
     it 'ログインしていないと新規投稿ページに遷移できない' do
      # トップページにいる
      visit root_path
-     # 連絡一覧ページへのボタンがあることを確認する
+     # 日記一覧ページへのボタンがあることを確認する
      expect(page).to have_content('日記')
-     # 連絡一覧ページに移動する
+     # 日記一覧ページに移動する
      visit diaries_path
      # ログインページへ戻されることを確認する
      expect(current_path).to eq(new_user_session_path)
@@ -64,15 +64,15 @@ RSpec.describe '日記編集', type: :system do
 
   context '日記編集ができるとき' do
     it 'ログインしたユーザーは自分が投稿した連絡の編集ができる' do
-     # 連絡を投稿したユーザーでログインする
+     # 日記投稿したユーザーでログインする
       visit new_user_session_path
       fill_in 'user[email]', with: @diary.user.email
       fill_in 'user[password]', with: @diary.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq(root_path)
-      # 連絡一覧ページへのボタンがあることを確認する
+      # 日記一覧ページへのボタンがあることを確認する
       expect(page).to have_content('日記')
-      # 連絡一覧ページに移動する
+      # 日記一覧ページに移動する
       visit diaries_path
       # 新規投稿ボタンがあることを確認する
       expect(page).to have_link @diary.title, href: diary_path(@diary)
@@ -80,7 +80,7 @@ RSpec.describe '日記編集', type: :system do
       visit diary_path(@diary)
       # 連絡詳細ボタンがあることを確認する
       expect(page).to have_link '編集する', href: edit_diary_path(@diary)
-      # トップページには先ほど投稿した内容のツイートが存在することを確認する（テキスト）
+      # 編集ページに遷移する
       visit edit_diary_path(@diary)
       # すでに投稿済みの内容がフォームに入っていることを確認する
       expect(
@@ -98,7 +98,7 @@ RSpec.describe '日記編集', type: :system do
       expect(
         find('#diary').value
       ).to eq(@diary.diary)
-      # 連絡内容を編集する
+      # 日記容を編集する
       select 2021 ,from: 'diary[diary_day(1i)]'
       select 6 ,from: 'diary[diary_day(2i)]'
       select 9 ,from: 'diary[diary_day(3i)]'
@@ -106,15 +106,15 @@ RSpec.describe '日記編集', type: :system do
       attach_file('diary[image]',image_path, make_visible: true)
       fill_in 'diary[title]', with: @diary.title + "編集したテキスト"
       fill_in 'diary[diary]', with: @diary.diary + "編集したテキスト"
-      # 編集してもTweetモデルのカウントは変わらないことを確認する
+      # 編集してもdiaryモデルのカウントは変わらないことを確認する
       expect{
         find('input[name="commit"]').click
       }.to change { Diary.count }.by(0)
-      # 連絡一覧ページに遷移することを確認する
+      # 日記一覧ページに遷移することを確認する
       expect(current_path).to eq(diaries_path)
-      # トップページには先ほど投稿した内容のツイートが存在することを確認する（画像）
+      # トップページには先ほど投稿した内容の日記が存在することを確認する（画像）
       expect(page).to have_selector("img[src$='user.png']")
-      # トップページには先ほど投稿した内容のツイートが存在することを確認する
+      # トップページには先ほど投稿した内容の日記が存在することを確認する
       expect(page).to have_content(@diary.title)
       # トップページには先ほど投稿した内容の日記が存在することを確認する
       expect(page).to have_content(@diary.diary)
@@ -156,7 +156,7 @@ RSpec.describe '削除', type: :system do
   end
   context '日記削除ができるとき' do
     it 'ログインしたユーザーは自らが投稿した日記の削除ができる' do
-      #diary1を投稿したユーザーでログインする
+      #日記1を投稿したユーザーでログインする
       visit new_user_session_path
       fill_in 'user[email]', with: @diary1.user.email
       fill_in 'user[password]', with: @diary1.user.password
@@ -222,11 +222,11 @@ RSpec.describe '日記詳細', type: :system do
       fill_in 'user[password]', with: @diary.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq(root_path)
-      # 連絡一覧ページへのボタンがあることを確認する
+      # 日記一覧ページへのボタンがあることを確認する
       expect(page).to have_content('日記')
-       # 連絡一覧ページに移動する
+       # 日記一覧ページに移動する
       visit diaries_path
-      # 連絡詳細ボタンがあることを確認する
+      # 日記詳細ボタンがあることを確認する
       expect(page).to have_link @diary.title, href: diary_path(@diary)
       # 詳細ページに遷移する
       visit diary_path(@diary)
@@ -236,9 +236,9 @@ RSpec.describe '日記詳細', type: :system do
   it 'ログインしていない状態で日記詳細ページに遷移できない' do
     # トップページに移動する
     visit root_path
-    # 連絡一覧ページへのボタンがあることを確認する
+    # 日記一覧ページへのボタンがあることを確認する
     expect(page).to have_content('連絡する')
-    # 連絡一覧ページに移動する
+    # 日記一覧ページに移動する
     visit contacts_path
     # ログインページへ戻されることを確認する
     expect(current_path).to eq(new_user_session_path)
