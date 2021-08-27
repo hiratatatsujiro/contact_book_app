@@ -13,9 +13,9 @@ RSpec.describe '商品コメント', type: :system do
     fill_in 'user[password]', with: @item.user.password
     find('input[name="commit"]').click
     expect(current_path).to eq(root_path)
-    # 日記一覧ページに遷移する
+    # 商品一覧ページに遷移する
     visit items_path
-    # 日記詳細ボタンが存在する
+    # 商品詳細ボタンが存在する
     expect(page).to have_link @item.name, href: item_path(@item)
     # ツイート詳細ページに遷移する
     visit item_path(@item)
