@@ -16,7 +16,7 @@ RSpec.describe 'Contacts', type: :system do
       find('input[name="commit"]').click
       expect(current_path).to eq(root_path)
       # 連絡一覧ページへのボタンがあることを確認する
-      expect(page).to have_content('連絡する')
+      expect(page).to have_content('連絡')
       # 連絡一覧ページに移動する
       visit contacts_path
       # 新規投稿ボタンがあることを確認する
@@ -41,6 +41,7 @@ RSpec.describe 'Contacts', type: :system do
 
   context '連絡投稿ができないとき' do
     it 'ログインしていないと新規投稿ページに遷移できない' do
+<<<<<<< Updated upstream
       # トップページにいる
       visit root_path
       # 連絡一覧ページへのボタンがあることを確認する
@@ -49,6 +50,16 @@ RSpec.describe 'Contacts', type: :system do
       visit contacts_path
       # ログインページへ戻されることを確認する
       expect(current_path).to eq(new_user_session_path)
+=======
+     # トップページにいる
+     visit root_path
+     # 連絡一覧ページへのボタンがあることを確認する
+     expect(page).to have_content('連絡')
+     # 連絡一覧ページに移動する
+     visit contacts_path
+     # ログインページへ戻されることを確認する
+     expect(current_path).to eq(new_user_session_path)
+>>>>>>> Stashed changes
     end
   end
 end
@@ -69,7 +80,7 @@ RSpec.describe '連絡編集', type: :system do
       find('input[name="commit"]').click
       expect(current_path).to eq(root_path)
       # 連絡一覧ページへのボタンがあることを確認する
-      expect(page).to have_content('連絡する')
+      expect(page).to have_content('連絡')
       # 連絡一覧ページに移動する
       visit contacts_path
       # 連絡詳細ボタンがあることを確認する
@@ -110,7 +121,7 @@ RSpec.describe '連絡編集', type: :system do
   end
 
   context '連絡編集ができないとき' do
-    it 'ログインしたユーザーは自分以外が投稿したツイートの編集画面には遷移できない' do
+    it 'ログインしたユーザーは自分以外が投稿した連絡の編集画面には遷移できない' do
       # 別ユーザーでログインする
       visit new_user_session_path
       fill_in 'user[email]', with: @user2.email
@@ -118,7 +129,7 @@ RSpec.describe '連絡編集', type: :system do
       find('input[name="commit"]').click
       expect(current_path).to eq(root_path)
       # 連絡一覧ページへのボタンがあることを確認する
-      expect(page).to have_content('連絡する')
+      expect(page).to have_content('連絡')
       # 連絡一覧ページに移動する
       visit contacts_path
       # 新規投稿ボタンがあることを確認する
@@ -128,11 +139,11 @@ RSpec.describe '連絡編集', type: :system do
       # 連絡に「編集」へのリンクがないことを確認する
       expect(page).to have_no_link '編集', href: edit_contact_path(@contact)
     end
-    it 'ログインしていないとツイートの編集画面には遷移できない' do
+    it 'ログインしていないと連絡の編集画面には遷移できない' do
       # トップページにいる
       visit root_path
       # 連絡一覧ページへのボタンがあることを確認する
-      expect(page).to have_content('連絡する')
+      expect(page).to have_content('連絡')
       # 連絡一覧ページに移動する
       visit contacts_path
       # ログインページへ戻されることを確認する
@@ -154,6 +165,7 @@ RSpec.describe '削除', type: :system do
       fill_in 'user[password]', with: @contact1.user.password
       find('input[name="commit"]').click
       expect(current_path).to eq(root_path)
+<<<<<<< Updated upstream
       # 連絡一覧ページへのボタンがあることを確認する
       expect(page).to have_content('連絡する')
       # 連絡一覧ページに移動する
@@ -172,6 +184,26 @@ RSpec.describe '削除', type: :system do
       visit contacts_path
       # トップページには連絡1の内容が存在しないことを確認する
       expect(page).to have_no_link @contact1.created_at.strftime('%Y/%m/%d %H:%M'), href: contact_path(@contact1)
+=======
+       # 連絡一覧ページへのボタンがあることを確認する
+       expect(page).to have_content('連絡')
+       # 連絡一覧ページに移動する
+       visit contacts_path
+       # 新規投稿ボタンがあることを確認する
+       expect(page).to have_link @contact1.created_at.strftime('%Y/%m/%d %H:%M')
+       # 新規投稿ページに移動する
+       visit contact_path(@contact1)
+       # 連絡1に「削除」のリンクがあることを確認する
+       expect(page).to have_link '削除', href: contact_path(@contact1)
+       # 投稿を削除するとレコードの数が1減ることを確認する
+       expect{
+       (page).find_link('削除', href: contact_path(@contact1)).click
+       }.to change { Contact.count }.by(-1)
+       # 連絡一覧画面へ遷移する
+       visit contacts_path
+       # トップページには連絡1の内容が存在しないことを確認する
+       expect(page).to have_no_link @contact1.created_at.strftime('%Y/%m/%d %H:%M'), href: contact_path(@contact1)
+>>>>>>> Stashed changes
     end
   end
   context '連絡削除ができないとき' do
@@ -183,7 +215,7 @@ RSpec.describe '削除', type: :system do
       find('input[name="commit"]').click
       expect(current_path).to eq(root_path)
       # 連絡一覧ページへのボタンがあることを確認する
-      expect(page).to have_content('連絡する')
+      expect(page).to have_content('連絡')
       # 連絡一覧ページに移動する
       visit contacts_path
       # 連絡詳細ボタンがないことを確認する
@@ -194,7 +226,7 @@ RSpec.describe '削除', type: :system do
       # トップページにいる
       visit root_path
       # 連絡一覧ページへのボタンがあることを確認する
-      expect(page).to have_content('連絡する')
+      expect(page).to have_content('連絡')
       # 連絡一覧ページに移動する
       visit contacts_path
       # ログインページへ戻されることを確認する
@@ -207,7 +239,7 @@ RSpec.describe '連絡詳細', type: :system do
   before do
     @contact = FactoryBot.create(:contact)
   end
-  it 'ログインしたユーザーはツイート詳細ページに遷移してコメント投稿欄が表示される' do
+  it 'ログインしたユーザーは連絡詳細ページに遷移して情報が表示される' do
     # ログインする
     visit new_user_session_path
     fill_in 'user[email]', with: @contact.user.email
@@ -215,7 +247,7 @@ RSpec.describe '連絡詳細', type: :system do
     find('input[name="commit"]').click
     expect(current_path).to eq(root_path)
     # 連絡一覧ページへのボタンがあることを確認する
-    expect(page).to have_content('連絡する')
+    expect(page).to have_content('連絡')
     # 連絡一覧ページに移動する
     visit contacts_path
     # 連絡詳細ボタンがあることを確認する
@@ -232,7 +264,7 @@ RSpec.describe '連絡詳細', type: :system do
     # トップページに移動する
     visit root_path
     # 連絡一覧ページへのボタンがあることを確認する
-    expect(page).to have_content('連絡する')
+    expect(page).to have_content('連絡')
     # 連絡一覧ページに移動する
     visit contacts_path
     # ログインページへ戻されることを確認する
