@@ -17,7 +17,7 @@ RSpec.describe 'コメント投稿', type: :system do
     visit diaries_path
     # 日記詳細ボタンが存在する
     expect(page).to have_link @diary.diary_day, href: diary_path(@diary)
-    # ツイート詳細ページに遷移する
+    # 日記詳細ページに遷移する
     visit diary_path(@diary)
     # フォームに情報を入力する
     fill_in "comment[comment]", with: @comment
