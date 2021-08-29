@@ -17,7 +17,7 @@ RSpec.describe '商品コメント', type: :system do
     visit items_path
     # 商品詳細ボタンが存在する
     expect(page).to have_link @item.name, href: item_path(@item)
-    # ツイート詳細ページに遷移する
+    # 日記詳細ページに遷移する
     visit item_path(@item)
     # フォームに情報を入力する
     fill_in 'item_comment[comment]', with: @item_comment

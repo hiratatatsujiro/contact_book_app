@@ -122,7 +122,7 @@ RSpec.describe '日記編集', type: :system do
   end
 
    context '日記編集ができないとき' do
-     it 'ログインしたユーザーは自分以外が投稿したツイートの編集画面には遷移できない' do
+     it 'ログインしたユーザーは自分以外が投稿した日記の編集画面には遷移できない' do
       # ユーザーでログインする
       visit new_user_session_path
       fill_in 'user[email]', with: @diary.user.email
@@ -215,7 +215,7 @@ RSpec.describe '日記詳細', type: :system do
   before do
     @diary = FactoryBot.create(:diary)
   end
-  it 'ログインしたユーザーはツイート詳細ページに遷移してコメント投稿欄が表示される' do
+  it 'ログインしたユーザーは日記詳細ページに遷移してコメント投稿欄が表示される' do
     # ログインする
       visit new_user_session_path
       fill_in 'user[email]', with: @diary.user.email
@@ -236,9 +236,9 @@ RSpec.describe '日記詳細', type: :system do
   it 'ログインしていない状態で日記詳細ページに遷移できない' do
     # トップページに移動する
     visit root_path
-    # 日記一覧ページへのボタンがあることを確認する
-    expect(page).to have_content('連絡する')
-    # 日記一覧ページに移動する
+    # 連絡一覧ページへのボタンがあることを確認する
+    expect(page).to have_content('日記')
+    # 連絡一覧ページに移動する
     visit contacts_path
     # ログインページへ戻されることを確認する
     expect(current_path).to eq(new_user_session_path)
