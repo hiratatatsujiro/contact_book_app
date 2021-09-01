@@ -1,27 +1,109 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション名
+ 
+「楽ちょ〜電子連絡帳〜」
 
-Things you may want to cover:
+## アプリケーション概要
+ 
+学校現場における教師と子どもの様々なやりとりができます。
+・出欠早退遅刻の連絡
+・日記のやりとり
+・学級のおたより掲載
+・時間わりの作成閲覧
+・保護者間でのチャットやDM
+・不用品の売買など
 
-* Ruby version
+## URL
+35.75.106.72
+ 
+## テスト用アカウント
 
-* System dependencies
+教師用アカウント
+メールアドレス：sensei@gmail.com
+パスワード：111aaa
 
-* Configuration
+児童１アカウント
+メールアドレス：kodomo1@gmail.com
+パスワード：111aaa
 
-* Database creation
+児童２アカウント
+メールアドレス：kodomo2@gmail.com
+パスワード：111aaa 
+ 
+## 利用方法
+ 
+# 教師
+連絡：児童が送信した欠席や遅刻などの連絡を見ることができます。
+日記：児童が送信した日記を読み、コメントすることができます。
+学級通信：学級の様子を書いたお便りを作成できます。（教師の作成可）
 
-* Database initialization
+# 児童
+連絡：欠席や遅刻などの連絡をすることができます。
+日記：児童が送信した日記を送信し、コメントすることができる。（他の児童は見ることはできません。）
+学級通信：学級の様子を書いたお便りを見ることができ、「いいね」することができます。
 
-* How to run the test suite
+# 共通
+時間わり：時間わりを作成し、見ることができます。
+チャットルーム：登録した全ての人と複数人のチャットができます。
+フリーマーケット：登録した全ての人が商品の登録・売買ができます。
 
-* Services (job queues, cache servers, search engines, etc.)
+# 目指した課題解決
+教師は多忙な中、紙媒体の連絡帳に目を通し、コメントしたり、保護者の連絡に返事をしたりしています。また、時間わりを書かせたり、来ていない児童に連絡をしたり、お便りを作り、紙で何枚も印刷することも多いです。連絡帳は紙媒体ですので、児童が登校している間にそれらを済ませななければなりません。そんな状況を少しでも改善するため、このアプリケーションを作りました。このアプリケーションを利用すれば、上に書いていることが改善されます。
+また、保護者や子どもにとっても簡単に手間なく利用でき流ものとなっています。学校での物品を無くしてそのままになっている子もいれば、保護者間で連絡先を知らず、困るケースも多いです。そんなときフリーマーケットで購入したり、電話番号を知らない保護者同士の連絡はチャット機能を利用したりすることもできます。
 
-* Deployment instructions
+# 洗い出した要件定義
+[![Image from Gyazo](https://i.gyazo.com/9bd2587dcaa95a3fb114f31ec3f1ff37.png)](https://gyazo.com/9bd2587dcaa95a3fb114f31ec3f1ff37)
 
-* ...
+# 実装した機能についての画像やGIFおよびその説明
+ホーム画面からページを選びます。
+[![Image from Gyazo](https://i.gyazo.com/7db0b0484f5a523ecae49251279ab513.gif)](https://gyazo.com/7db0b0484f5a523ecae49251279ab513)
+
+連絡したい情報を入力し、送信します。一覧画面では児童には日付が表示され、教師には日付と名前が表示されます。
+[![Image from Gyazo](https://i.gyazo.com/0cd1373fdd2498998cfaf2c57b21dded.gif)](https://gyazo.com/0cd1373fdd2498998cfaf2c57b21dded)
+[![Image from Gyazo](https://i.gyazo.com/4e60a22f3d02f7723600452f57ecf729.png)](https://gyazo.com/4e60a22f3d02f7723600452f57ecf729)
+
+日記も必要情報を入力の上、送信すると一覧に表示されます。
+[![Image from Gyazo](https://i.gyazo.com/9139e477c40580066424e857daf12fdd.gif)](https://gyazo.com/9139e477c40580066424e857daf12fdd)
+[![Image from Gyazo](https://i.gyazo.com/e08ece22d2dcb92b7750b96cd40df151.png)](https://gyazo.com/e08ece22d2dcb92b7750b96cd40df151)
+
+日記詳細画面では教師とコメントのやりとりができます。
+[![Image from Gyazo](https://i.gyazo.com/8f5dbe93a6c4de941a6ac85e6af76425.gif)](https://gyazo.com/8f5dbe93a6c4de941a6ac85e6af76425)
+[![Image from Gyazo](https://i.gyazo.com/273e5c5fb4bc222cbbf90186eea2c290.gif)](https://gyazo.com/273e5c5fb4bc222cbbf90186eea2c290)
+
+学級通信も日記と同様に必要事項を入力して作成でき、学級の子どもたちは閲覧できます。ただし、作成できるのは教師のみです。また、学級通信に「いいね」することができます。
+[![Image from Gyazo](https://i.gyazo.com/bea4a8d98bb9a3048d7ef5789b306b18.gif)](https://gyazo.com/bea4a8d98bb9a3048d7ef5789b306b18)
+
+
+チャットルームはルーム名とチャットメンバーを入力し、作成できます。
+[![Image from Gyazo](https://i.gyazo.com/f1635485c1690d5ca17d949c544ceec6.gif)](https://gyazo.com/f1635485c1690d5ca17d949c544ceec6)
+
+チャットではメンバーに画像とテキストを送信できます。
+[![Image from Gyazo](https://i.gyazo.com/7671b6f581415a4bb92591d3fc6de0a1.gif)](https://gyazo.com/7671b6f581415a4bb92591d3fc6de0a1)
+
+時間わり昨日も登録、閲覧ができます。
+
+フリーマーケットでは、商品の登録・購入ができます。
+[![Image from Gyazo](https://i.gyazo.com/be79544c2e8d6bfd9e3171b1106d5692.gif)](https://gyazo.com/be79544c2e8d6bfd9e3171b1106d5692)
+[![Image from Gyazo](https://i.gyazo.com/281dbb4eed802117bd021290a0021a52.gif)](https://gyazo.com/281dbb4eed802117bd021290a0021a52)
+
+# データベース設計
+[![Image from Gyazo](https://i.gyazo.com/7d7d81d0a672d73dedae7942143ce88c.png)](https://gyazo.com/7d7d81d0a672d73dedae7942143ce88c)
+
+# ローカルでの動作方法
+% git clone https://github.com/hiratatatsujiro/contact_book_app
+% cd contact_book_app
+% bundle install
+% yarn install
+% rails db:create
+% rails db:migrate
+% rails s
+
+ruby 2.6.5
+ruby on rails 6.0.0
+mysql2 0.4.4
+
+
 # contact_book_app
 
 # テーブル設計
