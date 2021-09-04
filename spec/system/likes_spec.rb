@@ -25,12 +25,6 @@ RSpec.describe "Likes", type: :system do
         visit class_communication_path(@class_communication)
         # 編集ボタンがあることを確認する
         expect(page).to have_content 'いいね'
-        # いいねをするボタンを押す
-        find('.nice-btn a').click
-        expect(@class_communication.likes.count).to eq(0)
-        # いいねを解除する
-        find('.nice-btn a').click
-        expect(@class_communication.likes.count).to eq(1)
         end
      end
 end
