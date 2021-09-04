@@ -20,7 +20,7 @@ RSpec.describe '商品コメント', type: :system do
     # ツイート詳細ページに遷移する
     visit item_path(@item)
     # フォームに情報を入力する
-    fill_in 'item_comment[comment]', with: @item_comment
+    fill_in 'item_comment[comment]', with: "いいね"
     # コメントを送信すると、Commentモデルのカウントが1上がることを確認する
     expect{
       find('input[name="commit"]').click
@@ -28,6 +28,6 @@ RSpec.describe '商品コメント', type: :system do
     # 詳細ページにリダイレクトされることを確認する
     expect(current_path).to eq item_path(@item)
     # 詳細ページ上に先ほどのコメント内容が含まれていることを確認する
-    expect(page).to have_content(@item_comment)
+    expect(page).to have_content("いいね")
   end
 end
