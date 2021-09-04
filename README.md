@@ -101,7 +101,7 @@
 
 ruby 2.6.5
 ruby on rails 6.0.0
-mysql2 0.4.4
+mysql  5.6.51
 
 
 # contact_book_app
