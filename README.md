@@ -65,7 +65,7 @@
 [![Image from Gyazo](https://i.gyazo.com/8f5dbe93a6c4de941a6ac85e6af76425.gif)](https://gyazo.com/8f5dbe93a6c4de941a6ac85e6af76425)
 [![Image from Gyazo](https://i.gyazo.com/273e5c5fb4bc222cbbf90186eea2c290.gif)](https://gyazo.com/273e5c5fb4bc222cbbf90186eea2c290)
 
-学級通信も日記と同様に必要事項を入力して作成でき、学級の子どもたちは閲覧できます。ただし、作成できるのは教師のみです。また、学級通信に「いいね」することができます。
+学級通信も日記と同様に必要事項を入力して作成でき、学級の児童は閲覧できます。ただし、作成できるのは教師のみです。また、学級通信に「いいね」することができます。
 [![Image from Gyazo](https://i.gyazo.com/bea4a8d98bb9a3048d7ef5789b306b18.gif)](https://gyazo.com/bea4a8d98bb9a3048d7ef5789b306b18)
 
 
@@ -75,7 +75,7 @@
 チャットではメンバーに画像とテキストを送信できます。
 [![Image from Gyazo](https://i.gyazo.com/7671b6f581415a4bb92591d3fc6de0a1.gif)](https://gyazo.com/7671b6f581415a4bb92591d3fc6de0a1)
 
-時間わり昨日も登録、閲覧ができます。
+時間わり機能も登録、閲覧ができます。
 
 フリーマーケットでは、商品の登録・購入ができます。
 [![Image from Gyazo](https://i.gyazo.com/be79544c2e8d6bfd9e3171b1106d5692.gif)](https://gyazo.com/be79544c2e8d6bfd9e3171b1106d5692)
