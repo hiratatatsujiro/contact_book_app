@@ -87,6 +87,9 @@
 [![Image from Gyazo](https://i.gyazo.com/be79544c2e8d6bfd9e3171b1106d5692.gif)](https://gyazo.com/be79544c2e8d6bfd9e3171b1106d5692)
 [![Image from Gyazo](https://i.gyazo.com/281dbb4eed802117bd021290a0021a52.gif)](https://gyazo.com/281dbb4eed802117bd021290a0021a52)
 
+# 実装予定の機能
+CICDパイプラインの構築を行っていく予定です。
+
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/7d7d81d0a672d73dedae7942143ce88c.png)](https://gyazo.com/7d7d81d0a672d73dedae7942143ce88c)
 
