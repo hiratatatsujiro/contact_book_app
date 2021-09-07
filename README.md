@@ -91,17 +91,17 @@
 [![Image from Gyazo](https://i.gyazo.com/7d7d81d0a672d73dedae7942143ce88c.png)](https://gyazo.com/7d7d81d0a672d73dedae7942143ce88c)
 
 # ローカルでの動作方法
-% git clone https://github.com/hiratatatsujiro/contact_book_app
-% cd contact_book_app
-% bundle install
-% yarn install
-% rails db:create
-% rails db:migrate
-% rails s
+% git clone https://github.com/hiratatatsujiro/contact_book_app \
+% cd contact_book_app \
+% bundle install \
+% yarn install \
+% rails db:create \
+% rails db:migrate \
+% rails s \
 
-ruby 2.6.5
-ruby on rails 6.0.0
-mysql  5.6.51
+ruby 2.6.5 \
+ruby on rails 6.0.0 \
+mysql  5.6.51 
 
 
 # contact_book_app
