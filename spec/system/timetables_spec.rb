@@ -125,7 +125,7 @@ RSpec.describe '時間わり編集', type: :system do
       expect(
         find('#notice').value
       ).to eq(@timetable.notice)
-      # 連絡内容を編集する
+      # 時間わり内容を編集する
       select 2022 ,from: 'timetable[next_day(1i)]'
       select 5 ,from: 'timetable[next_day(2i)]'
       select 15 ,from: 'timetable[next_day(3i)]'
@@ -145,7 +145,7 @@ RSpec.describe '時間わり編集', type: :system do
       }.to change { Timetable.count }.by(0)
       # 時間わり一覧ページに遷移することを確認する
       expect(current_path).to eq(timetable_path(@timetable))
-      # トップページには先ほど編集した内容の時間わりが存在することを確認する（日付）
+      # トップページには先ほど編集した内容の時間わりが存在することを確認する
       expect(page).to have_content(@timetable.homework)
     end
   end

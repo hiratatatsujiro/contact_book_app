@@ -98,7 +98,7 @@ RSpec.describe '連絡編集', type: :system do
       fill_in 'contact[reason]', with: @contact.reason + "編集したテキスト"
       select "できます", from: 'contact[pool_marathon_id]'
       fill_in 'contact[contact]', with: @contact.contact + "編集したテキスト"
-      # 編集してもTweetモデルのカウントは変わらないことを確認する
+      # 編集してもcontactモデルのカウントは変わらないことを確認する
       expect{
         find('input[name="commit"]').click
       }.to change { Contact.count }.by(0)
@@ -148,7 +148,7 @@ RSpec.describe '削除', type: :system do
   end
   context '連絡削除ができるとき' do
     it 'ログインしたユーザーは自らが投稿した連絡の削除ができる' do
-      #contact1を投稿したユーザーでログインする
+      #連絡1を投稿したユーザーでログインする
       visit new_user_session_path
       fill_in 'user[email]', with: @contact1.user.email
       fill_in 'user[password]', with: @contact1.user.password
