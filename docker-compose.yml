@@ -16,7 +16,11 @@ services:
       - db
 
   db:
+<<<<<<< Updated upstream
     image: mysql2:0.4.4
+=======
+    image: mysql:5.6.51
+>>>>>>> Stashed changes
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_USER: user
@@ -47,5 +51,9 @@ volumes:
   db-data:
 
 networks:
+<<<<<<< Updated upstream
   fitO2-network:
+=======
+  contact_book_app-network:
+>>>>>>> Stashed changes
     external: true
