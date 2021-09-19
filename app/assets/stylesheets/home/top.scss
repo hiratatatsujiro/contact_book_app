@@ -16,6 +16,12 @@ header {
 
 .header-left a {
   color: white;
+  opacity: 1;
+}
+
+.header-left a:hover {
+  opacity: 0.8;
+  transition: all 0.5s;
 }
 
 .header-right {
@@ -26,6 +32,11 @@ header {
 
 .header-right a{
   color: white;
+}
+
+.header-right a:hover {
+  opacity: 0.8;
+  transition: all 0.5s;
 }
 
 li {
@@ -69,6 +80,12 @@ main {
   text-decoration: none;
   color: black;
   font-size: 22px;
+  opacity: 1;
+}
+
+.select-menu a:hover {
+  color: red;
+  transition: all 0.5s;
 }
 
 .menu-list {
@@ -167,6 +184,8 @@ footer a{
     color: black;
     font-size: 20px;
   }
+
+ 
 
   .main-left {
     width: 100%;
