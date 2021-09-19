@@ -4,7 +4,7 @@ class ContactsController < ApplicationController
   before_action :move_to_index, only: [:edit, :update, :show, :destroy]
 
   def index
-    @contacts = Contact.includes(:user)
+    @contacts = Contact.order("created_at DESC").includes(:user)
   end
 
   def new
