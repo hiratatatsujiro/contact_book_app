@@ -62,9 +62,9 @@ jobs:
           name: Run webpack build
           command: bin/webpack
 
-      - run:
-          name: Run rubocop
-          command: bundle exec rubocop
+      #- run:
+          #name: Run rubocop
+          #command: bundle exec rubocop
 
       - run:
           name: Run rspec
@@ -77,6 +77,6 @@ jobs:
       - deploy:
           name: Deploy
           command: |
-            if [ "${CIRCLE_BRANCH}" = "develop" ]; then
-              bundle exec cap staging deploy
+            if [ "${CIRCLE_BRANCH}" = "master" ]; then
+              bundle exec cap production deploy
             fi
