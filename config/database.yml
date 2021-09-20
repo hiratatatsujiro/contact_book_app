@@ -16,6 +16,11 @@ default: &default
   username: root
   password:
   socket: /tmp/mysql.sock
+<<<<<<< Updated upstream
+=======
+  host: mysql
+
+>>>>>>> Stashed changes
 
 development:
   <<: *default
