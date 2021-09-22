@@ -23,7 +23,7 @@ jobs:
       - run:
           name: Which bundler?
           command: bundle -v
-      - run: mv config/database.yml config/database.yml
+      - run: mv config/database.yml.ci config/database.yml
       - restore_cache:
           keys:
             - cache-gem-{{ checksum "Gemfile.lock" }}
