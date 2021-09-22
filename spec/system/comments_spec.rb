@@ -19,7 +19,7 @@ RSpec.describe 'コメント投稿', type: :system do
     # 日記詳細ページに遷移する
     visit diary_path(@diary)
     # フォームに情報を入力する
-    fill_in "comment_comment", with: @comment
+    fill_in "comment[comment]", with: @comment
     # コメントを送信すると、Commentモデルのカウントが1上がることを確認する
     expect{
       find('input[name="commit"]').click
