@@ -64,9 +64,9 @@ jobs:
           name: Run webpack build
           command: bin/webpack
 
-      - run:
-          name: Run rubocop
-          command: bundle exec rubocop
+      #- run:
+          #name: Run rubocop
+          #command: bundle exec rubocop
 
       - run:
           name: Run rspec
