@@ -16,8 +16,8 @@ default: &default
   username: <%= ENV["DB_USERNAME"] %>
   password: <%= ENV["DB_PASSWORD"] %> 
   socket: /tmp/mysql.sock
-  #host: mysql
-  host: localhost
+  host: mysql
+  #host: localhost
 
 development:
   <<: *default
