@@ -15,10 +15,16 @@ jobs:
         env:
           MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
           MYSQL_HOST: '%'
-      - image: selenium/standalone-chrome-debug:latest
-        name: chrome
     steps:
       - checkout
+      - run: mkdir test-reports
+      - run:
+          name: Selenium のダウンロード
+          command: curl -O http://selenium-release.storage.googleapis.com/3.5/selenium-server-standalone-3.5.3.jar
+      - run:
+          name: Selenium の起動
+          command: java -jar selenium-server-standalone-3.5.3.jar -log test-reports/selenium.log
+          background: true
       - run:
           name: bundler install
           command: gem install bundler:2.2.27
