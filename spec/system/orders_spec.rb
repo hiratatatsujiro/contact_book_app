@@ -3,7 +3,10 @@ require 'rails_helper'
 RSpec.describe 'OrderInfomations', type: :system do
   let!(:user){FactoryBot.create(:user)}
   let!(:item){FactoryBot.create(:item)}
-  let!(:order_information){FactoryBot.create(:order_information, item_id: item.id)}
+  before do
+    @order_information = FactoryBot.create(:order_information, item_id: item.id)
+  end
+ 
 
 
   context '商品購入ができるとき'do

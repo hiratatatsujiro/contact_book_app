@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'コメント投稿', type: :system do
+RSpec.describe 'コメント投稿', type: :system, js: true do
   let!(:comment){FactoryBot.create(:comment)}
   let!(:diary){FactoryBot.create(:diary)}
 
@@ -22,6 +22,7 @@ RSpec.describe 'コメント投稿', type: :system do
     # コメントを送信すると、Commentモデルのカウントが1上がることを確認する
     expect{
       find('input[name="commit"]').click
+      wait_for_ajax
     }.to change { Comment.count }.by(1)
     # 詳細ページにリダイレクトされることを確認する
     expect(current_path).to eq diary_path(diary)

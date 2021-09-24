@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe '商品コメント', type: :system do
+RSpec.describe '商品コメント', type: :system, js: true do
   let!(:item_comment){FactoryBot.create(:item_comment)}
   let!(:item){FactoryBot.create(:item)}
 
@@ -22,6 +22,7 @@ RSpec.describe '商品コメント', type: :system do
     # コメントを送信すると、Commentモデルのカウントが1上がることを確認する
     expect{
       find('input[name="commit"]').click
+      wait_for_ajax
     }.to change { ItemComment.count }.by(1)
     # 詳細ページにリダイレクトされることを確認する
     expect(current_path).to eq item_path(item)
