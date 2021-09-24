@@ -15,6 +15,8 @@ jobs:
         env:
           MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
           MYSQL_HOST: '%'
+      - image: selenium/standalone-chrome-debug:latest
+        name: chrome
     steps:
       - checkout
       - run:
