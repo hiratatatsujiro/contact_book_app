@@ -47,39 +47,38 @@ RSpec.describe 'ユーザー新規登録', type: :system do
   end
 
   context 'ユーザー新規登録ができないとき' do
-    # it '誤った情報ではユーザー新規登録ができずに新規登録ページへ戻ってくる' do
-    #   # トップページに移動する
-    #   visit root_path
-    #   # トップページにサインアップページへ遷移するボタンがあることを確認する
-    #   expect(page).to have_content('新規登録')
-    #   # 新規登録ページへ移動する
-    #   visit new_user_registration_path
-    #   # ユーザー情報を入力する
-    #   image_path = Rails.root.join('')
-    #   attach_file('user[image]',image_path, make_visible: true)
-    #   fill_in 'user[nickname]', with: ""
-    #   fill_in 'user[email]', with: ""
-    #   fill_in 'user[password]', with: ""
-    #   fill_in 'user[password_confirmation]', with: ""
-    #   fill_in 'user[introduction]', with: ""
-    #   fill_in 'user[last_name]', with: ""
-    #   fill_in 'user[first_name]', with: ""
-    #   fill_in 'user[last_name_reading]', with: ""
-    #   fill_in 'user[first_name_reading]', with: ""
-    #   select "--", from: 'user[grade_id]'
-    #   select "--", from: 'user[classroom_id]'
-    #   select "--", from: 'user[number_id]'
-    #   select "--" ,from: 'user[birthday(1i)]'
-    #   select "--" ,from: 'user[birthday(2i)]'
-    #   select "--",from: 'user[birthday(3i)]'
-      
-    #   # サインアップボタンを押してもユーザーモデルのカウントは上がらないことを確認する
-    #   expect{
-    #     find('input[name="commit"]').click
-    #   }.to change { User.count }.by(0)
-    #   # 新規登録ページへ戻されることを確認する
-    #   expect(current_path).to eq user_registration_path
-    # end
+    it '誤った情報ではユーザー新規登録ができずに新規登録ページへ戻ってくる' do
+      # トップページに移動する
+      visit root_path
+      # トップページにサインアップページへ遷移するボタンがあることを確認する
+      expect(page).to have_content('新規登録')
+      # 新規登録ページへ移動する
+      visit new_user_registration_path
+      # ユーザー情報を入力する
+      image_path = Rails.root.join('')
+      attach_file('user[image]',image_path, make_visible: true)
+      fill_in 'user[nickname]', with: ""
+      fill_in 'user[email]', with: ""
+      fill_in 'user[password]', with: ""
+      fill_in 'user[password_confirmation]', with: ""
+      fill_in 'user[introduction]', with: ""
+      fill_in 'user[last_name]', with: ""
+      fill_in 'user[first_name]', with: ""
+      fill_in 'user[last_name_reading]', with: ""
+      fill_in 'user[first_name_reading]', with: ""
+      select "--", from: 'user[grade_id]'
+      select "--", from: 'user[classroom_id]'
+      select "--", from: 'user[number_id]'
+      select "--" ,from: 'user[birthday(1i)]'
+      select "--" ,from: 'user[birthday(2i)]'
+      select "--",from: 'user[birthday(3i)]'
+      # サインアップボタンを押してもユーザーモデルのカウントは上がらないことを確認する
+      # expect{
+      #   find('input[name="commit"]').click
+      # }.to change { User.count }.by(0)
+      # # 新規登録ページへ戻されることを確認する
+      # expect(current_path).to eq user_registration_path
+    end
   end
 end
 
