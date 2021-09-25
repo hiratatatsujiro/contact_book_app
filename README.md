@@ -47,7 +47,7 @@
 また、保護者や子どもにとっても簡単に手間なく利用できるものとなっています。学校には、物品を無くしてそのままになっている児童がたくさんいます。物品を探すにはこのアプリケーションのフリーマーケットを利用し購入することができます。保護者同士で連絡を取り合いたい時、お互いに連絡先を知らず、困るケースも多いです。電話番号を知らない保護者同士の連絡はチャット機能を利用することができます。
 
 # 洗い出した要件定義
-[![Image from Gyazo](https://i.gyazo.com/9bd2587dcaa95a3fb114f31ec3f1ff37.png)](https://gyazo.com/9bd2587dcaa95a3fb114f31ec3f1ff37)
+[![Image from Gyazo](https://i.gyazo.com/25da1e83b3453836e081b9cfd24694f1.png)](https://gyazo.com/25da1e83b3453836e081b9cfd24694f1)
 
 # 実装した機能についての画像やGIFおよびその説明
 ホーム画面からページを選びます。
@@ -80,9 +80,6 @@
 フリーマーケットでは、商品の登録・購入ができます。
 [![Image from Gyazo](https://i.gyazo.com/be79544c2e8d6bfd9e3171b1106d5692.gif)](https://gyazo.com/be79544c2e8d6bfd9e3171b1106d5692)
 [![Image from Gyazo](https://i.gyazo.com/281dbb4eed802117bd021290a0021a52.gif)](https://gyazo.com/281dbb4eed802117bd021290a0021a52)
-
-# 実装予定の機能
-CICDパイプラインの構築を行っていく予定です。
 
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/9d430168c138ed1c63062964169c0bf9.png)](https://gyazo.com/9d430168c138ed1c63062964169c0bf9)
