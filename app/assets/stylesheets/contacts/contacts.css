@@ -30,12 +30,12 @@
   text-align: center;
 }
 
-.contact-index:hover {
-  color: red;
-}
-
 .contact-index a {
   color: black;
+}
+
+.contact-index a:hover {
+  color: red;
 }
 
 .contact-show {
