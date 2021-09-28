@@ -36,6 +36,7 @@
 
 .contact-index a:hover {
   color: red;
+  transition: all 0.5s;
 }
 
 .contact-show {
