@@ -87,6 +87,6 @@ jobs:
       - deploy:
           name: Deploy
           command: |
-            if [ "${CIRCLE_BRANCH}" = "develop" ]; then
-              bundle exec cap staging deploy
+            if [ "${CIRCLE_BRANCH}" = "master" ]; then
+              bundle exec cap production deploy
             fi
