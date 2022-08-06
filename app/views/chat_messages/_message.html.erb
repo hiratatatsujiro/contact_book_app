@@ -7,9 +7,9 @@
         <div class="message"><%= message.content %></div>
     </div>
     <div class="detail-pic">
-      <%= image_tag message.image.variant(resize: '500x500'), class: 'message-image' if message.image.attached? %>
+      <%= image_tag message.image, size: '500x500', class: 'message-image' if message.image.attached? %>
     </div>
     <div class="detail-pic-responsive">
-    <%= image_tag message.image.variant(resize: '200x200'), class: 'message-image' if message.image.attached? %>
+    <%= image_tag message.image, size: '200x200', class: 'message-image' if message.image.attached? %>
     </div>
 </div>
