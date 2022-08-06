@@ -12,10 +12,10 @@
             </div>
             <% @class_communication.images.each do |image| %>
               <div class="detail-pic">
-                <%= image_tag image.variant(resize: '680x680') %>
+                <%= image_tag image, size: '680x680' %>
               </div>
               <div class="detail-pic-responsive">
-                <%= image_tag image.variant(resize: '300x300') %>
+                <%= image_tag image, size: '300x300' %>
               </div>
             <% end %>
           </div>
